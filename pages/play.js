@@ -19,10 +19,18 @@ export async function getStaticProps() {
 export default function Home({ sourceHtml }) {
   return (
     <div className="flex flex-col min-h-screen">
+      <Head>
+        <title>Code Hike Demos</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://unpkg.com/placeholdifier/placeholdifier.css"
+          rel="stylesheet"
+        />
+      </Head>
       <nav className="flex w-full h-12 items-center gap-4 text-gray-700">
         <h1 className="text-2xl font-bold pl-4">Code Hike</h1>
         <div
-          className="text-white h-10 p-4 pt-1 self-end rounded-tl-lg rounded-tr-lg"
+          className="text-white h-10 p-4 pt-1 self-end rounded-tl-md rounded-tr-md"
           style={{ background: "#22272e" }}
         >
           page.mdx
@@ -32,16 +40,15 @@ export default function Home({ sourceHtml }) {
         <div className="pr-4">Examples</div>
       </nav>
       <main className="flex-1 flex" style={{ background: "#22272e" }}>
-        <div
-          className="flex-1 p-4 min-w-0 source"
-          style={{ maxWidth: 800 }}
-          dangerouslySetInnerHTML={{ __html: sourceHtml }}
-        ></div>
+        <Source sourceHtml={sourceHtml} locked />
         <div
           className="w-96 self-start m-4"
           style={{ width: 900, minWidth: 900 }}
         >
-          <div className="text-2xl text-center" style={{ color: "#ADBAC7" }}>
+          <div
+            className="text-2xl text-center mb-4"
+            style={{ color: "#ADBAC7" }}
+          >
             Result
           </div>
           <div className="unreset bg-white rounded p-8">
@@ -85,6 +92,26 @@ export default function Home({ sourceHtml }) {
           </div>
         </div>
       </main>
+    </div>
+  );
+}
+
+function Source({ sourceHtml, locked }) {
+  return (
+    <div
+      className={`flex-1 p-4 min-w-0 relative source`}
+      style={{ maxWidth: 800 }}
+    >
+      <div
+        className={locked ? "placeholdify opacity-30" : ""}
+        dangerouslySetInnerHTML={{ __html: sourceHtml }}
+      ></div>
+      <div className="absolute inset-0">
+        <div className="p-16 mx-auto bg-gray-100 w-96 rounded-lg top-48 sticky">
+          <h2>Locked</h2>
+          Lorem ipsum something
+        </div>
+      </div>
     </div>
   );
 }

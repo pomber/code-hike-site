@@ -20,9 +20,9 @@ export default function Home() {
 
         <p className="text-2xl my-16  text-justify">
           Code Hike helps you build the best{" "}
-          <span className="text-blue-600">code walktroughts for the web</span>.
+          <span className="text-blue-600">code walkthroughs for the web</span>.
           Blogs, docs, tutorials, even coding videos. Code Hike helps you build
-          the best code walktroughts for the web. Blogs, docs, tutorials, even
+          the best code walkthroughs for the web. Blogs, docs, tutorials, even
           coding videos.
         </p>
 
