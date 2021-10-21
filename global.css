@@ -1,0 +1,83 @@
+.source pre {
+  white-space: pre-wrap;
+}
+
+/* unreset */
+
+.unreset a {
+  @apply text-blue-700 underline;
+}
+.unreset p {
+  @apply my-4;
+}
+
+.unreset hr {
+  @apply border;
+}
+
+.unreset h1 {
+  @apply text-4xl font-bold my-2;
+}
+
+.unreset h2 {
+  @apply text-2xl font-bold my-3;
+}
+
+.unreset h3 {
+  @apply text-lg font-bold my-4;
+}
+
+.unreset h4 {
+  @apply text-base font-bold my-5;
+}
+
+.unreset h5 {
+  @apply text-sm font-bold my-6;
+}
+
+.unreset h6 {
+  @apply text-xs font-bold my-10;
+}
+
+.unreset ol {
+  @apply list-decimal my-4 pl-10;
+}
+
+.unreset dd {
+  @apply pl-10;
+}
+
+.unreset dl {
+  @apply my-4;
+}
+
+.unreset legend {
+  @apply py-0 px-1;
+}
+
+.unreset fieldset {
+  @apply my-0 mx-1 pt-0 px-1 pb-2;
+}
+
+.unreset pre {
+  @apply my-4;
+}
+
+.unreset ul,
+.unreset ol {
+  list-style-type: circle;
+}
+
+.unreset ul,
+.unreset menu {
+  @apply list-disc my-1 pl-10;
+}
+.unreset blockquote,
+.unreset figure {
+  @apply my-4 mx-10;
+}
+
+.unreset b,
+.unreset strong {
+  font-weight: bold;
+}
