@@ -38,16 +38,25 @@ export default function Home() {
           coding videos.
         </p>
 
-        {/* <p className="mt-3 text-2xl">
-          Get started by running{" "}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            yarn add @codehike/mdx
-          </code>
-        </p> */}
-
+        <GetStarted />
         <Demos />
+        <Sponsors />
       </main>
     </div>
+  );
+}
+
+function GetStarted() {
+  return (
+    <>
+      <h2 className="mt-16 text-4xl font-bold">Get started</h2>
+      <div className="flex gap-6 w-full my-16">
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+      </div>
+    </>
   );
 }
 
@@ -55,6 +64,20 @@ function Demos() {
   return (
     <>
       <h2 className="mt-16 text-4xl font-bold">Explore the demos</h2>
+      <div className="flex gap-6 w-full my-16">
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+      </div>
+    </>
+  );
+}
+
+function Sponsors() {
+  return (
+    <>
+      <h2 className="mt-16 text-4xl font-bold">Sponsors</h2>
       <div className="flex gap-6 w-full my-16">
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
