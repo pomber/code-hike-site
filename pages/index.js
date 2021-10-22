@@ -1,11 +1,23 @@
 import Head from "next/head";
+import { CodeHikeLogo } from "../src/logo";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
         <title>Code Hike - Not just a syntax highlighter</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
       </Head>
 
       <Nav />
@@ -66,8 +78,11 @@ function HomeDemo() {
 
 function Nav() {
   return (
-    <nav className="flex w-full max-w-3xl pt-8 pb-8 items-center gap-4 text-gray-700 ">
-      <h1 className="text-3xl font-bold mr-auto">Code Hike</h1>
+    <nav className="flex w-full max-w-3xl pt-8 pb-8 items-center gap-4 text-gray-800 ">
+      <div className="flex items-center gap-2 mr-auto">
+        <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
+        <h1 className="text-3xl font-bold">Code Hike</h1>
+      </div>
       <a
         href="https://twitter.com/codehike_"
         className="hover:text-gray-500 transition-colors duration-200"
