@@ -1,7 +1,17 @@
 import Head from "next/head";
+import { HomeDemo } from "../src/home-demo";
+import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
 
-export default function Home() {
+export async function getStaticProps() {
+  return {
+    props: {
+      homeDemoProps: await getHomeDemoProps(),
+    },
+  };
+}
+
+export default function Home({ homeDemoProps }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -22,13 +32,13 @@ export default function Home() {
 
       <Nav />
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 text-center max-w-3xl">
-        <h1 className="text-6xl font-bold mt-16 mb-24">
+      <main className="flex flex-col items-center justify-center w-full flex-1  max-w-3xl">
+        <h1 className="text-6xl font-bold mt-16 mb-24 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
 
-        <HomeDemo />
+        <HomeDemo {...homeDemoProps} />
 
         <p className="text-2xl my-16  text-justify">
           Code Hike helps you build the best{" "}
@@ -85,17 +95,6 @@ function Sponsors() {
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
       </div>
     </>
-  );
-}
-
-function HomeDemo() {
-  return (
-    <div className="flex gap-6 w-full">
-      <div className="bg-gray-300 h-80 rounded flex-1 shadow-lg">Write MDX</div>
-      <div className="bg-gray-300 h-80 rounded flex-1 shadow-lg">
-        Get a React component
-      </div>
-    </div>
   );
 }
 
