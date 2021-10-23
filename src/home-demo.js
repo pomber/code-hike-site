@@ -4,7 +4,7 @@ import theme from "shiki/themes/github-light.json";
 export function HomeDemo({ code }) {
   return (
     <div className="flex gap-6 w-full">
-      <div className="bg-gray-300 h-80 rounded flex-1 shadow-lg">
+      <div className="bg-gray-300 h-96 rounded flex-1 shadow-lg unreset overflow-hidden">
         <CodeSpring
           config={{
             theme,
@@ -14,7 +14,7 @@ export function HomeDemo({ code }) {
           step={{ code, focus: "2:8", annotations: [] }}
         />
       </div>
-      <div className="bg-gray-300 h-80 rounded flex-1 shadow-lg">
+      <div className="bg-gray-300 h-96 rounded flex-1 shadow-lg">
         Get a React component
       </div>
     </div>

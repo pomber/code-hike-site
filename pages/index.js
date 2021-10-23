@@ -45,8 +45,8 @@ export default function Home({ homeDemoProps }) {
           Build first-class{" "}
           <span className="font-bold">code walkthroughs for the web</span>.
           Whether you are writing blog posts, documentation, tutorials, coding
-          videos, or any type of technical content, Code Hike helps you provide
-          a superior code reading experience.
+          videos, or any type of technical content, Code Hike helps you create a
+          superior code reading experience.
         </p>
 
         <Testimonials />

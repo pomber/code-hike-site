@@ -63,6 +63,10 @@
   @apply my-4;
 }
 
+.unreset code {
+  font-family: monospace;
+}
+
 .unreset ul,
 .unreset ol {
   list-style-type: circle;
