@@ -1,21 +1,26 @@
 import { CodeSpring } from "@code-hike/smooth-code";
-import theme from "shiki/themes/github-light.json";
+import { EditorSpring } from "@code-hike/mini-editor";
+import { MiniBrowser } from "@code-hike/mini-browser";
+import theme from "shiki/themes/min-light.json";
 
 export function HomeDemo({ code }) {
+  const props = {
+    northPanel: {
+      tabs: ["some.mdx"],
+      active: "some.mdx",
+      heightRatio: 1,
+    },
+    files: [{ name: "some.mdx", code, annotations: [], focus: "2:8" }],
+    codeConfig: { theme, minZoom: 0.5 },
+    frameProps: { style: { height: "100%" } },
+  };
   return (
-    <div className="flex gap-6 w-full">
-      <div className="bg-gray-300 h-96 rounded flex-1 shadow-lg unreset overflow-hidden">
-        <CodeSpring
-          config={{
-            theme,
-            minZoom: 0.5,
-            htmlProps: { style: { height: "100%" } },
-          }}
-          step={{ code, focus: "2:8", annotations: [] }}
-        />
+    <div className="flex gap-6 w-full home-demo">
+      <div className="h-96 rounded flex-1  unreset ">
+        <EditorSpring {...props} />
       </div>
-      <div className="bg-gray-300 h-96 rounded flex-1 shadow-lg">
-        Get a React component
+      <div className="h-96 rounded flex-1 ">
+        <MiniBrowser />
       </div>
     </div>
   );

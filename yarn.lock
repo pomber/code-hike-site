@@ -89,6 +89,15 @@
     estree-util-value-to-estree "^1.3.0"
     unist-util-visit "^2.0.0"
 
+"@code-hike/mini-browser@0.3.0--canary.77.60a8361.0":
+  version "0.3.0--canary.77.60a8361.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0--canary.77.60a8361.0.tgz#fa7b9f10e60e3d85e173850fc0d1d09139dcc51b"
+  integrity sha512-qpo2Ggrm4Pc+tRr0SJfn7OxhH9h/Utoyv2fqnk5b3TLTZeh+BgaEeQODr9WLlyI5IxCfYaJk154nXmclIgTyvA==
+  dependencies:
+    "@code-hike/classer" "0.3.0--canary.77.60a8361.0"
+    "@code-hike/mini-frame" "0.3.0--canary.77.60a8361.0"
+    use-spring "^0.2.3"
+
 "@code-hike/mini-editor@0.3.0--canary.77.60a8361.0":
   version "0.3.0--canary.77.60a8361.0"
   resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0--canary.77.60a8361.0.tgz#c5ed1d93d2451b81668985085938293e307ea9d1"
