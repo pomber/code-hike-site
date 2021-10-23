@@ -2,6 +2,7 @@ import Head from "next/head";
 import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
+import React from "react";
 
 export async function getStaticProps() {
   return {
@@ -41,11 +42,11 @@ export default function Home({ homeDemoProps }) {
         <HomeDemo {...homeDemoProps} />
 
         <p className="text-2xl my-16  text-justify">
-          Code Hike helps you build the best{" "}
-          <span className="text-blue-600">code walkthroughs for the web</span>.
-          Blogs, docs, tutorials, even coding videos. Code Hike helps you build
-          the best code walkthroughs for the web. Blogs, docs, tutorials, even
-          coding videos.
+          Build first-class{" "}
+          <span className="font-bold">code walkthroughs for the web</span>.
+          Whether you are writing blog posts, documentation, tutorials, coding
+          videos, or any type of technical content, Code Hike helps you provide
+          a superior code reading experience.
         </p>
 
         <Testimonials />
@@ -102,23 +103,39 @@ function Testimonials() {
   );
 }
 function Quote({ text, author, url, avatar, job }) {
+  const [hover, setHover] = React.useState(false);
+
   return (
-    <a href={url}>
-      <figure class="flex rounded-xl p-4 border w-half mx-auto my-4 align-top gap-4">
+    <a
+      href={url}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      <figure
+        className={`flex rounded-xl p-4 border w-half mx-auto my-4 align-top gap-4 ${
+          hover ? "border-blue-600" : ""
+        }`}
+      >
         <img
-          class="w-20 h-20 rounded-full object-cover filter grayscale"
+          className={`w-20 h-20 rounded-full object-cover ${
+            hover ? "" : "filter grayscale"
+          }`}
           src={avatar}
           alt={author}
           width="384"
           height="512"
         />
-        <div class="">
-          <figcaption class="font-medium">
-            <span class="text-gray-800">{author}</span>
-            <span class="text-gray-500 pl-2 text-md font-normal">{job}</span>
+        <div className="">
+          <figcaption className="font-medium">
+            <span className={hover ? "text-blue-600" : "text-gray-800"}>
+              {author}
+            </span>
+            <span className="text-gray-500 pl-2 text-md font-normal">
+              {job}
+            </span>
           </figcaption>
           <blockquote>
-            <p class="text-xl mr-8">{text}</p>
+            <p className="text-xl mr-8">{text}</p>
           </blockquote>
         </div>
       </figure>
