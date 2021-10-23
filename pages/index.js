@@ -48,6 +48,8 @@ export default function Home({ homeDemoProps }) {
           coding videos.
         </p>
 
+        <Testimonials />
+
         <GetStarted />
         <Demos />
         <Sponsors />
@@ -67,6 +69,60 @@ function GetStarted() {
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
       </div>
     </>
+  );
+}
+
+function Testimonials() {
+  return (
+    <section className="w-full">
+      <Quote
+        text="This looks like the future of documentation"
+        author="Guillermo Rauch"
+        url="https://twitter.com/rauchg/status/1367199228494155786"
+        avatar="https://github.com/rauchg.png"
+        job="Vercel CEO"
+      />
+      <Quote
+        text="This is one of the most impressive tools for teaching I've seen in quite
+      some time"
+        author="Tomasz Łakomy"
+        url="https://twitter.com/tlakomy/status/1298686860785573888"
+        avatar="https://github.com/tlakomy.png"
+        job="Egghead instructor"
+      />
+      <Quote
+        text="This would definitely raise the bar on the formatting of technical
+        content"
+        author="Cassie Evans"
+        url="https://twitter.com/cassiecodes/status/1277152181280485376"
+        avatar="https://github.com/cassieevans.png"
+        job="SVG magician"
+      />
+    </section>
+  );
+}
+function Quote({ text, author, url, avatar, job }) {
+  return (
+    <a href={url}>
+      <figure class="flex rounded-xl p-4 border w-half mx-auto my-4 align-top gap-4">
+        <img
+          class="w-20 h-20 rounded-full object-cover filter grayscale"
+          src={avatar}
+          alt={author}
+          width="384"
+          height="512"
+        />
+        <div class="">
+          <figcaption class="font-medium">
+            <span class="text-gray-800">{author}</span>
+            <span class="text-gray-500 pl-2 text-md font-normal">{job}</span>
+          </figcaption>
+          <blockquote>
+            <p class="text-xl mr-8">{text}</p>
+          </blockquote>
+        </div>
+      </figure>
+    </a>
   );
 }
 
