@@ -34,7 +34,7 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center justify-center w-full flex-1  max-w-3xl">
-        <h1 className="text-6xl font-bold mt-16 mb-24 text-center">
+        <h1 className="text-6xl font-bold my-32 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
@@ -113,7 +113,7 @@ function Quote({ text, author, url, avatar, job }) {
     >
       <figure
         className={`flex rounded-xl p-4 border w-half mx-auto my-4 align-top gap-4 ${
-          hover ? "border-blue-600" : "border-blue-600"
+          hover ? "border-blue-600" : "border-gray-600"
         }`}
       >
         <img
@@ -173,7 +173,7 @@ function Sponsors() {
 
 function Nav() {
   return (
-    <nav className="flex w-full max-w-3xl pt-8 pb-8 items-center gap-4 text-gray-800 ">
+    <nav className="flex w-full max-w-3xl pt-8 items-center gap-4 text-gray-800 ">
       <div className="flex items-center gap-2 mr-auto">
         <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
         <h1 className="text-3xl font-bold">Code Hike</h1>
