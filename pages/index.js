@@ -113,7 +113,7 @@ function Quote({ text, author, url, avatar, job }) {
     >
       <figure
         className={`flex rounded-xl p-4 border w-half mx-auto my-4 align-top gap-4 ${
-          hover ? "border-blue-600" : ""
+          hover ? "border-blue-600" : "border-blue-600"
         }`}
       >
         <img
