@@ -4,16 +4,18 @@ import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
 import React from "react";
 import Link from "next/link";
+import { fetchSponsors } from "../src/sponsors-fetch";
 
 export async function getStaticProps() {
   return {
     props: {
       homeDemoProps: await getHomeDemoProps(),
+      sponsors: await fetchSponsors(),
     },
   };
 }
 
-export default function Home({ homeDemoProps }) {
+export default function Home({ homeDemoProps, sponsors }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -54,7 +56,7 @@ export default function Home({ homeDemoProps }) {
 
         <GetStarted />
         <Demos />
-        <Sponsors />
+        <Sponsors sponsors={sponsors} />
       </main>
     </div>
   );
@@ -205,17 +207,48 @@ function Demos() {
   );
 }
 
-function Sponsors() {
+function Sponsors({ sponsors }) {
   return (
-    <>
-      <h2 className="mt-16 text-4xl font-bold">Sponsors</h2>
-      <div className="flex gap-6 w-full my-16">
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
+    <section className="mt-24 w-full">
+      <h2 className="mb-16 text-4xl font-bold text-center">Sponsors</h2>
+      <ul className="grid gap-2 grid-cols-3 w-full mb-16">
+        {sponsors.map((sponsor) => (
+          <li key={sponsor.login} className="rounded p-2 hover:border-blue-600">
+            <a className="flex" href={sponsor.url}>
+              <img
+                src={sponsor.avatarUrl}
+                className="w-16 h-16 rounded-full object-cover"
+              />
+              <div className="flex flex-col pl-2 min-w-0">
+                <h4 className="truncate" title={sponsor.name}>
+                  {sponsor.name}
+                </h4>
+                <span className="text-sm text-gray-500 truncate">
+                  {sponsor.login}
+                </span>
+                <span className="text-sm text-gray-500 truncate">
+                  {sponsor.location}
+                </span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className="flex gap-6 justify-center mb-36">
+        <a
+          href="https://github.com/sponsors/code-hike"
+          className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
+        >
+          Sponsor on GitHub
+        </a>
+        <a
+          href="https://opencollective.com/codehike"
+          className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
+        >
+          Sponsor on Open Collective
+        </a>
       </div>
-    </>
+    </section>
   );
 }
 
