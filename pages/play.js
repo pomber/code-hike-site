@@ -40,7 +40,7 @@ export default function Home({ sourceHtml }) {
         <div className="pr-4">Examples</div>
       </nav>
       <main className="flex-1 flex" style={{ background: "#22272e" }}>
-        <Source sourceHtml={sourceHtml} locked />
+        <Source sourceHtml={sourceHtml} />
         <div
           className="w-96 self-start m-4"
           style={{ width: 900, minWidth: 900 }}
@@ -106,12 +106,14 @@ function Source({ sourceHtml, locked }) {
         className={locked ? "placeholdify opacity-30" : ""}
         dangerouslySetInnerHTML={{ __html: sourceHtml }}
       ></div>
-      <div className="absolute inset-0">
-        <div className="p-16 mx-auto bg-gray-100 w-96 rounded-lg top-48 sticky">
-          <h2>Locked</h2>
-          Lorem ipsum something
+      {locked && (
+        <div className="absolute inset-0">
+          <div className="p-16 mx-auto bg-gray-100 w-96 rounded-lg top-48 sticky">
+            <h2>Locked</h2>
+            Lorem ipsum something
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

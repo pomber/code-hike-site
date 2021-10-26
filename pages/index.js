@@ -16,7 +16,7 @@ export default function Home({ homeDemoProps }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Code Hike - Not just a syntax highlighter</title>
+        <title>Code Hike</title>
         <link
           rel="icon"
           type="image/png"
@@ -33,7 +33,7 @@ export default function Home({ homeDemoProps }) {
 
       <Nav />
 
-      <main className="flex flex-col items-center justify-center w-full flex-1  max-w-3xl">
+      <main className="flex flex-col items-center w-full flex-1  max-w-3xl">
         <h1 className="text-6xl font-bold my-32 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
@@ -58,21 +58,6 @@ export default function Home({ homeDemoProps }) {
     </div>
   );
 }
-
-function GetStarted() {
-  return (
-    <>
-      <h2 className="mt-16 text-4xl font-bold">Get started</h2>
-      <div className="flex gap-6 w-full my-16">
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-        <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
-      </div>
-    </>
-  );
-}
-
 function Testimonials() {
   return (
     <section className="w-full">
@@ -143,17 +128,50 @@ function Quote({ text, author, url, avatar, job }) {
   );
 }
 
+function GetStarted() {
+  return (
+    <section className="mt-24">
+      <h2 className="mb-16 text-4xl font-bold text-center">Get started</h2>
+      <p className="text-2xl text-justify">
+        There's no stable version yet. If you want to give it a try now, you can
+        fork this{" "}
+        <a
+          href="https://github.com/pomber/code-hike-sample"
+          className="text-blue-600"
+        >
+          starter project
+        </a>
+        . If you have feedback (about syntax, customization, new components, new
+        annotations) please{" "}
+        <a
+          href="https://github.com/code-hike/codehike"
+          className="text-blue-600"
+        >
+          open an issue
+        </a>
+        .
+      </p>
+      <p className="text-2xl text-justify mt-6">
+        There are no docs yet, but you can explore the demos for an overview of
+        all the features and how to use them from MDX.
+      </p>
+    </section>
+  );
+}
+
 function Demos() {
   return (
-    <>
-      <h2 className="mt-16 text-4xl font-bold">Explore the demos</h2>
+    <section className="mt-24">
+      <h2 className="mb-16 text-4xl font-bold text-center">
+        Explore the demos
+      </h2>
       <div className="flex gap-6 w-full my-16">
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
         <div className="bg-gray-300 h-48 rounded w-64 shadow-md" />
       </div>
-    </>
+    </section>
   );
 }
 

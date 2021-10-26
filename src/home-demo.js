@@ -1,18 +1,36 @@
 import { EditorSpring } from "@code-hike/mini-editor";
 import { MiniBrowser } from "@code-hike/mini-browser";
 import theme from "shiki/themes/min-light.json";
+import React from "react";
 
 export function HomeDemo({ code }) {
-  const props = {
-    northPanel: {
-      tabs: ["some.mdx"],
-      active: "some.mdx",
-      heightRatio: 1,
-    },
-    files: [{ name: "some.mdx", code, annotations: [], focus: "2:8" }],
-    codeConfig: { theme, minZoom: 0.5 },
-    frameProps: { style: { height: "100%" } },
-  };
+  const [focus, setFocus] = React.useState(focuses[0][0]);
+
+  function onVideoProgress(e) {
+    const { currentTime } = e.currentTarget;
+    for (let i = 0; i < focuses.length; i++) {
+      const [focus, end] = focuses[i];
+      if (currentTime <= end) {
+        setFocus(focus);
+        return;
+      }
+    }
+    setFocus(focuses[0][0]);
+  }
+
+  const props = React.useMemo(
+    () => ({
+      northPanel: {
+        tabs: ["some.mdx"],
+        active: "some.mdx",
+        heightRatio: 1,
+      },
+      files: [{ name: "some.mdx", code, annotations: [], focus }],
+      codeConfig: { theme, minZoom: 0.5 },
+      frameProps: { style: { height: "100%" } },
+    }),
+    [code, focus]
+  );
   return (
     <div className="flex gap-6 w-full home-demo">
       <div className="flex-1">
@@ -34,12 +52,35 @@ export function HomeDemo({ code }) {
           <Arrow right />
         </div>
         <div className="h-96">
-          <MiniBrowser />
+          <MiniBrowser>
+            <video
+              onTimeUpdate={onVideoProgress}
+              onSeeking={onVideoProgress}
+              src="./timer.mp4"
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              controls
+              loop
+              style={{ opacity: 0.05 }}
+            />
+          </MiniBrowser>
         </div>
       </div>
     </div>
   );
 }
+
+const focuses = [
+  ["2:8", 3],
+  ["9:15", 5],
+  ["16:20", 7],
+  ["21:25", 9],
+  ["26:30", 11],
+  ["31:35", 13],
+  ["36:40", 15],
+  ["41:45", 17],
+];
 
 function Arrow({ right }) {
   return (
