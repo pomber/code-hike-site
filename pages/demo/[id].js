@@ -2,6 +2,10 @@ import Head from "next/head";
 import { CodeHikeLogo } from "../../src/logo";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/router";
+import * as Dialog from "@radix-ui/react-dialog";
+import { IdProvider } from "@radix-ui/react-id";
+import { DemoGrid } from "../../src/demo-grid";
 
 export async function getStaticPaths() {
   return {
@@ -31,89 +35,129 @@ export async function getStaticProps() {
 }
 
 export default function Home({ sourceHtml }) {
-  const [showDemoMenu, setDemoMenu] = React.useState(false);
   return (
-    <div className="flex flex-col min-h-screen">
-      <Head>
-        <title>Code Hike Demos</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          href="https://unpkg.com/placeholdifier/placeholdifier.css"
-          rel="stylesheet"
-        />
-      </Head>
-      <nav className="flex w-full h-12 items-center gap-4 text-gray-800">
-        <Link href="/">
-          <a className="flex items-center gap-2 ml-4">
-            <CodeHikeLogo className="block h-7 w-7 text-blue-600" />
-            <h1 className="text-2xl font-bold">Code Hike</h1>
-          </a>
-        </Link>
-        <div
-          className="text-white h-10 p-4 pt-1 self-end rounded-tl-md rounded-tr-md"
-          style={{ background: "#22272e" }}
-        >
-          page.mdx
-        </div>
-        <div>styles.css</div>
-        <div className="ml-auto">Theme</div>
-        <button className="pr-4" onClick={() => setDemoMenu(true)}>
-          Examples
-        </button>
-      </nav>
-      <main className="flex-1 flex" style={{ background: "#22272e" }}>
-        <Source sourceHtml={sourceHtml} />
-        <div
-          className="w-96 self-start m-4"
-          style={{ width: 900, minWidth: 900 }}
-        >
+    <IdProvider>
+      <div className="flex flex-col min-h-screen">
+        <Head>
+          <title>Code Hike Demos</title>
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link
+            href="https://unpkg.com/placeholdifier/placeholdifier.css"
+            rel="stylesheet"
+          />
+        </Head>
+        <nav className="flex w-full h-12 items-center gap-4 text-gray-800">
+          <Link href="/">
+            <a className="flex items-center gap-2 ml-4 mr-2">
+              <CodeHikeLogo className="block h-7 w-7 text-blue-600" />
+              <h1 className="text-2xl font-bold">Code Hike</h1>
+            </a>
+          </Link>
           <div
-            className="text-2xl text-center mb-4"
-            style={{ color: "#ADBAC7" }}
+            className="text-white h-10 p-4 pt-1 self-end rounded-tl-md rounded-tr-md"
+            style={{ background: "#22272e" }}
           >
-            Result
+            page.mdx
           </div>
-          <div className="unreset bg-white rounded p-8">
-            <p>
-              <strong>Pellentesque habitant morbi tristique</strong> senectus et
-              netus et malesuada fames ac turpis egestas. Vestibulum tortor
-              quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-              eu libero sit amet quam egestas semper.{" "}
-              <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend
-              leo. Quisque sit amet est et sapien ullamcorper pharetra.
-              Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>,
-              ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt
-              condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac
-              dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis.
-              Ut felis.
-            </p>
-
-            <h2>Header Level 2</h2>
-
-            <ol>
-              <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-              <li>Aliquam tincidunt mauris eu risus.</li>
-            </ol>
-
-            <blockquote>
+          <div>styles.css</div>
+          <div className="ml-auto">Theme</div>
+          <Demos className="pr-4 relative" />
+        </nav>
+        <main className="flex-1 flex" style={{ background: "#22272e" }}>
+          <Source sourceHtml={sourceHtml} />
+          <div
+            className="w-96 self-start m-4"
+            style={{ width: 900, minWidth: 900 }}
+          >
+            <div
+              className="text-2xl text-center mb-4"
+              style={{ color: "#ADBAC7" }}
+            >
+              Result
+            </div>
+            <div className="unreset bg-white rounded p-8">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                magna. Cras in mi at felis aliquet congue. Ut a est eget ligula
-                molestie gravida. Curabitur massa. Donec eleifend, libero at
-                sagittis mollis, tellus est malesuada tellus, at luctus turpis
-                elit sit amet quam. Vivamus pretium ornare est.
+                <strong>Pellentesque habitant morbi tristique</strong> senectus
+                et netus et malesuada fames ac turpis egestas. Vestibulum tortor
+                quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+                Donec eu libero sit amet quam egestas semper.{" "}
+                <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend
+                leo. Quisque sit amet est et sapien ullamcorper pharetra.
+                Vestibulum erat wisi, condimentum sed,{" "}
+                <code>commodo vitae</code>, ornare sit amet, wisi. Aenean
+                fermentum, elit eget tincidunt condimentum, eros ipsum rutrum
+                orci, sagittis tempus lacus enim ac dui.{" "}
+                <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut
+                felis.
               </p>
-            </blockquote>
 
-            <h3>Header Level 3</h3>
+              <h2>Header Level 2</h2>
 
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-              <li>Aliquam tincidunt mauris eu risus.</li>
-            </ul>
+              <ol>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+              </ol>
+
+              <blockquote>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vivamus magna. Cras in mi at felis aliquet congue. Ut a est
+                  eget ligula molestie gravida. Curabitur massa. Donec eleifend,
+                  libero at sagittis mollis, tellus est malesuada tellus, at
+                  luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+                </p>
+              </blockquote>
+
+              <h3>Header Level 3</h3>
+
+              <ul>
+                <li>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
+    </IdProvider>
+  );
+}
+
+function Demos(props) {
+  const router = useRouter();
+
+  // React.useEffect(() => {
+  //   router.events.on("routeChangeStart", closeMenu);
+  //   return () => {
+  //     router.events.off("routeChangeStart", closeMenu);
+  //   };
+  // }, []);
+  return (
+    <div {...props} key={router.asPath}>
+      <Dialog.Root>
+        <Dialog.Trigger>Examples</Dialog.Trigger>
+        <Dialog.Overlay className="bg-black bg-opacity-50 fixed inset-0" />
+        <Dialog.Content className="p-4 bg-white fixed right-16 top-16 rounded">
+          <Dialog.Description className="max-w-2xl">
+            <DemoGrid />
+          </Dialog.Description>
+          <Dialog.Close />
+        </Dialog.Content>
+      </Dialog.Root>
     </div>
   );
 }

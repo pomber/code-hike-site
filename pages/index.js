@@ -3,8 +3,8 @@ import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
 import React from "react";
-import Link from "next/link";
 import { fetchSponsors } from "../src/sponsors-fetch";
+import { DemoGrid } from "../src/demo-grid";
 
 export async function getStaticProps() {
   return {
@@ -162,47 +162,13 @@ function GetStarted() {
   );
 }
 
-const demos = [
-  { title: "Code and focus", locked: false, id: "code" },
-  { title: "File names", locked: false, id: "filenames" },
-  { title: "Comment annotations", locked: false, id: "comment-annotations" },
-  { title: "Custom annotations", locked: true, id: "custom-annotations" },
-  { title: "Component annotations", locked: true, id: "component-annotations" },
-  { title: "Code sections", locked: true, id: "sections" },
-  { title: "Spotlight", locked: true, id: "spotlight" },
-  { title: "Spotlight & preview", locked: true, id: "spotlight-preview" },
-  { title: "Scrollycoding", locked: true, id: "scrollycoding" },
-  {
-    title: "Scrollycoding & preview",
-    locked: true,
-    id: "scrollycoding-preview",
-  },
-];
-
 function Demos() {
   return (
     <section className="mt-24 w-full">
       <h2 className="mb-16 text-4xl font-bold text-center">
         Explore the demos
       </h2>
-      <div className="grid gap-2 grid-cols-2 w-full text-xl">
-        {demos.map((demo) => (
-          <Link key={demo.id} href={`/demo/${demo.id}`}>
-            <a className="border border-gray-300 rounded p-3 flex hover:border-blue-600">
-              <span>{demo.title}</span>
-              {demo.locked && (
-                <LockIcon className="h-6 ml-auto text-gray-500" />
-              )}
-            </a>
-          </Link>
-        ))}
-      </div>
-      <p className="pt-8 text-xl text-justify">
-        Everyone can see all the demos, but only sponsors can see the code for
-        demos marked with <LockIcon className="h-5 inline align-text-top" />.
-        Locked demos are unlocked for everyone after being sponsored by five
-        sponsors.
-      </p>
+      <DemoGrid />
     </section>
   );
 }
@@ -290,24 +256,5 @@ function Nav() {
         </svg>
       </a>
     </nav>
-  );
-}
-
-function LockIcon(props) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <title>Locked</title>
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-    </svg>
   );
 }

@@ -1,0 +1,24 @@
+[
+  { "title": "Code and focus", "locked": false, "id": "code" },
+  { "title": "File names", "locked": false, "id": "filenames" },
+  {
+    "title": "Comment annotations",
+    "locked": false,
+    "id": "comment-annotations"
+  },
+  { "title": "Custom annotations", "locked": true, "id": "custom-annotations" },
+  {
+    "title": "Component annotations",
+    "locked": true,
+    "id": "component-annotations"
+  },
+  { "title": "Code sections", "locked": true, "id": "sections" },
+  { "title": "Spotlight", "locked": true, "id": "spotlight" },
+  { "title": "Spotlight & preview", "locked": true, "id": "spotlight-preview" },
+  { "title": "Scrollycoding", "locked": true, "id": "scrollycoding" },
+  {
+    "title": "Scrollycoding & preview",
+    "locked": true,
+    "id": "scrollycoding-preview"
+  }
+]
