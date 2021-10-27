@@ -22,7 +22,7 @@ export async function getStaticProps() {
   const mdxSource = mdx;
   const shiki = await import("shiki");
   const highlighter = await shiki.getHighlighter({
-    theme: "github-dark-dimmed",
+    theme: "nord",
   });
 
   const sourceHtml = highlighter.codeToHtml(mdxSource, "markdown");
@@ -33,6 +33,8 @@ export async function getStaticProps() {
     },
   };
 }
+
+const bg = "#2e3440ff";
 
 export default function Home({ sourceHtml }) {
   return (
@@ -57,34 +59,34 @@ export default function Home({ sourceHtml }) {
             rel="stylesheet"
           />
         </Head>
-        <nav className="flex w-full h-12 items-center gap-4 text-gray-800">
+        <nav className="flex w-full h-12 items-center gap-4 text-gray-200 bg-black">
           <Link href="/">
             <a className="flex items-center gap-2 ml-4 mr-2">
-              <CodeHikeLogo className="block h-7 w-7 text-blue-600" />
+              <CodeHikeLogo className="block h-7 w-7 text-blue-400" />
               <h1 className="text-2xl font-bold">Code Hike</h1>
             </a>
           </Link>
           <div
             className="text-white h-10 p-4 pt-1 self-end rounded-tl-md rounded-tr-md"
-            style={{ background: "#22272e" }}
+            style={{ background: bg }}
           >
-            page.mdx
+            demo.mdx
           </div>
           <div>styles.css</div>
           <div className="ml-auto">Theme</div>
           <Demos className="pr-4 relative" />
         </nav>
-        <main className="flex-1 flex" style={{ background: "#22272e" }}>
+        <main className="flex-1 flex" style={{ background: bg }}>
           <Source sourceHtml={sourceHtml} />
           <div
             className="w-96 self-start m-4"
             style={{ width: 900, minWidth: 900 }}
           >
-            <div
-              className="text-2xl text-center mb-4"
-              style={{ color: "#ADBAC7" }}
-            >
+            <div className="text-2xl text-center mb-4 text-gray-200">
               Result
+            </div>
+            <div className="text-2xl text-center mb-4 text-gray-200">
+              Sponsored by:
             </div>
             <div className="unreset bg-white rounded p-8">
               <p>
