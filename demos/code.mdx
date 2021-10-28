@@ -1,4 +1,4 @@
-# Show some code
+# Code and Focus
 
 Use code fences
 
@@ -6,11 +6,48 @@ Use code fences
 console.log();
 ```
 
-Works by default with [many](https://github.com/shikijs/shiki/blob/main/docs/languages.md) languages.
+Works by default with many languages.
 
-```pascal
-program Hello;
-begin
-  writeln ('Hello, world.');
-end.
+```groovy
+def f() {
+   return [2, 3]
+}
+
+(a, b) = f()
+println a
+println b
+```
+
+Use `focus` to show the code that's important to the reader
+
+```groovy focus=5
+def f() {
+   return [2, 3]
+}
+
+(a, b) = f()
+println a
+println b
+```
+
+You can specify a list of line numbers
+
+```groovy focus=1:3,6
+def f() {
+   return [2, 3]
+}
+
+(a, b) = f()
+println a
+```
+
+And also columns
+
+```groovy focus=2,5[1:6]
+def f() {
+   return [2, 3]
+}
+
+(a, b) = f()
+println a
 ```

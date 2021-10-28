@@ -1,24 +1,24 @@
 [
-  { "title": "Code and focus", "locked": false, "id": "code" },
-  { "title": "File names", "locked": false, "id": "filenames" },
+  { "id": "code", "title": "Code and focus", "locked": false },
+  { "id": "filenames", "title": "File names", "locked": false },
   {
+    "id": "comment-annotations",
     "title": "Comment annotations",
-    "locked": false,
-    "id": "comment-annotations"
+    "locked": false
   },
-  { "title": "Custom annotations", "locked": true, "id": "custom-annotations" },
+  { "id": "custom-annotations", "title": "Custom annotations", "locked": true },
   {
+    "id": "component-annotations",
     "title": "Component annotations",
-    "locked": true,
-    "id": "component-annotations"
+    "locked": true
   },
-  { "title": "Code sections", "locked": true, "id": "sections" },
-  { "title": "Spotlight", "locked": true, "id": "spotlight" },
-  { "title": "Spotlight & preview", "locked": true, "id": "spotlight-preview" },
-  { "title": "Scrollycoding", "locked": true, "id": "scrollycoding" },
+  { "id": "sections", "title": "Code sections", "locked": true },
+  { "id": "spotlight", "title": "Spotlight", "locked": true },
+  { "id": "spotlight-preview", "title": "Spotlight & preview", "locked": true },
+  { "id": "scrollycoding", "title": "Scrollycoding", "locked": true },
   {
+    "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
-    "locked": true,
-    "id": "scrollycoding-preview"
+    "locked": true
   }
 ]

@@ -6,20 +6,21 @@ import { useRouter } from "next/router";
 import * as Dialog from "@radix-ui/react-dialog";
 import { IdProvider } from "@radix-ui/react-id";
 import { DemoGrid } from "../../src/demo-grid";
+import demos from "../../demos/index.json";
+import fs from "fs";
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      { params: { id: "1" } },
-      { params: { id: "2" } },
-      { params: { id: "3" } },
-    ],
+    paths: demos.map((demo) => ({ params: { id: demo.id } })),
     fallback: true,
   };
 }
 
-export async function getStaticProps() {
-  const mdxSource = mdx;
+export async function getStaticProps(context) {
+  const { id } = context.params;
+  // const demo = demos.find((demo) => demo.id === id);
+  const mdxSource = await fs.promises.readFile(`./demos/${id}.mdx`, "utf8");
+
   const shiki = await import("shiki");
   const highlighter = await shiki.getHighlighter({
     theme: "nord",
