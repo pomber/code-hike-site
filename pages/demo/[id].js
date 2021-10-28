@@ -73,20 +73,27 @@ export default function Home({ sourceHtml }) {
             demo.mdx
           </div>
           <div>styles.css</div>
+
           <div className="ml-auto">Theme</div>
           <Demos className="pr-4 relative" />
         </nav>
         <main className="flex-1 flex" style={{ background: bg }}>
           <Source sourceHtml={sourceHtml} />
           <div
-            className="w-96 self-start m-4"
+            className="w-96 self-start m-4 mt-0"
             style={{ width: 900, minWidth: 900 }}
           >
-            <div className="text-2xl text-center mb-4 text-gray-200">
-              Result
-            </div>
-            <div className="text-2xl text-center mb-4 text-gray-200">
-              Sponsored by:
+            <div className="flex py-4 text-xl items-center justify-center text-gray-300 gap-1">
+              <div className="mr-2">This demo is sponsored by</div>
+              {sponsors.slice(0, 5).map((sponsor) => (
+                <img
+                  className="rounded-full h-12 w-12 bg-gray-300 filter grayscale hover:filter-none"
+                  alt={sponsor.name}
+                  title={sponsor.name}
+                  src={sponsor.avatarUrl}
+                  key={sponsor.avatarUrl}
+                />
+              ))}
             </div>
             <div className="unreset bg-white rounded p-8">
               <p>
@@ -167,8 +174,8 @@ function Demos(props) {
 function Source({ sourceHtml, locked }) {
   return (
     <div
-      className={`flex-1 p-4 min-w-0 relative source`}
-      style={{ maxWidth: 800 }}
+      className={`flex-1 p-4 mr-auto relative source`}
+      style={{ maxWidth: 800, minWidth: 400 }}
     >
       <div
         className={locked ? "placeholdify opacity-30" : ""}
@@ -294,3 +301,96 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
 `;
+
+const sponsors = [
+  {
+    name: "Facebook Open Source",
+    login: "facebook",
+    avatarUrl:
+      "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
+    location: "Menlo Park, California",
+    url: "https://github.com/facebook",
+  },
+  {
+    name: "Fran Méndez",
+    login: "fmvilas",
+    avatarUrl: "https://avatars.githubusercontent.com/u/242119?s=128&v=4",
+    location: "Spain",
+    url: "https://github.com/fmvilas",
+  },
+  {
+    name: "Matthias Zepper",
+    login: "MatthiasZepper",
+    avatarUrl: "https://avatars.githubusercontent.com/u/6963520?s=128&v=4",
+    location: "Germany",
+    url: "https://github.com/matthiaszepper",
+  },
+  {
+    name: "Cassie Evans",
+    login: "cassieevans",
+    avatarUrl:
+      "https://avatars.githubusercontent.com/u/19754257?s=128&u=be0fd55595fcc0d9a096effd841ea167854a97f5&v=4",
+    location: "Brighton",
+    url: "https://github.com/cassieevans",
+  },
+  {
+    name: "Jonathan Carter",
+    login: "lostintangent",
+    avatarUrl:
+      "https://avatars.githubusercontent.com/u/116461?s=128&u=696403c7f1d14b3bb4d4d4dcbb1b92942ddae8ae&v=4",
+    location: "Seattle, WA",
+    url: "https://github.com/lostintangent",
+  },
+  {
+    name: "Varun Vachhar",
+    login: "winkerVSbecks",
+    avatarUrl:
+      "https://avatars.githubusercontent.com/u/42671?s=128&u=38b604be6c441cb725f29813ca983a7a2f8ccee0&v=4",
+    location: "Toronto",
+    url: "https://github.com/winkerVSbecks",
+  },
+  {
+    name: "Nicolas Berger",
+    login: "nberger",
+    avatarUrl: "https://avatars.githubusercontent.com/u/81371?s=128&v=4",
+    location: "Bay Area, CA",
+    url: "https://github.com/nberger",
+  },
+  {
+    name: "Davo Galavotti",
+    login: "davo",
+    avatarUrl: "https://avatars.githubusercontent.com/u/76307?s=128&v=4",
+    location: "New York, NY",
+    url: "https://github.com/davo",
+  },
+  {
+    name: "Bobby Dresser",
+    login: "bdresser",
+    avatarUrl:
+      "https://avatars.githubusercontent.com/u/1016190?s=128&u=d88c979c3dad16b9b0f604b0da60169b12cf7c34&v=4",
+    location: "United States",
+    url: "https://github.com/bdresser",
+  },
+  {
+    name: "Josep M Sobrepere",
+    login: "josepot",
+    avatarUrl:
+      "https://avatars.githubusercontent.com/u/8620144?s=128&u=e2a5b7f00c32b723d88ae344ce0aad619d7d6753&v=4",
+    location: "Barcelona",
+    url: "https://github.com/josepot",
+  },
+  {
+    avatarUrl: "https://avatars.githubusercontent.com/u/59406945?s=128&v=4",
+    login: "uidotdev",
+    name: "ui.dev",
+    location: null,
+    url: "https://github.com/uidotdev",
+  },
+  {
+    avatarUrl: "https://avatars.githubusercontent.com/u/58904235?s=128&v=4",
+    login: "codecrafters-io",
+    name: "CodeCrafters",
+    location: "United Kingdom",
+    url: "https://github.com/codecrafters-io",
+  },
+];
