@@ -81,9 +81,9 @@
   @apply my-4;
 }
 
-.unreset code {
+/* .unreset code {
   font-family: monospace;
-}
+} */
 
 .unreset ul,
 .unreset ol {
