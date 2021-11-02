@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import * as Dialog from "@radix-ui/react-dialog";
 import { IdProvider } from "@radix-ui/react-id";
 import { DemoGrid } from "../../src/demo-grid";
-import demos from "../../demos/index.json";
+import demos from "../../data/demos/index.json";
 import fs from "fs";
 import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -22,7 +22,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { id } = context.params;
   // const demo = demos.find((demo) => demo.id === id);
-  const mdxSource = await fs.promises.readFile(`./demos/${id}.mdx`, "utf8");
+  const mdxSource = await fs.promises.readFile(
+    `./data/demos/${id}.mdx`,
+    "utf8"
+  );
 
   const shiki = await import("shiki");
   const highlighter = await shiki.getHighlighter({

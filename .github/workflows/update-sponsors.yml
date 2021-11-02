@@ -8,6 +8,17 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
-      - run: node .github/update-sponsors.mjs
+      - name: Update sponsors files
+        run: node .github/update-sponsors/index.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.CH_GITHUB_TOKEN }}
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update sponsors" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

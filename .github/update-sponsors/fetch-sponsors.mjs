@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-async function fetchSponsors() {
+export async function fetchSponsors() {
   const githubUrl = "https://api.github.com/graphql";
   const token = process.env.GITHUB_TOKEN;
   const oauth = { Authorization: "bearer " + token };
@@ -23,9 +23,16 @@ async function fetchSponsors() {
         console.error(JSON.stringify(errors));
         return;
       }
-      const ghSponsors = data.organization.sponsorshipsAsMaintainer.nodes.map(
-        (node) => node.sponsorEntity
-      );
+      // console.log(JSON.stringify(data.organization, null, 2));
+      const ghSponsors = data.organization.sponsorshipsAsMaintainer.nodes
+        .filter((node) => node.tier.monthlyPriceInDollars >= 9)
+        .map((node) => {
+          const { __typename, ...sponsor } = node.sponsorEntity;
+          return {
+            ...sponsor,
+            isOrg: __typename === "Organization",
+          };
+        });
       return [...otherSponsors, ...ghSponsors.reverse()];
     })
     .catch((error) => {
@@ -38,7 +45,13 @@ const query = `
   organization(login: "code-hike") {
     sponsorshipsAsMaintainer(last: 100, orderBy: {field: CREATED_AT, direction: DESC}) {
       nodes {
+        tier {
+          monthlyPriceInDollars
+          isCustomAmount
+          isOneTime          
+        }
         sponsorEntity {
+          __typename
           ... on User {
             name
             login
@@ -68,6 +81,7 @@ const otherSponsors = [
       "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
     location: "Menlo Park, California",
     url: "https://github.com/facebook",
+    isOrg: true,
   },
   {
     name: "Fran Méndez",
@@ -75,6 +89,7 @@ const otherSponsors = [
     avatarUrl: "https://avatars.githubusercontent.com/u/242119?s=128&v=4",
     location: "Spain",
     url: "https://github.com/fmvilas",
+    isOrg: false,
   },
   {
     name: "Matthias Zepper",
@@ -82,11 +97,6 @@ const otherSponsors = [
     avatarUrl: "https://avatars.githubusercontent.com/u/6963520?s=128&v=4",
     location: "Germany",
     url: "https://github.com/matthiaszepper",
+    isOrg: false,
   },
 ];
-
-fetchSponsors().then((s) => console.log(JSON.stringify(s, null, 2)));
-
-process.on("unhandledRejection", (up) => {
-  throw up;
-});
