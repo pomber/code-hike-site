@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 async function fetchSponsors() {
   const githubUrl = "https://api.github.com/graphql";
   const token = process.env.GITHUB_TOKEN;
