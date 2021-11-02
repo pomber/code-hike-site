@@ -1,5 +1,102 @@
 {
-  "sponsors": [],
+  "sponsors": [
+    {
+      "name": "Facebook Open Source",
+      "login": "facebook",
+      "avatarUrl": "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
+      "location": "Menlo Park, California",
+      "url": "https://github.com/facebook",
+      "isOrg": true
+    },
+    {
+      "name": "Fran Méndez",
+      "login": "fmvilas",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/242119?s=128&v=4",
+      "location": "Spain",
+      "url": "https://github.com/fmvilas",
+      "isOrg": false
+    },
+    {
+      "name": "Matthias Zepper",
+      "login": "MatthiasZepper",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/6963520?s=128&v=4",
+      "location": "Germany",
+      "url": "https://github.com/matthiaszepper",
+      "isOrg": false
+    },
+    {
+      "name": "Cassie Evans",
+      "login": "cassieevans",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/19754257?s=128&u=2f91ef7cf918f683f6727d4c6fa2632e098a0fe5&v=4",
+      "location": "Brighton",
+      "url": "https://github.com/cassieevans",
+      "isOrg": false
+    },
+    {
+      "name": "Jonathan Carter",
+      "login": "lostintangent",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/116461?s=128&u=696403c7f1d14b3bb4d4d4dcbb1b92942ddae8ae&v=4",
+      "location": "Seattle, WA",
+      "url": "https://github.com/lostintangent",
+      "isOrg": false
+    },
+    {
+      "name": "Varun Vachhar",
+      "login": "winkerVSbecks",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/42671?s=128&u=38b604be6c441cb725f29813ca983a7a2f8ccee0&v=4",
+      "location": "Toronto",
+      "url": "https://github.com/winkerVSbecks",
+      "isOrg": false
+    },
+    {
+      "name": "Nicolas Berger",
+      "login": "nberger",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/81371?s=128&v=4",
+      "location": "Bay Area, CA",
+      "url": "https://github.com/nberger",
+      "isOrg": false
+    },
+    {
+      "name": "Davo Galavotti",
+      "login": "davo",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/76307?s=128&v=4",
+      "location": "New York, NY",
+      "url": "https://github.com/davo",
+      "isOrg": false
+    },
+    {
+      "name": "Bobby Dresser",
+      "login": "bdresser",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1016190?s=128&u=d88c979c3dad16b9b0f604b0da60169b12cf7c34&v=4",
+      "location": "United States",
+      "url": "https://github.com/bdresser",
+      "isOrg": false
+    },
+    {
+      "name": "Josep M Sobrepere",
+      "login": "josepot",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/8620144?s=128&u=e2a5b7f00c32b723d88ae344ce0aad619d7d6753&v=4",
+      "location": "Barcelona",
+      "url": "https://github.com/josepot",
+      "isOrg": false
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/59406945?s=128&v=4",
+      "login": "uidotdev",
+      "name": "ui.dev",
+      "location": null,
+      "url": "https://github.com/uidotdev",
+      "isOrg": true
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/58904235?s=128&v=4",
+      "login": "codecrafters-io",
+      "name": "CodeCrafters",
+      "location": "United Kingdom",
+      "url": "https://github.com/codecrafters-io",
+      "isOrg": true
+    }
+  ],
   "access": [
     {
       "login": "pomber"
