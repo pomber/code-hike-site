@@ -3,19 +3,18 @@ import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
 import React from "react";
-import { fetchSponsors } from "../src/sponsors-fetch";
 import { DemoGrid } from "../src/demo-grid";
+import sponsorsData from "../data/sponsors.json";
 
 export async function getStaticProps() {
   return {
     props: {
       homeDemoProps: await getHomeDemoProps(),
-      sponsors: await fetchSponsors(),
     },
   };
 }
 
-export default function Home({ homeDemoProps, sponsors }) {
+export default function Home({ homeDemoProps }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -56,7 +55,7 @@ export default function Home({ homeDemoProps, sponsors }) {
 
         <GetStarted />
         <Demos />
-        <Sponsors sponsors={sponsors} />
+        <Sponsors sponsors={sponsorsData.sponsors} />
       </main>
     </div>
   );

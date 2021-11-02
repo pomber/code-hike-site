@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import demos from "../demos/index.json";
+import demos from "../data/demos/index.json";
 
 export function DemoGrid() {
   return (
