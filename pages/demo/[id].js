@@ -15,7 +15,7 @@ import { bundleMDX } from "mdx-bundler";
 export async function getStaticPaths() {
   return {
     paths: demos.map((demo) => ({ params: { id: demo.id } })),
-    fallback: true,
+    fallback: false,
   };
 }
 
