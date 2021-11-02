@@ -10,4 +10,4 @@ jobs:
       - uses: actions/setup-node@main
       - run: node .github/update-sponsors.mjs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CH_GITHUB_TOKEN }}
