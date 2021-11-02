@@ -50,6 +50,8 @@ export async function getStaticProps(context) {
     },
   });
 
+  console.log(id, previewSource.code.slice(0, 10));
+
   return {
     props: {
       sourceHtml,
