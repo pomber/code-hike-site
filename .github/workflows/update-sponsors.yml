@@ -9,3 +9,5 @@ jobs:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
       - run: node .github/update-sponsors.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
