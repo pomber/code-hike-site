@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
-      - run: node .github/update-sponsors.js
+      - run: node .github/update-sponsors.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
