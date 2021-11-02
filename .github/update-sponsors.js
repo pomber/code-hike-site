@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 async function fetchSponsors() {
   const githubUrl = "https://api.github.com/graphql";
@@ -86,3 +86,7 @@ const otherSponsors = [
 ];
 
 fetchSponsors().then((s) => console.log(JSON.stringify(s, null, 2)));
+
+process.on("unhandledRejection", (up) => {
+  throw up;
+});
