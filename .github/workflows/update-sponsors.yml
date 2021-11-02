@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+name: Update Sponsors
+jobs:
+  render:
+    name: Update Sponsors
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - run: node .github/update-sponsors.js
