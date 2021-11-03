@@ -11,6 +11,7 @@ import fs from "fs";
 import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
+import sponsorsData from "../../data/sponsors.json";
 
 export async function getStaticPaths() {
   return {
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { id } = context.params;
-  // const demo = demos.find((demo) => demo.id === id);
+  const demo = demos.find((demo) => demo.id === id);
   const mdxSource = await fs.promises.readFile(
     `./data/demos/${id}.mdx`,
     "utf8"
@@ -50,12 +51,11 @@ export async function getStaticProps(context) {
     },
   });
 
-  console.log(id, previewSource.code.slice(0, 10));
-
   return {
     props: {
       sourceHtml,
       previewSource: previewSource.code,
+      demo,
     },
   };
 }
@@ -70,7 +70,9 @@ function MDXComponent({ code }) {
   return <Component />;
 }
 
-export default function Home({ sourceHtml, previewSource }) {
+export default function Home({ sourceHtml, previewSource, demo }) {
+  const locked = demo.sponsors.length < 5;
+
   return (
     <IdProvider>
       <div className="flex flex-col min-h-screen">
@@ -112,23 +114,12 @@ export default function Home({ sourceHtml, previewSource }) {
           <Demos className="pr-4 relative" />
         </nav>
         <main className="flex-1 flex" style={{ background: bg }}>
-          <Source sourceHtml={sourceHtml} />
+          <Source sourceHtml={sourceHtml} locked={locked} />
           <div
             className="w-96 self-start m-4 mt-0"
             style={{ width: 900, minWidth: 900 }}
           >
-            <div className="flex py-4 text-xl items-center justify-center text-gray-300 gap-1">
-              <div className="mr-2">This demo is sponsored by</div>
-              {sponsors.slice(0, 5).map((sponsor) => (
-                <img
-                  className="rounded-full h-12 w-12 bg-gray-300 filter grayscale hover:filter-none"
-                  alt={sponsor.name}
-                  title={sponsor.name}
-                  src={sponsor.avatarUrl}
-                  key={sponsor.avatarUrl}
-                />
-              ))}
-            </div>
+            <Sponsors demo={demo} />
             <div className="unreset bg-white rounded p-8">
               <MDXComponent code={previewSource} />
             </div>
@@ -136,6 +127,28 @@ export default function Home({ sourceHtml, previewSource }) {
         </main>
       </div>
     </IdProvider>
+  );
+}
+
+function Sponsors({ demo }) {
+  const sponsors = demo.sponsors.map((login) =>
+    sponsorsData.sponsors.find((s) => s.login === login)
+  );
+  return sponsors.length > 0 ? (
+    <div className="flex py-4 text-xl items-center justify-center text-gray-300 gap-1">
+      <div className="mr-2">This demo is sponsored by</div>
+      {sponsors.map((sponsor) => (
+        <img
+          className="rounded-full h-12 w-12 bg-gray-300 filter grayscale hover:filter-none"
+          alt={sponsor.name}
+          title={sponsor.name}
+          src={sponsor.avatarUrl}
+          key={sponsor.avatarUrl}
+        />
+      ))}
+    </div>
+  ) : (
+    <div className="h-4" />
   );
 }
 
@@ -185,96 +198,3 @@ function Source({ sourceHtml, locked }) {
     </div>
   );
 }
-
-const sponsors = [
-  {
-    name: "Facebook Open Source",
-    login: "facebook",
-    avatarUrl:
-      "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
-    location: "Menlo Park, California",
-    url: "https://github.com/facebook",
-  },
-  {
-    name: "Fran Méndez",
-    login: "fmvilas",
-    avatarUrl: "https://avatars.githubusercontent.com/u/242119?s=128&v=4",
-    location: "Spain",
-    url: "https://github.com/fmvilas",
-  },
-  {
-    name: "Matthias Zepper",
-    login: "MatthiasZepper",
-    avatarUrl: "https://avatars.githubusercontent.com/u/6963520?s=128&v=4",
-    location: "Germany",
-    url: "https://github.com/matthiaszepper",
-  },
-  {
-    name: "Cassie Evans",
-    login: "cassieevans",
-    avatarUrl:
-      "https://avatars.githubusercontent.com/u/19754257?s=128&u=be0fd55595fcc0d9a096effd841ea167854a97f5&v=4",
-    location: "Brighton",
-    url: "https://github.com/cassieevans",
-  },
-  {
-    name: "Jonathan Carter",
-    login: "lostintangent",
-    avatarUrl:
-      "https://avatars.githubusercontent.com/u/116461?s=128&u=696403c7f1d14b3bb4d4d4dcbb1b92942ddae8ae&v=4",
-    location: "Seattle, WA",
-    url: "https://github.com/lostintangent",
-  },
-  {
-    name: "Varun Vachhar",
-    login: "winkerVSbecks",
-    avatarUrl:
-      "https://avatars.githubusercontent.com/u/42671?s=128&u=38b604be6c441cb725f29813ca983a7a2f8ccee0&v=4",
-    location: "Toronto",
-    url: "https://github.com/winkerVSbecks",
-  },
-  {
-    name: "Nicolas Berger",
-    login: "nberger",
-    avatarUrl: "https://avatars.githubusercontent.com/u/81371?s=128&v=4",
-    location: "Bay Area, CA",
-    url: "https://github.com/nberger",
-  },
-  {
-    name: "Davo Galavotti",
-    login: "davo",
-    avatarUrl: "https://avatars.githubusercontent.com/u/76307?s=128&v=4",
-    location: "New York, NY",
-    url: "https://github.com/davo",
-  },
-  {
-    name: "Bobby Dresser",
-    login: "bdresser",
-    avatarUrl:
-      "https://avatars.githubusercontent.com/u/1016190?s=128&u=d88c979c3dad16b9b0f604b0da60169b12cf7c34&v=4",
-    location: "United States",
-    url: "https://github.com/bdresser",
-  },
-  {
-    name: "Josep M Sobrepere",
-    login: "josepot",
-    avatarUrl:
-      "https://avatars.githubusercontent.com/u/8620144?s=128&u=e2a5b7f00c32b723d88ae344ce0aad619d7d6753&v=4",
-    location: "Barcelona",
-    url: "https://github.com/josepot",
-  },
-  {
-    avatarUrl: "https://avatars.githubusercontent.com/u/59406945?s=128&v=4",
-    login: "uidotdev",
-    name: "ui.dev",
-    location: null,
-    url: "https://github.com/uidotdev",
-  },
-  {
-    avatarUrl: "https://avatars.githubusercontent.com/u/58904235?s=128&v=4",
-    login: "codecrafters-io",
-    name: "CodeCrafters",
-    location: "United Kingdom",
-    url: "https://github.com/codecrafters-io",
-  },
-];

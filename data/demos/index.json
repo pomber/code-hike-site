@@ -1,24 +1,54 @@
 [
-  { "id": "code", "title": "Code and focus", "locked": false },
-  { "id": "filenames", "title": "File names", "locked": false },
+  {
+    "id": "code",
+    "title": "Code and focus",
+    "sponsors": [
+      "facebook",
+      "fmvilas",
+      "MatthiasZepper",
+      "cassieevans",
+      "lostintangent"
+    ]
+  },
+  {
+    "id": "filenames",
+    "title": "File names",
+    "sponsors": ["winkerVSbecks", "nberger"]
+  },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "locked": false
+    "sponsors": []
   },
-  { "id": "custom-annotations", "title": "Custom annotations", "locked": true },
+  {
+    "id": "custom-annotations",
+    "title": "Custom annotations",
+    "sponsors": []
+  },
   {
     "id": "component-annotations",
     "title": "Component annotations",
-    "locked": true
+    "sponsors": []
   },
-  { "id": "sections", "title": "Code sections", "locked": true },
-  { "id": "spotlight", "title": "Spotlight", "locked": true },
-  { "id": "spotlight-preview", "title": "Spotlight & preview", "locked": true },
-  { "id": "scrollycoding", "title": "Scrollycoding", "locked": true },
+  {
+    "id": "sections",
+    "title": "Code sections",
+    "sponsors": []
+  },
+  { "id": "spotlight", "title": "Spotlight", "sponsors": [] },
+  {
+    "id": "spotlight-preview",
+    "title": "Spotlight & preview",
+    "sponsors": []
+  },
+  {
+    "id": "scrollycoding",
+    "title": "Scrollycoding",
+    "sponsors": []
+  },
   {
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
-    "locked": true
+    "sponsors": []
   }
 ]
