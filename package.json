@@ -7,10 +7,11 @@
   },
   "dependencies": {
     "@code-hike/mdx": "0.3.0--canary.77.cd9e81b.0",
-    "@code-hike/scroller": "0.3.0--canary.77.cd9e81b.0",
     "@code-hike/mini-browser": "0.3.0--canary.77.cd9e81b.0",
+    "@code-hike/scroller": "0.3.0--canary.77.cd9e81b.0",
     "@radix-ui/react-dialog": "^0.1.1",
     "@radix-ui/react-dropdown-menu": "^0.1.1",
+    "@radix-ui/react-hover-card": "^0.1.1",
     "@radix-ui/react-id": "^0.1.1",
     "esbuild": "^0.13.10",
     "mdx-bundler": "^6.0.2",

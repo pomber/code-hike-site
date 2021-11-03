@@ -12,6 +12,7 @@ import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import sponsorsData from "../../data/sponsors.json";
+import * as HoverCard from "@radix-ui/react-hover-card";
 
 export async function getStaticPaths() {
   return {
@@ -116,11 +117,11 @@ export default function Home({ sourceHtml, previewSource, demo }) {
         <main className="flex-1 flex" style={{ background: bg }}>
           <Source sourceHtml={sourceHtml} locked={locked} />
           <div
-            className="w-96 self-start m-4 mt-0"
+            className="w-96 self-start m-4"
             style={{ width: 900, minWidth: 900 }}
           >
-            <Sponsors demo={demo} />
-            <div className="unreset bg-white rounded p-8">
+            <div className="unreset bg-white rounded p-8 pt-16 relative">
+              <Sponsors demo={demo} />
               <MDXComponent code={previewSource} />
             </div>
           </div>
@@ -134,22 +135,53 @@ function Sponsors({ demo }) {
   const sponsors = demo.sponsors.map((login) =>
     sponsorsData.sponsors.find((s) => s.login === login)
   );
+  const placeholders = Array(5 - demo.sponsors.length).fill(null);
   return sponsors.length > 0 ? (
-    <div className="flex py-4 text-xl items-center justify-center text-gray-300 gap-1">
-      <div className="mr-2">This demo is sponsored by</div>
-      {sponsors.map((sponsor) => (
-        <img
-          className="rounded-full h-12 w-12 bg-gray-300 filter grayscale hover:filter-none"
-          alt={sponsor.name}
-          title={sponsor.name}
-          src={sponsor.avatarUrl}
-          key={sponsor.avatarUrl}
-        />
-      ))}
+    <div className="absolute right-8 top-8 flex flex-col text-xl items-center justify-center gap-1">
+      <div className="">This demo is sponsored by</div>
+      <div className="flex items-center justify-center gap-1">
+        {sponsors.map((sponsor) => (
+          <>
+            <HoverCard.Root openDelay={300}>
+              <HoverCard.Trigger>
+                <a href={sponsor.url}>
+                  <img
+                    className="rounded-full h-12 w-12 bg-gray-300 cursor-pointer"
+                    alt={sponsor.name}
+                    src={sponsor.avatarUrl}
+                    key={sponsor.avatarUrl}
+                  />
+                </a>
+              </HoverCard.Trigger>
+              <HoverCard.Content
+                className="border border-gray-400 rounded w-72 flex p-4 bg-white shadow-lg"
+                sideOffset={8}
+              >
+                <img
+                  src={sponsor.avatarUrl}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div className="flex flex-col pl-2 min-w-0">
+                  <h4 className="truncate font-bold" title={sponsor.name}>
+                    {sponsor.name}
+                  </h4>
+                  <span className="text-sm text-gray-500 truncate">
+                    {sponsor.login}
+                  </span>
+                  <span className="text-sm text-gray-500 truncate">
+                    {sponsor.location}
+                  </span>
+                </div>
+              </HoverCard.Content>
+            </HoverCard.Root>
+          </>
+        ))}
+        {placeholders.map((_, i) => (
+          <div className="rounded-full h-12 w-12 bg-gray-200" key={i} />
+        ))}
+      </div>
     </div>
-  ) : (
-    <div className="h-4" />
-  );
+  ) : null;
 }
 
 function Demos(props) {
