@@ -8,47 +8,70 @@
       "MatthiasZepper",
       "cassieevans",
       "lostintangent"
-    ]
+    ],
+    "locked": false
   },
   {
     "id": "filenames",
     "title": "File names",
-    "sponsors": ["winkerVSbecks", "nberger"]
+    "sponsors": [
+      "winkerVSbecks",
+      "nberger",
+      "codecrafters-io",
+      "uidotdev",
+      "josepot"
+    ],
+    "locked": false
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "sponsors": []
+    "sponsors": [
+      "bdresser",
+      "davo"
+    ],
+    "locked": true
   },
   {
     "id": "custom-annotations",
     "title": "Custom annotations",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "component-annotations",
     "title": "Component annotations",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "sections",
     "title": "Code sections",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   },
-  { "id": "spotlight", "title": "Spotlight", "sponsors": [] },
+  {
+    "id": "spotlight",
+    "title": "Spotlight",
+    "sponsors": [],
+    "locked": true
+  },
   {
     "id": "spotlight-preview",
     "title": "Spotlight & preview",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "scrollycoding",
     "title": "Scrollycoding",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
-    "sponsors": []
+    "sponsors": [],
+    "locked": true
   }
 ]

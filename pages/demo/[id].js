@@ -77,7 +77,7 @@ export default function Home({ sourceHtml, previewSource, demo }) {
     <IdProvider>
       <div className="flex flex-col min-h-screen">
         <Head>
-          <title>Code Hike Demos</title>
+          <title>{demo.title} - Code Hike</title>
           <link
             rel="icon"
             type="image/png"
@@ -95,15 +95,15 @@ export default function Home({ sourceHtml, previewSource, demo }) {
             rel="stylesheet"
           />
         </Head>
-        <nav className="flex w-full h-12 items-center gap-4 text-gray-200 bg-black">
+        <nav className="flex w-full h-14 items-center gap-4 text-gray-200 bg-black">
           <Link href="/">
             <a className="flex items-center gap-2 ml-4 mr-2">
               <CodeHikeLogo className="block h-7 w-7 text-blue-400" />
-              <h1 className="text-2xl font-bold">Code Hike</h1>
+              <h1 className="text-2xl font-bold text-gray-100">Code Hike</h1>
             </a>
           </Link>
           <div
-            className="text-white h-10 p-4 pt-1 self-end rounded-tl-md rounded-tr-md"
+            className="text-white h-12 p-4 pt-2 self-end rounded-tl-md rounded-tr-md"
             style={{ background: bg }}
           >
             demo.mdx
@@ -164,7 +164,21 @@ function Demos(props) {
   return (
     <div {...props} key={router.asPath}>
       <Dialog.Root>
-        <Dialog.Trigger>Examples</Dialog.Trigger>
+        <Dialog.Trigger>
+          Demos{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 inline-block"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Dialog.Trigger>
         <Dialog.Overlay className="bg-black bg-opacity-50 fixed inset-0" />
         <Dialog.Content className="p-4 bg-white fixed right-16 top-16 rounded">
           <Dialog.Description className="max-w-2xl">
