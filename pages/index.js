@@ -94,6 +94,10 @@ function Quote({ text, author, url, avatar, job }) {
 
   return (
     <a
+      target="_blank"
+      rel="noopener noreferrer"
+      target="_blank"
+      rel="noopener noreferrer"
       href={url}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
@@ -138,6 +142,8 @@ function GetStarted() {
         There's no stable version yet. If you want to give it a try now, you can
         fork this{" "}
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/pomber/code-hike-sample"
           className="text-blue-600"
         >
@@ -146,6 +152,8 @@ function GetStarted() {
         . If you have feedback (about syntax, customization, new components, new
         annotations) please{" "}
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/code-hike/codehike"
           className="text-blue-600"
         >
@@ -179,7 +187,12 @@ function Sponsors({ sponsors }) {
       <ul className="grid gap-2 grid-cols-3 w-full mb-16">
         {sponsors.map((sponsor) => (
           <li key={sponsor.login} className="rounded p-2 hover:border-blue-600">
-            <a className="flex" href={sponsor.url}>
+            <a
+              className="flex"
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={sponsor.avatarUrl}
                 className="w-16 h-16 rounded-full object-cover"
@@ -201,12 +214,16 @@ function Sponsors({ sponsors }) {
       </ul>
       <div className="flex gap-6 justify-center mb-36">
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/sponsors/code-hike"
           className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
         >
           Sponsor on GitHub
         </a>
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://opencollective.com/codehike"
           className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
         >
@@ -225,6 +242,8 @@ function Nav() {
         <h1 className="text-3xl font-bold">Code Hike</h1>
       </div>
       <a
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://twitter.com/codehike_"
         className="hover:text-gray-500 transition-colors duration-200"
       >
@@ -244,6 +263,8 @@ function Nav() {
         </svg>
       </a>
       <a
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://github.com/code-hike/codehike"
         className="hover:text-gray-500 transition-colors duration-200"
       >

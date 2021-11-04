@@ -105,11 +105,15 @@
       "login": "tylermcginnis"
     },
     {
+      "login": "rachelnabors"
+    },
+    {
       "login": "mdx-js",
       "isOrg": true
     },
     {
-      "login": "rachelnabors"
+      "login": "unifiedjs",
+      "isOrg": true
     }
   ]
 }

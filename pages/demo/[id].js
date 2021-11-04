@@ -145,7 +145,7 @@ function Sponsors({ demo }) {
           <div key={sponsor.avatarUrl}>
             <HoverCard.Root openDelay={300}>
               <HoverCard.Trigger asChild>
-                <a href={sponsor.url}>
+                <a target="_blank" rel="noopener noreferrer" href={sponsor.url}>
                   <img
                     className="rounded-full h-12 w-12 bg-gray-300 cursor-pointer"
                     alt={sponsor.name}
