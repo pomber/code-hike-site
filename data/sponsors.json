@@ -100,6 +100,16 @@
   "access": [
     {
       "login": "pomber"
+    },
+    {
+      "login": "tylermcginnis"
+    },
+    {
+      "login": "mdx-js",
+      "isOrg": true
+    },
+    {
+      "login": "rachelnabors"
     }
   ]
 }

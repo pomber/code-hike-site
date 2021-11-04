@@ -13,6 +13,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import sponsorsData from "../../data/sponsors.json";
 import * as HoverCard from "@radix-ui/react-hover-card";
+import { signIn, useSession } from "next-auth/react";
 
 export async function getStaticPaths() {
   return {
@@ -141,15 +142,14 @@ function Sponsors({ demo }) {
       <div className="">This demo is sponsored by</div>
       <div className="flex items-center justify-center gap-1">
         {sponsors.map((sponsor) => (
-          <>
+          <div key={sponsor.avatarUrl}>
             <HoverCard.Root openDelay={300}>
-              <HoverCard.Trigger>
+              <HoverCard.Trigger asChild>
                 <a href={sponsor.url}>
                   <img
                     className="rounded-full h-12 w-12 bg-gray-300 cursor-pointer"
                     alt={sponsor.name}
                     src={sponsor.avatarUrl}
-                    key={sponsor.avatarUrl}
                   />
                 </a>
               </HoverCard.Trigger>
@@ -174,7 +174,7 @@ function Sponsors({ demo }) {
                 </div>
               </HoverCard.Content>
             </HoverCard.Root>
-          </>
+          </div>
         ))}
         {placeholders.map((_, i) => (
           <div className="rounded-full h-12 w-12 bg-gray-200" key={i} />
@@ -224,23 +224,88 @@ function Demos(props) {
 }
 
 function Source({ sourceHtml, locked }) {
+  const hasAccess = useUnlock(locked);
+  const isLoading = useIsLoadingOrSSR();
+
+  const className = isLoading
+    ? "opacity-0"
+    : hasAccess
+    ? "opacity-100"
+    : "placeholdify opacity-30";
+
   return (
     <div
       className={`flex-1 p-4 mr-auto relative source`}
       style={{ maxWidth: 800, minWidth: 400 }}
     >
       <div
-        className={locked ? "placeholdify opacity-30" : ""}
+        className={`transition-opacity duration-300 ${className}`}
         dangerouslySetInnerHTML={{ __html: sourceHtml }}
-      ></div>
-      {locked && (
-        <div className="absolute inset-0">
-          <div className="p-16 mx-auto bg-gray-100 w-96 rounded-lg top-48 sticky">
-            <h2>Locked</h2>
-            Lorem ipsum something
-          </div>
-        </div>
-      )}
+      />
+      {!isLoading && !hasAccess ? <LockedCard /> : null}
     </div>
   );
+}
+function LockedCard() {
+  return (
+    <div className="absolute inset-0">
+      <div className="p-12 mx-auto bg-gray-100 w-96 rounded-lg top-48 sticky">
+        <h2 className="text-center text-lg font-bold mb-6">Locked Demo</h2>
+        <p className="my-4">
+          The code of this demo is hidden until it reaches five sponsors.
+        </p>
+        <hr />
+        <p className="my-4">
+          Become a sponsor to have full acces to all demos:
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block border p-2 text-center w-52 mt-3 rounded border-gray-800 hover:border-blue-600 mx-auto"
+            href="https://github.com/sponsors/code-hike"
+          >
+            Sponsor Code Hike
+          </a>
+        </p>
+        <hr />
+        <p className="my-4">
+          Or, if you already are a sponsor:{" "}
+          <button
+            className="block border p-2 text-center w-52 mt-3 rounded border-gray-800 hover:border-blue-600 mx-auto"
+            onClick={() => signIn("github", { redirect: false })}
+          >
+            Log in with GitHub
+          </button>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function useUnlock(locked) {
+  const session = useSession();
+  // console.log({ session });
+  if (!locked) return true;
+  if (session.status != "authenticated") {
+    return false;
+  }
+  const { user } = session.data;
+  const login = user.name;
+  const allAccess = [...sponsorsData.sponsors, ...sponsorsData.access];
+  // user has access
+  if (allAccess.some((s) => s.login === login)) {
+    return true;
+  }
+
+  // org has access
+  const userOrgs = session.data.orgs || [];
+  if (allAccess.some((s) => s.isOrg && userOrgs.includes(s.login))) {
+    return true;
+  }
+
+  return false;
+}
+
+function useIsLoadingOrSSR() {
+  const session = useSession();
+  return session.status === "loading";
 }
