@@ -32,7 +32,7 @@ export function HomeDemo({ code }) {
     [code, focus]
   );
   return (
-    <div className="flex gap-6 w-full home-demo">
+    <div className="flex gap-6 w-full home-demo relative">
       <div className="flex-1">
         <div className="text-2xl flex ml-8 mb-2">
           <Arrow />
@@ -44,7 +44,7 @@ export function HomeDemo({ code }) {
           <EditorSpring {...props} />
         </div>
       </div>
-      <div className="h-96 flex-1 ">
+      <div className="h-96 flex-1">
         <div className="flex text-2xl justify-end mr-8 mb-2">
           <span>
             Show with <span className="font-bold">React</span>
@@ -65,6 +65,24 @@ export function HomeDemo({ code }) {
               style={{ opacity: 0.05 }}
             />
           </MiniBrowser>
+        </div>
+      </div>
+      <Draft />
+    </div>
+  );
+}
+
+function Draft() {
+  return (
+    <div className="absolute flex flex-col items-center justify-center text-red-900  inset-0  font-bold">
+      <div className="border-4 border-red-900 rounded-xl p-6 w-3/4 -rotate-6 bg-white bg-opacity-60">
+        <div className="text-4xl text-center pb-8">Draft</div>
+        <div className="text-2xl">
+          This is the next version of{" "}
+          <a href="https://codehike.org" className="underline">
+            codehike.org
+          </a>
+          . Still work in progress.
         </div>
       </div>
     </div>
