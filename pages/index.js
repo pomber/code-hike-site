@@ -186,7 +186,10 @@ function Sponsors({ sponsors }) {
       <h2 className="mb-16 text-4xl font-bold text-center">Sponsors</h2>
       <ul className="grid gap-2 grid-cols-3 w-full mb-16">
         {sponsors.map((sponsor) => (
-          <li key={sponsor.login} className="rounded p-2 hover:border-blue-600">
+          <li
+            key={sponsor.login}
+            className="rounded p-2 hover:border-blue-600 border"
+          >
             <a
               className="flex"
               href={sponsor.url}
@@ -197,7 +200,7 @@ function Sponsors({ sponsors }) {
                 src={sponsor.avatarUrl}
                 className="w-16 h-16 rounded-full object-cover"
               />
-              <div className="flex flex-col pl-2 min-w-0">
+              <div className="flex flex-col pl-4 min-w-0">
                 <h4 className="truncate" title={sponsor.name}>
                   {sponsor.name}
                 </h4>
