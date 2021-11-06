@@ -13,7 +13,7 @@
   },
   {
     "id": "filenames",
-    "title": "File names",
+    "title": "Filenames and tabs",
     "sponsors": [
       "winkerVSbecks",
       "nberger",
@@ -26,10 +26,7 @@
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "sponsors": [
-      "bdresser",
-      "davo"
-    ],
+    "sponsors": ["bdresser", "davo"],
     "locked": true
   },
   {
