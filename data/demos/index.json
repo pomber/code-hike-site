@@ -14,14 +14,8 @@
   {
     "id": "filenames",
     "title": "Filenames and tabs",
-    "sponsors": [
-      "winkerVSbecks",
-      "nberger",
-      "codecrafters-io",
-      "uidotdev",
-      "josepot"
-    ],
-    "locked": false
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "comment-annotations",
@@ -50,8 +44,14 @@
   {
     "id": "spotlight",
     "title": "Spotlight",
-    "sponsors": [],
-    "locked": true
+    "sponsors": [
+      "winkerVSbecks",
+      "nberger",
+      "codecrafters-io",
+      "uidotdev",
+      "josepot"
+    ],
+    "locked": false
   },
   {
     "id": "spotlight-preview",
