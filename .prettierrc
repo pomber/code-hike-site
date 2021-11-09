@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": {
+        "semi": false
+      }
+    }
+  ]
+}

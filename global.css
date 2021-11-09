@@ -20,6 +20,10 @@
   background: #f6f6f6;
 }
 
+.ch-mini-browser a {
+  color: unset !important;
+}
+
 /* unreset */
 
 .unreset a {
