@@ -21,6 +21,9 @@ export default NextAuth({
       },
     }),
   ],
+  jwt: {
+    signingKey: process.env.JWT_SIGNING_PRIVATE_KEY,
+  },
   callbacks: {
     async jwt({ token, account, user, profile }) {
       if (user && user.orgs && !token.orgs) {
