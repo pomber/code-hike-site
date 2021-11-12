@@ -14,13 +14,18 @@
   {
     "id": "filenames",
     "title": "Filenames and tabs",
-    "sponsors": [],
+    "sponsors": [
+      "guicurcio"
+    ],
     "locked": true
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "sponsors": ["bdresser", "davo"],
+    "sponsors": [
+      "bdresser",
+      "davo"
+    ],
     "locked": true
   },
   {
