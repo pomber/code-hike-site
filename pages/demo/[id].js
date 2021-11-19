@@ -121,7 +121,7 @@ export default function Home({ sourceHtml, previewSource, demo }) {
             className="w-96 self-start m-4"
             style={{ width: 900, minWidth: 900 }}
           >
-            <div className="unreset bg-white rounded p-8 pt-16 relative">
+            <div className="unreset bg-white rounded p-8 pt-20 relative">
               <Sponsors demo={demo} />
               <MDXComponent code={previewSource} />
             </div>

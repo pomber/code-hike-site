@@ -15,28 +15,29 @@
     "id": "filenames",
     "title": "Filenames and tabs",
     "sponsors": [
-      "guicurcio"
+      "winkerVSbecks",
+      "nberger",
+      "codecrafters-io",
+      "uidotdev",
+      "josepot"
     ],
+    "locked": false
+  },
+  {
+    "id": "meta-annotations",
+    "title": "Annotations",
+    "sponsors": ["bdresser", "davo", "guicurcio"],
     "locked": true
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "sponsors": [
-      "bdresser",
-      "davo"
-    ],
+    "sponsors": [],
     "locked": true
   },
   {
     "id": "custom-annotations",
     "title": "Custom annotations",
-    "sponsors": [],
-    "locked": true
-  },
-  {
-    "id": "component-annotations",
-    "title": "Component annotations",
     "sponsors": [],
     "locked": true
   },
@@ -49,14 +50,8 @@
   {
     "id": "spotlight",
     "title": "Spotlight",
-    "sponsors": [
-      "winkerVSbecks",
-      "nberger",
-      "codecrafters-io",
-      "uidotdev",
-      "josepot"
-    ],
-    "locked": false
+    "sponsors": [],
+    "locked": true
   },
   {
     "id": "spotlight-preview",
