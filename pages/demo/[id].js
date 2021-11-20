@@ -23,8 +23,28 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  async function getFiles(demo) {
+    let filenames = [];
+    try {
+      filenames = await fs.promises.readdir(`./data/demos/${demo}/`);
+    } catch (e) {
+      return undefined;
+    }
+
+    const files = {};
+    for (const filename of filenames) {
+      files[filename] = await fs.promises.readFile(
+        `./data/demos/${demo}/${filename}`,
+        "utf8"
+      );
+    }
+
+    return files;
+  }
+
   const { id } = context.params;
   const demo = demos.find((demo) => demo.id === id);
+  const files = await getFiles(demo.id);
   const mdxSource = await fs.promises.readFile(
     `./data/demos/${id}.mdx`,
     "utf8"
@@ -43,6 +63,7 @@ export async function getStaticProps(context) {
   );
 
   const previewSource = await bundleMDX(mdxSource, {
+    files,
     esbuildOptions(options) {
       options.platform = "node";
       return options;
