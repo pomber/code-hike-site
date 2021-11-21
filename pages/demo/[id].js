@@ -74,9 +74,24 @@ export async function getStaticProps(context) {
     },
   });
 
+  const sourceTabs = [
+    {
+      name: "demo.mdx",
+      html: sourceHtml,
+    },
+    ...Object.keys(files || {}).map((name) => ({
+      name,
+      html: highlighter.codeToHtml(
+        files[name],
+        // file extension
+        name.split(".").pop()
+      ),
+    })),
+  ];
+
   return {
     props: {
-      sourceHtml,
+      sourceTabs,
       previewSource: previewSource.code,
       demo,
     },
@@ -93,7 +108,9 @@ function MDXComponent({ code }) {
   return <Component />;
 }
 
-export default function Home({ sourceHtml, previewSource, demo }) {
+export default function Home({ sourceTabs, previewSource, demo }) {
+  const [tabIndex, setTabIndex] = React.useState(0);
+
   const locked = demo.sponsors.length < 5;
 
   return (
@@ -125,19 +142,17 @@ export default function Home({ sourceHtml, previewSource, demo }) {
               <h1 className="text-2xl font-bold text-gray-100">Code Hike</h1>
             </a>
           </Link>
-          <div
-            className="text-white h-12 p-4 pt-2 self-end rounded-tl-md rounded-tr-md"
-            style={{ background: bg }}
-          >
-            demo.mdx
-          </div>
-          <div>styles.css</div>
+          <Tabs
+            sourceTabs={sourceTabs}
+            selected={tabIndex}
+            onChange={setTabIndex}
+          />
 
           <div className="ml-auto">Theme</div>
           <Demos className="pr-4 relative" />
         </nav>
         <main className="flex-1 flex" style={{ background: bg }}>
-          <Source sourceHtml={sourceHtml} locked={locked} />
+          <Source sourceHtml={sourceTabs[tabIndex].html} locked={locked} />
           <div
             className="w-96 self-start m-4"
             style={{ width: 900, minWidth: 900 }}
@@ -150,6 +165,32 @@ export default function Home({ sourceHtml, previewSource, demo }) {
         </main>
       </div>
     </IdProvider>
+  );
+}
+
+function Tabs({ sourceTabs, onChange, selected }) {
+  return (
+    <div className="flex self-end">
+      {sourceTabs.map(({ name }, index) =>
+        selected === index ? (
+          <div
+            className="text-white h-12 p-4 pt-2  rounded-tl-md rounded-tr-md"
+            style={{ background: bg }}
+            key={name}
+          >
+            {name}
+          </div>
+        ) : (
+          <div
+            className="cursor-pointer h-12 p-4 pt-2"
+            key={name}
+            onClick={() => onChange(index)}
+          >
+            {name}
+          </div>
+        )
+      )}
+    </div>
   );
 }
 
