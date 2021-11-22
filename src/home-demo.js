@@ -67,24 +67,6 @@ export function HomeDemo({ code }) {
           </MiniBrowser>
         </div>
       </div>
-      <Draft />
-    </div>
-  );
-}
-
-function Draft() {
-  return (
-    <div className="absolute flex flex-col items-center justify-center text-red-900  inset-0  font-bold">
-      <div className="border-4 border-red-900 rounded-xl p-6 w-3/4 -rotate-6 bg-white bg-opacity-60">
-        <div className="text-4xl text-center pb-8">Draft</div>
-        <div className="text-2xl">
-          This is the next version of{" "}
-          <a href="https://codehike.org" className="underline">
-            codehike.org
-          </a>
-          . Still work in progress.
-        </div>
-      </div>
     </div>
   );
 }

@@ -35,7 +35,8 @@ export default function Home({ homeDemoProps }) {
 
       <Nav />
 
-      <main className="flex flex-col items-center w-full flex-1  max-w-3xl">
+      <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
+        <Draft />
         <h1 className="text-6xl font-bold my-32 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
@@ -60,6 +61,24 @@ export default function Home({ homeDemoProps }) {
     </div>
   );
 }
+
+function Draft() {
+  return (
+    <div className="absolute flex flex-col items-center justify-center text-red-900  -right-16 top-2 font-bold max-w-md">
+      <div className="border-2 border-red-900 rounded-xl p-4 w-3/4 rotate-12 bg-red-50 bg-opacity-60">
+        <div className="text-3xl text-center pb-4">DRAFT</div>
+        <div className="text-xl text-center">
+          This is the next version of{" "}
+          <a href="https://codehike.org" className="underline">
+            codehike.org
+          </a>
+          . Still work in progress.
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Testimonials() {
   return (
     <section className="w-full">
