@@ -3,6 +3,7 @@ import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import React from "react";
+import { steps } from "../src/home-demo";
 
 export async function getStaticProps() {
   const mdxSource = await fs.promises.readFile(`./data/demos/show.mdx`, "utf8");
@@ -38,7 +39,10 @@ export default function Home({ code }) {
     [code]
   );
   return (
-    <main style={{ width: 560, margin: "0 auto" }} className="unreset">
+    <main
+      style={{ width: 560, margin: "0 auto", position: "relative" }}
+      className="unreset"
+    >
       <style jsx global>{`
         .ch-scrollycoding-preview,
         .ch-spotlight-preview {
@@ -53,6 +57,45 @@ export default function Home({ code }) {
         }
       `}</style>
       <Component />
+      <button
+        id="start-button"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          width: "100%",
+          background: "red",
+        }}
+        onClick={() => {
+          setTimeout(tour, 500);
+        }}
+      >
+        Start
+      </button>
     </main>
   );
+}
+
+function tour() {
+  document.getElementById("start-button").style.display = "none";
+  window.scrollTo({
+    top: steps[0].top,
+  });
+  let t0 = performance.now();
+  let i = 0;
+  setInterval(() => {
+    const currentStep = steps[i];
+    const nextStep = steps[i + 1];
+    if (!nextStep) return;
+
+    const delta = (performance.now() - t0) / 1000;
+    if (delta > currentStep.delay) {
+      t0 += currentStep.delay * 1000;
+      window.scrollTo({
+        top: nextStep.top,
+        behavior: "smooth",
+      });
+      i++;
+    }
+  }, 30);
 }

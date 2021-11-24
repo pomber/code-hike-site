@@ -56,13 +56,12 @@ export function HomeDemo({ code }) {
             <video
               onTimeUpdate={onVideoProgress}
               onSeeking={onVideoProgress}
-              src="./timer.mp4"
+              src="./show1.mp4"
               className="h-full w-full object-cover"
               autoPlay
               muted
               controls
               loop
-              style={{ opacity: 0.05 }}
             />
           </MiniBrowser>
         </div>
@@ -70,13 +69,6 @@ export function HomeDemo({ code }) {
     </div>
   );
 }
-
-const focuses = [
-  ["7:14", 3],
-  ["20:27", 7],
-  ["33:37,53", 11],
-  ["34,37,41:51", 15],
-];
 
 function Arrow({ right }) {
   return (
@@ -95,3 +87,17 @@ function Arrow({ right }) {
     </svg>
   );
 }
+
+export const steps = [
+  { delay: 4, focus: "1,7:14", top: 0 },
+  { delay: 3, focus: "20:27", top: 424 },
+  { delay: 2, focus: "33:37,53", top: 1000 },
+  { delay: 2, focus: "34,37,41:51,53", top: 1000 },
+  { delay: 2, focus: "53,59,71,73", top: 1100 },
+  { delay: 2, focus: "73,75,79:81,83", top: 1300 },
+  { delay: 2, focus: "83,85,89,103,105", top: 1391 },
+  { delay: 2, focus: "83,85,89,103,105", top: 1491 },
+];
+
+let t = 0;
+const focuses = steps.map(({ delay, focus }) => [focus, (t = t + delay)]);

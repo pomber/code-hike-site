@@ -191,9 +191,7 @@ function GetStarted() {
 function Demos() {
   return (
     <section className="mt-24 w-full">
-      <h2 className="mb-16 text-4xl font-bold text-center">
-        Explore the demos
-      </h2>
+      <h2 className="mb-16 text-4xl font-bold text-center">Demos</h2>
       <DemoGrid />
     </section>
   );
