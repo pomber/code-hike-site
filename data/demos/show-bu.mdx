@@ -1,0 +1,530 @@
+# Hello World
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Basic syntax highlighting
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit =
+    ipsum == null ? 0 : ipsum.sit
+  dolor = sit - amet(dolor)
+  return consectetur(ipsum) :
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Focusing parts of the code
+
+```js focus=2,4[10:38]
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## Show multiple files together
+
+<CH.Code>
+
+```js index.js
+function lorem(ipsum, dolor = 1) {
+  sit = ipsum - amet(dolor);
+  return sit;
+}
+```
+
+---
+
+```js index.css
+.bar {
+  height: 10px;
+  width: 10px;
+}
+```
+
+</CH.Code>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## Annotations
+
+```js bg=2:3 box=5[16:26]
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## And more annotations
+
+```js focus=4,8
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  // link[16:26] https://github.com/code-hike/codehike
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  // label something something
+  console.log("hover me");
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## And even custom annotations
+
+import { MyTooltipAnnotation } from "./MyTooltipAnnotation";
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  console.log(2);
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+<CH.Annotation as={MyTooltipAnnotation} focus="4[16:26]">
+
+### Something
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit.
+
+</CH.Annotation>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## Code links
+
+<CH.Section>
+
+Lorem ipsum dolor
+[sit amet](focus://2:3), consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at.
+
+```js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+Viverra mauris in
+[consectetur](focus://5[10:15]) sem
+fringilla ut morbi tincidunt augue. Quis
+vel eros donec ac odio. Tellus id
+interdum velit laoreet id. Porta lorem
+mollis aliquam ut porttitor leo a. Eget
+mi proin sed libero enim.
+
+</CH.Section>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## Spotlight
+
+<CH.Spotlight>
+
+```js app.js
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+---
+
+Change focus
+
+```js app.js focus=2:4
+
+```
+
+---
+
+Or change the code
+
+```js app.js focus=6:10
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null && 0;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+
+function adipiscing(...elit) {
+  console.log(elit);
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+---
+
+Or change the file
+
+```js app.js focus=1:4
+function adipiscing(...elit) {
+  console.log(elit);
+  return elit.map((ipsum) => ipsum.sit);
+}
+```
+
+</CH.Spotlight>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+
+## Spotlight with preview
+
+<CH.Spotlight 
+  preset="https://codesandbox.io/s/w5wfe" 
+  start={1}
+>
+
+```jsx src/App.js
+import { motion } from "framer-motion";
+
+const transition = { duration: 1 };
+
+export default function App() {
+  const bg = "hsl(20, 100%, 50%)";
+  return (
+    <div className="container">
+      <motion.div
+        className="swatch"
+        animate={{
+          backgroundColor: bg,
+        }}
+        transition={transition}
+      />
+    </div>
+  );
+}
+```
+
+---
+
+### Step 1
+
+Lorem ipsum dolor sit amet
+
+```jsx src/App.js
+import { motion } from "framer-motion";
+
+const transition = { duration: 1 };
+
+export default function App() {
+  const bg = "hsl(20, 100%, 50%)";
+  return (
+    <div className="container">
+      <motion.div
+        className="swatch"
+        animate={{
+          backgroundColor: bg,
+        }}
+        transition={transition}
+      />
+    </div>
+  );
+}
+```
+
+---
+
+### Step 2
+
+Velit euismod in pellentesque
+
+```jsx src/App.js focus=1,6,9:15
+import { motion } from "framer-motion";
+
+const transition = { duration: 1 };
+
+export default function App() {
+  const bg = "hsl(110, 100%, 50%)";
+  return (
+    <div className="container">
+      <motion.div
+        className="swatch"
+        animate={{
+          backgroundColor: bg,
+        }}
+        transition={transition}
+      />
+    </div>
+  );
+}
+```
+
+---
+
+### Step 3
+
+Id aliquet risus feugiat
+
+```jsx src/App.js focus=1,6,9:15
+import { motion } from "framer-motion";
+
+const transition = { duration: 1 };
+
+export default function App() {
+  const bg = "hsl(200, 100%, 50%)";
+  return (
+    <div className="container">
+      <motion.div
+        className="swatch"
+        animate={{
+          backgroundColor: bg,
+        }}
+        transition={transition}
+      />
+    </div>
+  );
+}
+```
+
+</CH.Spotlight>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Praesent elementum facilisis leo
+vel fringilla est ullamcorper eget. At
+imperdiet dui accumsan sit amet nulla
+facilities morbi tempus. Praesent
+elementum facilisis leo vel fringilla.
+Congue mauris rhoncus aenean vel.
+Egestas sed tempus urna et pharetra
+pharetra massa massa ultricies.
+
+## Scrollycoding
+
+<CH.Scrollycoding 
+  preset="https://codesandbox.io/s/w5wfe"
+>
+
+### Step 1
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing something about points, sed
+do eiusmod tempor incididunt ut labore
+et dolore magna aliqua.
+
+```jsx src/App.js
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(20, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+### Step 2
+
+Velit euismod in pellentesque massa
+placerat. Mi bibendum neque egestas
+congue quisque egestas diam in arcu.
+Nisi lacus sed viverra tellus in.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(110, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+### Step 3
+
+Id aliquet risus feugiat in ante metus
+dictum at tempor. Sed blandit libero
+volutpat sed cras.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(200, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+### Step 4
+
+Velit euismod in pellentesque massa
+placerat. Mi bibendum neque egestas
+congue quisque egestas diam in arcu.
+Nisi lacus sed viverra tellus in.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(290, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+---
+
+### Step 5
+
+Velit euismod in pellentesque massa
+placerat.
+
+- Fringilla ut morbi tincidunt augue
+  interdum velit euismod.
+- Luctus accumsan tortor posuere ac ut
+  consequat semper viverra.
+
+Morbi quis commodo.
+
+```jsx src/App.js focus=1,4,6:10
+import { motion } from "framer-motion";
+
+export default function App() {
+  const bg = "hsl(10, 100%, 50%)";
+  return (
+    <motion.div
+      className="swatch"
+      animate={{ backgroundColor: bg }}
+      transition={{ duration: 1 }}
+    />
+  );
+}
+```
+
+</CH.Scrollycoding>
+
+Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna
+aliqua. Erat pellentesque adipiscing
+commodo elit at. Viverra mauris in
+aliquam sem fringilla ut morbi tincidunt
+augue. Quis vel eros donec ac odio.
+Tellus id interdum velit laoreet id.
+Porta lorem mollis aliquam ut porttitor
+leo a. Eget mi proin sed libero enim.
+Sapien et ligula ullamcorper malesuada
+proin libero nunc consequat. Turpis in
+eu mi bibendum neque. Mollis aliquam ut
+porttitor leo a diam. Eget arcu dictum
+varius duis at consectetur lorem donec
+massa. Sagittis purus sit amet volutpat
+consequat mauris.

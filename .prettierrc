@@ -1,8 +1,9 @@
 {
   "overrides": [
     {
-      "files": "*.mdx",
+      "files": "show.mdx",
       "options": {
+        "printWidth": 40,
         "semi": false
       }
     }

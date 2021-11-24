@@ -40,7 +40,7 @@ export function HomeDemo({ code }) {
             Write with <span className="font-bold">MDX</span>
           </span>
         </div>
-        <div className="h-96 unreset">
+        <div className="unreset" style={{ height: 420.6 }}>
           <EditorSpring {...props} />
         </div>
       </div>
@@ -51,7 +51,7 @@ export function HomeDemo({ code }) {
           </span>
           <Arrow right />
         </div>
-        <div className="h-96">
+        <div style={{ height: 420.6 }}>
           <MiniBrowser>
             <video
               onTimeUpdate={onVideoProgress}
@@ -72,14 +72,10 @@ export function HomeDemo({ code }) {
 }
 
 const focuses = [
-  ["2:8", 3],
-  ["9:15", 5],
-  ["16:20", 7],
-  ["21:25", 9],
-  ["26:30", 11],
-  ["31:35", 13],
-  ["36:40", 15],
-  ["41:45", 17],
+  ["7:14", 3],
+  ["20:27", 7],
+  ["33:37,53", 11],
+  ["34,37,41:51", 15],
 ];
 
 function Arrow({ right }) {
