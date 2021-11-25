@@ -6,8 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@code-hike/mdx": "0.3.0--canary.77.59321d0.0",
-    "@code-hike/scroller": "0.3.0--canary.77.59321d0.0",
+    "@code-hike/mdx": "0.3.0--canary.77.eda31ba.0",
     "@radix-ui/react-dialog": "^0.1.1",
     "@radix-ui/react-dropdown-menu": "^0.1.1",
     "@radix-ui/react-hover-card": "^0.1.1",
