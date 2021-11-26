@@ -9,7 +9,7 @@ export async function getStaticProps() {
   const mdxSource = await fs.promises.readFile(`./data/demos/show.mdx`, "utf8");
 
   const tooltipAnnotation = await fs.promises.readFile(
-    `./data/demos/custom-annotations/MyTooltipAnnotation.jsx`,
+    `./data/demos/custom-annotations/MyThing.jsx`,
     "utf8"
   );
 
@@ -19,7 +19,7 @@ export async function getStaticProps() {
   );
 
   const previewSource = await bundleMDX(mdxSource, {
-    files: { "MyTooltipAnnotation.jsx": tooltipAnnotation },
+    files: { "MyThing.jsx": tooltipAnnotation },
     esbuildOptions(options) {
       options.platform = "node";
       return options;
@@ -65,6 +65,7 @@ export default function Home({ code }) {
           top: 0,
           width: "100%",
           background: "red",
+          // display: "none",
         }}
         onClick={() => {
           setTimeout(tour, 500);
@@ -86,15 +87,19 @@ function tour() {
   setInterval(() => {
     const currentStep = steps[i];
     const nextStep = steps[i + 1];
-    if (!nextStep) return;
+    if (!currentStep) return;
 
     const delta = (performance.now() - t0) / 1000;
     if (delta > currentStep.delay) {
       t0 += currentStep.delay * 1000;
-      window.scrollTo({
-        top: nextStep.top,
-        behavior: "smooth",
-      });
+      if (nextStep) {
+        window.scrollTo({
+          top: nextStep.top,
+          behavior: "smooth",
+        });
+      } else {
+        document.getElementById("start-button").style.display = "block";
+      }
       i++;
     }
   }, 30);

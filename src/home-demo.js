@@ -52,7 +52,7 @@ export function HomeDemo({ code }) {
           <Arrow right />
         </div>
         <div style={{ height: 420.6 }}>
-          <MiniBrowser>
+          <MiniBrowser url="/show">
             <video
               onTimeUpdate={onVideoProgress}
               onSeeking={onVideoProgress}
@@ -89,15 +89,30 @@ function Arrow({ right }) {
 }
 
 export const steps = [
-  { delay: 4, focus: "1,7:14", top: 0 },
-  { delay: 3, focus: "20:27", top: 424 },
-  { delay: 2, focus: "33:37,53", top: 1000 },
-  { delay: 2, focus: "34,37,41:51,53", top: 1000 },
-  { delay: 2, focus: "53,59,71,73", top: 1100 },
-  { delay: 2, focus: "73,75,79:81,83", top: 1300 },
-  { delay: 2, focus: "83,85,89,103,105", top: 1391 },
-  { delay: 2, focus: "83,85,89,103,105", top: 1491 },
+  { delay: 4, focus: "3,5:14", top: 0 },
+  // Focusing parts
+  { delay: 3, focus: "18,20:29", top: 465 },
+  // Multiple files
+  { delay: 3, focus: "35:53", top: 1006 },
+  // Annotations
+  { delay: 3, focus: "57:68", top: 1530 },
+  // More annotations
+  { delay: 3, focus: "72:85", top: 1988 },
+  // Custom Annotations
+  { delay: 3, focus: "91:108", top: 2443 },
+  // Code links
+  { delay: 3, focus: "114:129", top: 2940 },
+  // Spotlight:
+  { delay: 3, focus: "135:147", top: 3440 },
+  { delay: 3, focus: "147:155", top: 3440 },
+  { delay: 3, focus: "155:170", top: 3440 },
+  { delay: 3, focus: "170:188", top: 3440 },
+  // Scrollycoding;
+  { delay: 3, focus: "204:208,212:224", top: 4029 },
+  { delay: 3, focus: "224:226,230:244", top: 4341 },
+  { delay: 3, focus: "244:246,250:254", top: 4577 },
+  { delay: 3, focus: "254:256,260:276", top: 4923 },
 ];
 
-let t = 0;
+let t = -0.25;
 const focuses = steps.map(({ delay, focus }) => [focus, (t = t + delay)]);

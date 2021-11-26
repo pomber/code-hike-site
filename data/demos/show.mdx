@@ -1,15 +1,15 @@
-# Hello World
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
 ## Basic syntax highlighting
 
 ```js
-function lorem(ipsum, dolor = 1) {
-  const sit =
-    ipsum == null ? 0 : ipsum.sit
-  dolor = sit - amet(dolor)
-  return consectetur(ipsum)
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
 }
 ```
 
@@ -17,14 +17,185 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ## Focusing parts of the code
 
-```js focus=2,4[10:38]
-function lorem(ipsum, dolor = 1) {
-  const sit =
-    ipsum == null ? 0 : ipsum.sit
-  dolor = sit - amet(dolor)
-  return consectetur(ipsum)
+```js focus=2,4[9:30],6
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
 }
 ```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Multiple files together
+
+<CH.Code>
+
+```js index.js
+function lorem(ipsum, dolor) {
+  const sit = ipsum - amet(dolor)
+  return sit + "lorem ipsum"
+}
+```
+
+---
+
+```css styles.css
+.lorem-ipsum > .dolor pre {
+  background-color: var(--color-bg);
+  padding: 1em 0px 10vh 300px;
+}
+```
+
+</CH.Code>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Annotations
+
+```js bg=2:3 box=5[9:15]
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## And more annotations
+
+```js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  // link[12:22] http://codehike.org
+  while (++consectetur < amet) {
+    tempor(ipsum, adipiscing)
+    // label lorem ipsum dolor
+    sit.eiusmod("hover me")
+  }
+}
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## And even custom annotations
+
+import MyThing from "./MyThing"
+
+```js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
+}
+```
+
+<CH.Annotation as={MyThing} focus="3[11:24]">
+
+Lorem **ipsum** dolor sit: [amet](#)
+
+</CH.Annotation>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+## Code links
+
+<CH.Section>
+
+Lorem ipsum [loop](focus://4:7) sit.
+
+```js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
+}
+```
+
+</CH.Section>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+# Spotlight
+
+<CH.Spotlight>
+
+```js app.js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    // TODO
+  }
+}
+```
+
+---
+
+Change focus
+
+```js app.js focus=4:6
+
+```
+
+---
+
+Or change the code
+
+```js app.js focus=4:7
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
+}
+```
+
+---
+
+Or change the file
+
+<CH.Code>
+
+```js app.js focus=4:6
+
+```
+
+---
+
+```css styles.css
+.lorem-ipsum > .dolor pre {
+  padding: 1em 0px 10vh 300px;
+}
+```
+
+</CH.Code>
+
+---
+
+Lorem ipsum
+
+```js app.js
+
+```
+
+</CH.Spotlight>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
@@ -36,7 +207,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Step 1
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
 ```jsx app.js focus=3:9
 import Circle from "./circle"
@@ -54,7 +225,7 @@ export default function App() {
 
 ### Step 2
 
-Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
 
 ```jsx app.js focus=5:9
 import Circle from "./circle"
@@ -74,7 +245,7 @@ export default function App() {
 
 ### Step 3
 
-At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget.
 
 ```jsx app.js focus=2,6:8
 
@@ -84,7 +255,7 @@ At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent eleme
 
 ### Step 4
 
-Egestas sed tempus urna et pharetra pharetra massa massa ultricies. Praesent elementum facilisis leo vel fringilla. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
 ```jsx app.js focus=8:10
 import Circle from "./circle"

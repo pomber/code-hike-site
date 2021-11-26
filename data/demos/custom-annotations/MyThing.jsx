@@ -1,6 +1,6 @@
 import * as HoverCard from "@radix-ui/react-hover-card";
 
-export function MyTooltipAnnotation({ children, data, theme }) {
+export default function MyTooltipAnnotation({ children, data, theme }) {
   const border =
     typeof data === "string"
       ? data
