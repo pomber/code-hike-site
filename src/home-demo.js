@@ -52,7 +52,7 @@ export function HomeDemo({ code }) {
           <Arrow right />
         </div>
         <div style={{ height: 420.6 }}>
-          <MiniBrowser url="/show">
+          <MiniBrowser url="" loadUrl="/show">
             <video
               onTimeUpdate={onVideoProgress}
               onSeeking={onVideoProgress}
