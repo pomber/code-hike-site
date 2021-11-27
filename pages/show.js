@@ -65,7 +65,7 @@ export default function Home({ code }) {
           top: 0,
           width: "100%",
           background: "red",
-          // display: "none",
+          display: "none",
         }}
         onClick={() => {
           setTimeout(tour, 500);
