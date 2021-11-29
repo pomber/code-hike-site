@@ -36,7 +36,7 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        {/* <Draft /> */}
+        <Draft />
         <h1 className="md:text-6xl text-5xl font-bold md:my-32 my-20 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
@@ -64,7 +64,7 @@ export default function Home({ homeDemoProps }) {
 
 function Draft() {
   return (
-    <div className="absolute flex flex-col items-center justify-center text-red-900  -right-16 top-2 font-bold max-w-md">
+    <div className="absolute flex flex-col items-center justify-center text-red-900  md:-right-16 md:top-2 -right-8 font-bold max-w-md">
       <div className="border-2 border-red-900 rounded-xl p-4 w-3/4 rotate-12 bg-red-50 bg-opacity-60">
         <div className="text-3xl text-center pb-4">DRAFT</div>
         <div className="text-xl text-center">
