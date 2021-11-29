@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
 export default function Home({ homeDemoProps }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 md:px-0 px-4">
       <Head>
         <title>Code Hike</title>
         <link
@@ -36,15 +36,15 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        <Draft />
-        <h1 className="text-6xl font-bold my-32 text-center">
+        {/* <Draft /> */}
+        <h1 className="md:text-6xl text-5xl font-bold md:my-32 my-20 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
 
         <HomeDemo {...homeDemoProps} />
 
-        <p className="text-2xl my-16  text-justify">
+        <p className="md:text-2xl text-xl my-16  text-justify">
           Build first-class{" "}
           <span className="font-bold">code walkthroughs for the web</span>.
           Whether you are writing blog posts, documentation, tutorials, coding
@@ -127,7 +127,7 @@ function Quote({ text, author, url, avatar, job }) {
         }`}
       >
         <img
-          className={`w-20 h-20 rounded-full object-cover ${
+          className={`md:w-20 w-16 md:h-20 h-16 rounded-full object-cover ${
             hover ? "" : "filter grayscale"
           }`}
           src={avatar}
@@ -145,7 +145,7 @@ function Quote({ text, author, url, avatar, job }) {
             </span>
           </figcaption>
           <blockquote>
-            <p className="text-xl mr-8">{text}</p>
+            <p className="md:text-xl text-md mr-8">{text}</p>
           </blockquote>
         </div>
       </figure>
@@ -157,7 +157,7 @@ function GetStarted() {
   return (
     <section className="mt-24">
       <h2 className="mb-16 text-4xl font-bold text-center">Get started</h2>
-      <p className="text-2xl text-justify">
+      <p className="md:text-2xl text-xl text-justify">
         <span className="font-bold">There isn't a stable version yet</span>, but
         there's a preview version for people who want to try it out and{" "}
         <a
@@ -180,7 +180,7 @@ function GetStarted() {
         </a>
         .
       </p>
-      <p className="text-2xl text-justify mt-6">
+      <p className="md:text-2xl text-xl text-justify mt-6">
         There are no docs yet, but you can explore the demos for an overview of
         all the features and how to use them.
       </p>
@@ -201,7 +201,7 @@ function Sponsors({ sponsors }) {
   return (
     <section className="mt-24 w-full">
       <h2 className="mb-16 text-4xl font-bold text-center">Sponsors</h2>
-      <ul className="grid gap-2 grid-cols-3 w-full mb-16">
+      <ul className="grid gap-2 md:grid-cols-3 grid-cols-1 w-full mb-16">
         {sponsors.map((sponsor) => (
           <li
             key={sponsor.login}
@@ -232,12 +232,12 @@ function Sponsors({ sponsors }) {
           </li>
         ))}
       </ul>
-      <div className="flex gap-6 justify-center mb-36">
+      <div className="flex gap-6 justify-center mb-36 md:flex-row flex-col">
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/sponsors/code-hike"
-          className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
+          className="border-2 border-gray-600 hover:border-blue-600 text-xl md:w-72 p-2 rounded text-center"
         >
           Sponsor on GitHub
         </a>
@@ -245,7 +245,7 @@ function Sponsors({ sponsors }) {
           target="_blank"
           rel="noopener noreferrer"
           href="https://opencollective.com/codehike"
-          className="border-2 border-gray-600 hover:border-blue-600 text-xl w-72 p-2 rounded text-center"
+          className="border-2 border-gray-600 hover:border-blue-600 text-xl md:w-72 p-2 rounded text-center"
         >
           Sponsor on Open Collective
         </a>
@@ -256,7 +256,7 @@ function Sponsors({ sponsors }) {
 
 function Nav() {
   return (
-    <nav className="flex w-full max-w-3xl pt-8 items-center gap-4 text-gray-800 ">
+    <nav className="flex w-full max-w-3xl md:pt-8 pt-4 items-center gap-4 text-gray-800 ">
       <div className="flex items-center gap-2 mr-auto">
         <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
         <h1 className="text-3xl font-bold">Code Hike</h1>

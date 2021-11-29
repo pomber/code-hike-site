@@ -5,7 +5,7 @@ import demos from "../data/demos/index.json";
 export function DemoGrid() {
   return (
     <>
-      <div className="grid gap-2 grid-cols-2 w-full text-xl">
+      <div className="grid gap-2 md:grid-cols-2 grid-cols-1 w-full text-xl">
         {demos.map((demo) => (
           <Link key={demo.id} href={`/demo/${demo.id}`}>
             <a className="border border-gray-300 rounded p-3 flex hover:border-blue-600">

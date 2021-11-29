@@ -32,26 +32,29 @@ export function HomeDemo({ code }) {
     [code, focus]
   );
   return (
-    <div className="flex gap-6 w-full home-demo relative">
+    <div className="flex flex-col md:flex-row gap-6 w-full home-demo relative">
       <div className="flex-1">
-        <div className="text-2xl flex ml-8 mb-2">
+        <div className="text-2xl flex md:justify-start justify-center md:ml-8 mb-2">
           <Arrow />
           <span>
             Write with <span className="font-bold">MDX</span>
           </span>
         </div>
-        <div className="unreset" style={{ height: 420.6 }}>
+        <div
+          className="unreset mx-auto"
+          style={{ height: 420.6, maxWidth: 372 }}
+        >
           <EditorSpring {...props} />
         </div>
       </div>
       <div className="h-96 flex-1">
-        <div className="flex text-2xl justify-end mr-8 mb-2">
+        <div className="flex text-2xl md:justify-end justify-center md:mr-8 mb-2">
           <span>
             Show with <span className="font-bold">React</span>
           </span>
           <Arrow right />
         </div>
-        <div style={{ height: 420.6 }}>
+        <div style={{ height: 420.6, maxWidth: 372 }} className="mx-auto">
           <MiniBrowser url="" loadUrl="/show">
             <video
               onTimeUpdate={onVideoProgress}
@@ -75,7 +78,7 @@ function Arrow({ right }) {
     <svg
       width="60"
       viewBox="0 0 107 99"
-      className="m-3"
+      className="m-3 md:block hidden"
       style={{ transform: right ? "scale(-1, 1)" : undefined, margin: "0.6em" }}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
