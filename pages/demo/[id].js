@@ -115,7 +115,7 @@ export default function Home({ sourceTabs, previewSource, demo }) {
 
   return (
     <IdProvider>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen" style={{ minWidth: 1332 }}>
         <Head>
           <title>{demo.title} - Code Hike</title>
           <link
