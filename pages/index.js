@@ -158,8 +158,18 @@ function GetStarted() {
     <section className="mt-24">
       <h2 className="mb-16 text-4xl font-bold text-center">Get started</h2>
       <p className="text-2xl text-justify">
-        There's no stable version yet. If you want to give it a try now, you can
-        fork this{" "}
+        <span className="font-bold">There isn't a stable version yet</span>, but
+        there's a preview version for people who want to try it out and{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/code-hike/codehike/discussions"
+          className="text-blue-600"
+        >
+          give feedback
+        </a>
+        . You can use it in any project that has MDX v2 configured. Or you can
+        clone this{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -168,21 +178,11 @@ function GetStarted() {
         >
           starter project
         </a>
-        . If you have feedback (about syntax, customization, new components, new
-        annotations) please{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/code-hike/codehike"
-          className="text-blue-600"
-        >
-          open an issue
-        </a>
         .
       </p>
       <p className="text-2xl text-justify mt-6">
         There are no docs yet, but you can explore the demos for an overview of
-        all the features and how to use them from MDX.
+        all the features and how to use them.
       </p>
     </section>
   );
