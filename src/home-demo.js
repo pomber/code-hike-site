@@ -77,6 +77,7 @@ function Arrow({ right }) {
   return (
     <svg
       width="60"
+      height="60"
       viewBox="0 0 107 99"
       className="m-3 md:block hidden"
       style={{ transform: right ? "scale(-1, 1)" : undefined, margin: "0.6em" }}
