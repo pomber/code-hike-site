@@ -18,18 +18,13 @@ import { signIn, useSession } from "next-auth/react";
 const themes = ["github-light", "poimandres"];
 const DEFAULT_THEME = "material-palenight";
 
-export const config = {
-  unstable_includeFiles: ["data/**/*"],
-};
-
 export async function getStaticPaths() {
   return {
-    paths: [
-      ...demos.map((demo) => ({ params: { slug: [demo.id] } })),
-      // ...demos.map((demo) => ({ params: { slug: [demo.id, "github-light"] } })),
-      // ...demos.map((demo) => ({ params: { slug: [demo.id, "poimandres"] } })),
-    ],
-    fallback: "blocking",
+    paths: demos.flatMap((demo) => [
+      { params: { slug: [demo.id] } },
+      ...themes.map((theme) => ({ params: { slug: [demo.id, theme] } })),
+    ]),
+    fallback: false,
   };
 }
 
@@ -109,7 +104,6 @@ export async function getStaticProps(context) {
       demo,
       allThemes,
     },
-    revalidate: false,
   };
 }
 
@@ -321,13 +315,34 @@ function Themes({ demo, allThemes, ...props }) {
         <Dialog.Content className="p-4 bg-white fixed right-16 top-16 rounded">
           <Dialog.Description className="max-w-2xl">
             <div className="grid gap-2 grid-cols-3 w-full text-xl">
-              {allThemes.map((theme) => (
-                <Link key={theme} href={`/demo/${demo.id}/${theme}`}>
-                  <a className="border border-gray-300 rounded p-3 flex hover:border-blue-600">
-                    <span>{theme}</span>
-                  </a>
-                </Link>
-              ))}
+              {allThemes.map((theme) => {
+                const available = [...themes, DEFAULT_THEME].includes(theme);
+
+                if (!available) {
+                  return (
+                    <span
+                      key={theme}
+                      className={`border rounded p-3 flex border-gray-300 text-gray-400`}
+                    >
+                      {theme}
+                    </span>
+                  );
+                }
+
+                const href =
+                  theme === DEFAULT_THEME
+                    ? `/demo/${demo.id}`
+                    : `/demo/${demo.id}/${theme}`;
+                return (
+                  <Link key={theme} href={href}>
+                    <a
+                      className={`border rounded p-3 flex hover:border-blue-600 border-gray-600`}
+                    >
+                      <span>{theme}</span>
+                    </a>
+                  </Link>
+                );
+              })}
             </div>
           </Dialog.Description>
         </Dialog.Content>
