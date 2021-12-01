@@ -18,6 +18,10 @@ import { signIn, useSession } from "next-auth/react";
 const themes = ["github-light", "poimandres"];
 const DEFAULT_THEME = "material-palenight";
 
+export const config = {
+  unstable_includeFiles: ["data/**/*"],
+};
+
 export async function getStaticPaths() {
   return {
     paths: [
