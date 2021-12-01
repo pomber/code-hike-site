@@ -25,7 +25,7 @@ export async function getStaticPaths() {
       // ...demos.map((demo) => ({ params: { slug: [demo.id, "github-light"] } })),
       // ...demos.map((demo) => ({ params: { slug: [demo.id, "poimandres"] } })),
     ],
-    fallback: true,
+    fallback: "blocking",
   };
 }
 
@@ -51,6 +51,7 @@ export async function getStaticProps(context) {
 
   const [id, theme = DEFAULT_THEME] = context.params.slug;
   const demo = demos.find((demo) => demo.id === id);
+
   const files = await getFiles(demo.id);
   const mdxSource = await fs.promises.readFile(
     `./data/demos/${id}.mdx`,
@@ -104,6 +105,7 @@ export async function getStaticProps(context) {
       demo,
       allThemes,
     },
+    revalidate: false,
   };
 }
 
@@ -117,7 +119,7 @@ function MDXComponent({ code }) {
   return <Component />;
 }
 
-export default function Home({ sourceTabs, previewSource, demo, allThemes }) {
+export default function Page({ sourceTabs, previewSource, demo, allThemes }) {
   const [tabIndex, setTabIndex] = React.useState(0);
 
   const locked = demo.sponsors.length < 5;
