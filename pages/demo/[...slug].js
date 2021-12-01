@@ -15,10 +15,17 @@ import sponsorsData from "../../data/sponsors.json";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { signIn, useSession } from "next-auth/react";
 
+const themes = ["github-light", "poimandres"];
+const DEFAULT_THEME = "material-palenight";
+
 export async function getStaticPaths() {
   return {
-    paths: demos.map((demo) => ({ params: { id: demo.id } })),
-    fallback: false,
+    paths: [
+      ...demos.map((demo) => ({ params: { slug: [demo.id] } })),
+      // ...demos.map((demo) => ({ params: { slug: [demo.id, "github-light"] } })),
+      // ...demos.map((demo) => ({ params: { slug: [demo.id, "poimandres"] } })),
+    ],
+    fallback: true,
   };
 }
 
@@ -42,7 +49,7 @@ export async function getStaticProps(context) {
     return files;
   }
 
-  const { id } = context.params;
+  const [id, theme = DEFAULT_THEME] = context.params.slug;
   const demo = demos.find((demo) => demo.id === id);
   const files = await getFiles(demo.id);
   const mdxSource = await fs.promises.readFile(
@@ -55,9 +62,10 @@ export async function getStaticProps(context) {
     theme: "nord",
   });
 
+  const allThemes = shiki.BUNDLED_THEMES.filter((t) => t !== "css-variables");
+
   const sourceHtml = highlighter.codeToHtml(mdxSource, "markdown");
 
-  const theme = "material-palenight";
   const loadedTheme = await import(`shiki/themes/${theme}.json`).then(
     (module) => module.default
   );
@@ -94,6 +102,7 @@ export async function getStaticProps(context) {
       sourceTabs,
       previewSource: previewSource.code,
       demo,
+      allThemes,
     },
   };
 }
@@ -108,7 +117,7 @@ function MDXComponent({ code }) {
   return <Component />;
 }
 
-export default function Home({ sourceTabs, previewSource, demo }) {
+export default function Home({ sourceTabs, previewSource, demo, allThemes }) {
   const [tabIndex, setTabIndex] = React.useState(0);
 
   const locked = demo.sponsors.length < 5;
@@ -148,8 +157,12 @@ export default function Home({ sourceTabs, previewSource, demo }) {
             onChange={setTabIndex}
           />
 
-          <div className="ml-auto">Theme</div>
-          <Demos className="pr-4 relative" />
+          <Themes
+            className="ml-auto relative"
+            demo={demo}
+            allThemes={allThemes}
+          />
+          <Demos className="pr-4 relative" demo={demo} />
         </nav>
         <main className="flex-1 flex" style={{ background: bg }}>
           <Source sourceHtml={sourceTabs[tabIndex].html} locked={locked} />
@@ -249,12 +262,6 @@ function Sponsors({ demo }) {
 function Demos(props) {
   const router = useRouter();
 
-  // React.useEffect(() => {
-  //   router.events.on("routeChangeStart", closeMenu);
-  //   return () => {
-  //     router.events.off("routeChangeStart", closeMenu);
-  //   };
-  // }, []);
   return (
     <div {...props} key={router.asPath}>
       <Dialog.Root>
@@ -278,7 +285,45 @@ function Demos(props) {
           <Dialog.Description className="max-w-2xl">
             <DemoGrid />
           </Dialog.Description>
-          <Dialog.Close />
+        </Dialog.Content>
+      </Dialog.Root>
+    </div>
+  );
+}
+function Themes({ demo, allThemes, ...props }) {
+  const router = useRouter();
+
+  return (
+    <div {...props} key={router.asPath}>
+      <Dialog.Root>
+        <Dialog.Trigger>
+          Themes{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 inline-block"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </Dialog.Trigger>
+        <Dialog.Overlay className="bg-black bg-opacity-50 fixed inset-0" />
+        <Dialog.Content className="p-4 bg-white fixed right-16 top-16 rounded">
+          <Dialog.Description className="max-w-2xl">
+            <div className="grid gap-2 grid-cols-3 w-full text-xl">
+              {allThemes.map((theme) => (
+                <Link key={theme} href={`/demo/${demo.id}/${theme}`}>
+                  <a className="border border-gray-300 rounded p-3 flex hover:border-blue-600">
+                    <span>{theme}</span>
+                  </a>
+                </Link>
+              ))}
+            </div>
+          </Dialog.Description>
         </Dialog.Content>
       </Dialog.Root>
     </div>
