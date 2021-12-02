@@ -2,134 +2,89 @@
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
-<CH.Spotlight preset="https://codesandbox.io/s/w5wfe" start={1}>
+<CH.Spotlight preset="https://codesandbox.io/s/zzgrb" start={1}>
 
-```jsx src/App.js
-import { motion } from "framer-motion"
-
-const transition = { duration: 1 }
-
+```jsx app.js
+import Circle from "./circle";
+const red = "hsl(0 85% 60%)";
 export default function App() {
-  const bg = "hsl(20, 100%, 50%)"
   return (
-    <div className="container">
-      <motion.div
-        className="swatch"
-        animate={{
-          backgroundColor: bg,
-        }}
-        transition={transition}
-      />
+    <div>
+      <Circle color={red} />
     </div>
-  )
+  );
 }
 ```
 
 ---
 
-## Step 1
+## Lorem
 
 Lorem ipsum dolor sit amet, consectetur adipiscing something about points, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-```jsx src/App.js
-import { motion } from "framer-motion"
+```jsx app.js
 
-const transition = { duration: 1 }
-
-export default function App() {
-  const bg = "hsl(20, 100%, 50%)"
-  return (
-    <div className="container">
-      <motion.div
-        className="swatch"
-        animate={{
-          backgroundColor: bg,
-        }}
-        transition={transition}
-      />
-    </div>
-  )
-}
 ```
 
 ---
 
-## Step 2
+## Ipsum
 
 Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in.
 
-```jsx src/App.js focus=1,6,9:15
-import { motion } from "framer-motion"
-
-const transition = { duration: 1 }
-
+```jsx app.js focus=5:9
+import Circle from "./circle";
+const red = "hsl(0 85% 60%)";
 export default function App() {
-  const bg = "hsl(110, 100%, 50%)"
   return (
-    <div className="container">
-      <motion.div
-        className="swatch"
-        animate={{
-          backgroundColor: bg,
-        }}
-        transition={transition}
-      />
+    <div>
+      <Circle color={red} />
+      <Circle color={red} />
+      <Circle color={red} />
     </div>
-  )
+  );
 }
 ```
 
 ---
 
-## Step 3
+## Dolor sit
 
 Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu.
 
-```jsx src/App.js focus=1,6,9:15
-import { motion } from "framer-motion"
-
-const transition = { duration: 1 }
-
+```jsx app.js focus=2,6:8
+import Circle from "./circle";
+const red = "hsl(0 85% 60%)";
 export default function App() {
-  const bg = "hsl(200, 100%, 50%)"
   return (
-    <div className="container">
-      <motion.div
-        className="swatch"
-        animate={{
-          backgroundColor: bg,
-        }}
-        transition={transition}
-      />
+    <div>
+      <Circle color={red} />
+      <Circle color={red} />
+      <Circle color={red} />
     </div>
-  )
+  );
 }
 ```
 
 ---
 
-## Step 4
+## Amet
 
 Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt.
 
-```jsx src/App.js focus=1,6,9:15
-import { motion } from "framer-motion"
-
-const transition = { duration: 1 }
-
+```jsx app.js focus=8:10
+import Circle from "./circle";
+const red = "hsl(0 85% 60%)";
+const blue = "hsl(240 50% 60%)";
+const gold = "hsl(60 60% 60%)";
 export default function App() {
-  const bg = "hsl(290, 100%, 50%)"
   return (
-    <div className="container">
-      <motion.div
-        className="swatch"
-        animate={{
-          backgroundColor: bg,
-        }}
-        transition={transition}
-      />
+    <div>
+      <Circle color={red} />
+      <Circle color={blue} />
+      <Circle color={gold} />
     </div>
-  )
+  );
 }
 ```
 
