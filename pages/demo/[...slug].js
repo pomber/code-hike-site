@@ -384,7 +384,7 @@ function LockedCard() {
         </p>
         <hr />
         <p className="my-4">
-          Become a sponsor to have full acces to all demos:
+          Become a sponsor for $9 a month to have full acces to all demos:
           <a
             target="_blank"
             rel="noopener noreferrer"
