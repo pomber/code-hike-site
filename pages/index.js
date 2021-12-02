@@ -36,7 +36,7 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        <Draft />
+        
         <h1 className="md:text-6xl text-5xl font-bold md:my-32 my-20 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
