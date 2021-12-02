@@ -81,7 +81,7 @@ function Draft() {
 
 function Testimonials() {
   return (
-    <section className="w-full">
+    <section className="w-full" id="testimonials">
       <Quote
         text="This looks like the future of documentation"
         author="Guillermo Rauch"
@@ -156,7 +156,9 @@ function Quote({ text, author, url, avatar, job }) {
 function GetStarted() {
   return (
     <section className="mt-24">
-      <h2 className="mb-16 text-4xl font-bold text-center">Get started</h2>
+      <h2 className="mb-16 text-4xl font-bold text-center" id="get-started">
+        Get started
+      </h2>
       <p className="md:text-2xl text-xl text-justify">
         <span className="font-bold">There isn't a stable version yet</span>, but
         there's a preview version for people who want to try it out and{" "}
@@ -182,7 +184,16 @@ function GetStarted() {
       </p>
       <p className="md:text-2xl text-xl text-justify mt-6">
         There are no docs yet, but you can explore the demos for an overview of
-        all the features and how to use them.
+        all the features and how to use them. Don't hestitate to{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/code-hike/codehike/discussions"
+          className="text-blue-600"
+        >
+          ask for help
+        </a>
+        .
       </p>
     </section>
   );
@@ -191,7 +202,9 @@ function GetStarted() {
 function Demos() {
   return (
     <section className="mt-24 w-full">
-      <h2 className="mb-16 text-4xl font-bold text-center">Demos</h2>
+      <h2 className="mb-16 text-4xl font-bold text-center" id="demos">
+        Demos
+      </h2>
       <DemoGrid />
     </section>
   );
@@ -200,7 +213,9 @@ function Demos() {
 function Sponsors({ sponsors }) {
   return (
     <section className="mt-24 w-full">
-      <h2 className="mb-16 text-4xl font-bold text-center">Sponsors</h2>
+      <h2 className="mb-16 text-4xl font-bold text-center" id="sponsors">
+        Sponsors
+      </h2>
       <ul className="grid gap-2 md:grid-cols-3 grid-cols-1 w-full mb-16">
         {sponsors.map((sponsor) => (
           <li
