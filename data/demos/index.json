@@ -26,7 +26,11 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": ["bdresser", "davo", "guicurcio"],
+    "sponsors": [
+      "bdresser",
+      "davo",
+      "guicurcio"
+    ],
     "locked": true
   },
   {
