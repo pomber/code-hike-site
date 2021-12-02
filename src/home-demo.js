@@ -65,6 +65,7 @@ export function HomeDemo({ code }) {
               muted
               controls
               loop
+              poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             />
           </MiniBrowser>
         </div>
