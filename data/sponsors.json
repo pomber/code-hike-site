@@ -3,7 +3,7 @@
     {
       "name": "Facebook Open Source",
       "login": "facebook",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/69631?v=4",
+      "avatarUrl": "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
       "location": "Menlo Park, California",
       "url": "https://github.com/facebook",
       "isOrg": true
@@ -102,6 +102,14 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/20285232?s=128&u=6c587c0842c0cd38e0d7dfcaf4b90f83c4e2dbfd&v=4",
       "location": "Buenos Aires",
       "url": "https://github.com/guicurcio",
+      "isOrg": false
+    },
+    {
+      "name": "swyx",
+      "login": "sw-yx",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/6764957?s=128&u=97ad815028595b73b06ee4b0510e66bbe391228d&v=4",
+      "location": "Seattle",
+      "url": "https://github.com/sw-yx",
       "isOrg": false
     }
   ],
