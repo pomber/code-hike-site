@@ -36,7 +36,6 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        
         <h1 className="md:text-6xl text-5xl font-bold md:my-32 my-20 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
@@ -162,40 +161,42 @@ function GetStarted() {
       <p className="md:text-2xl text-xl text-justify">
         <span className="font-bold">There isn't a stable version yet</span>, but
         there's a preview version for people who want to try it out and{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/code-hike/codehike/discussions"
-          className="text-blue-600"
-        >
+        <ExternalLink href="https://github.com/code-hike/codehike/discussions">
           give feedback
-        </a>
-        . You can use it in any project that has MDX v2 configured. Or you can
-        clone this{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/pomber/code-hike-sample"
-          className="text-blue-600"
-        >
+        </ExternalLink>
+        . You can use it in any project that has MDX v2 configured by following
+        the{" "}
+        <ExternalLink href="https://github.com/code-hike/codehike#how-to-set-up-code-hike">
+          instructions on how to set it up
+        </ExternalLink>
+        . Or you can clone this{" "}
+        <ExternalLink href="https://github.com/pomber/code-hike-sample">
           starter project
-        </a>
+        </ExternalLink>
         .
       </p>
       <p className="md:text-2xl text-xl text-justify mt-6">
         There are no docs yet, but you can explore the demos for an overview of
         all the features and how to use them. Don't hestitate to{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/code-hike/codehike/discussions"
-          className="text-blue-600"
-        >
+        <ExternalLink href="https://github.com/code-hike/codehike/discussions">
           ask for help
-        </a>
+        </ExternalLink>
         .
       </p>
     </section>
+  );
+}
+
+function ExternalLink({ href, children }) {
+  return (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={href}
+      className="text-blue-600"
+    >
+      {children}
+    </a>
   );
 }
 
