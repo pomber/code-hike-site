@@ -38,7 +38,9 @@
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
-    "sponsors": [],
+    "sponsors": [
+      "stefanjudis"
+    ],
     "locked": true
   },
   {
