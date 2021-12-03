@@ -77,8 +77,7 @@ const otherSponsors = [
   {
     name: "Facebook Open Source",
     login: "facebook",
-    avatarUrl:
-      "https://images.opencollective.com/fbopensource/fbb8a5b/logo/256.png",
+    avatarUrl: "https://avatars.githubusercontent.com/u/69631?v=4",
     location: "Menlo Park, California",
     url: "https://github.com/facebook",
     isOrg: true,
