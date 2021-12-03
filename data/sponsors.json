@@ -127,6 +127,14 @@
       "location": "Berlin",
       "url": "https://github.com/stefanjudis",
       "isOrg": false
+    },
+    {
+      "name": "Rochez Benjamin",
+      "login": "BenjaminRochez",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/9745039?s=128&u=b66e39ced598887f1586dc4373b498365f246533&v=4",
+      "location": "Belgium",
+      "url": "https://github.com/BenjaminRochez",
+      "isOrg": false
     }
   ],
   "access": [
