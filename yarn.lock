@@ -57,30 +57,30 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@code-hike/classer@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0-next.12.tgz#d112f3c5fb86768a2fe8d3a7e11569a170450874"
-  integrity sha512-5qQmAbCRhdMs4uRpxtYiHYmX8dFxWo9rrVK5jYCvv50mX/iHQWRkfHKAD7nxMXbA6m96j2hmn9nEZYZdM594hw==
+"@code-hike/classer@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0-next.13.tgz#d265674e69c0c9ed0f5c891ac8400f71f1fccae7"
+  integrity sha512-nvd6yq61wYTR8JJXmmGKFLvmqvx8SzxcKDzhWLGXmNZI3Qs8mK7h5XEj9iDHN22a2wOzk4CzX3JVGg9bXTTosQ==
 
-"@code-hike/highlighter@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/highlighter/-/highlighter-0.3.0-next.12.tgz#39e852c01c859ccb740ed503ddc7ef2f09b12da7"
-  integrity sha512-Qb8Zdex/G2Sg8e729DNvdCQrHexSzWeXU2qFtjQV7TA4Dj4OSqJ7xjTbpjOjm3HvRMNj87X7dtah+ud12jDIMw==
+"@code-hike/highlighter@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/highlighter/-/highlighter-0.3.0-next.13.tgz#ddf40f2c0592ce69ded8c3b3448507ea8b65d3c7"
+  integrity sha512-vRkXIDOyqK1KnhIVl870MBK95edLcgfUPnxLmd5+rISdiLs1n28ef+pJX0SuJQgqwDfVV4RAfzpLJOwZK0+w4w==
   dependencies:
-    "@code-hike/utils" "0.3.0-next.12"
+    "@code-hike/utils" "0.3.0-next.13"
     shiki "^0.9.11"
 
-"@code-hike/mdx@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.3.0-next.12.tgz#903916feae80e330a081a2dd6dd8b307f182753c"
-  integrity sha512-3dw6ItKflU0gvewJn+npxQjtNGYlO6GA2iBqEE2xz0CEqvEZGxJqHS1undZG8p87dtCR9TMBn2zu38T3ZgEwkQ==
+"@code-hike/mdx@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.3.0-next.13.tgz#0f885b3fc66f47165a6d844c88d41797985349cd"
+  integrity sha512-GzkK1omGfawb5uNajROzi+LP3f3d5xvf12S11UdY/o0BBcTWxinfkbOrTp2MGXaQrnLDyEMEdgkXIDU16sX4Yg==
   dependencies:
-    "@code-hike/highlighter" "0.3.0-next.12"
-    "@code-hike/mini-browser" "0.3.0-next.12"
-    "@code-hike/mini-editor" "0.3.0-next.12"
-    "@code-hike/scroller" "0.3.0-next.12"
-    "@code-hike/smooth-code" "0.3.0-next.12"
-    "@code-hike/utils" "0.3.0-next.12"
+    "@code-hike/highlighter" "0.3.0-next.13"
+    "@code-hike/mini-browser" "0.3.0-next.13"
+    "@code-hike/mini-editor" "0.3.0-next.13"
+    "@code-hike/scroller" "0.3.0-next.13"
+    "@code-hike/smooth-code" "0.3.0-next.13"
+    "@code-hike/utils" "0.3.0-next.13"
     "@codesandbox/sandpack-client" "^0.1.20"
     estree-util-value-to-estree "^1.3.0"
     hast-util-to-estree "^1.4.0"
@@ -89,59 +89,59 @@
     unified "^9.2.2"
     unist-util-visit "^2.0.0"
 
-"@code-hike/mini-browser@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0-next.12.tgz#6422f8c5bcdc6799e50d035928af329d2cb66012"
-  integrity sha512-KttQR8s4NfuhyYKooU9HL+CmLlbG1Nds7UpyLpM3toVfgQbfnXzzYLoL7BKLPoyMh1vOienC/BbUG16amJPVsw==
+"@code-hike/mini-browser@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0-next.13.tgz#89a4d5efc7744332ccf376d383ee4920a1c4b5ce"
+  integrity sha512-DsU5lfOPjzxWD3HtTj7ocZ09koF2EZWS6Z8yR5/zCFuryM8j2FUcUHEhcvZBiHnhpca93VIQcMn4AN/jk5xumA==
   dependencies:
-    "@code-hike/classer" "0.3.0-next.12"
-    "@code-hike/mini-frame" "0.3.0-next.12"
+    "@code-hike/classer" "0.3.0-next.13"
+    "@code-hike/mini-frame" "0.3.0-next.13"
     use-spring "^0.2.3"
 
-"@code-hike/mini-editor@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0-next.12.tgz#0a138e7b3b1847752cc2050cea9d604947bf3dab"
-  integrity sha512-6ec2OcYqkDvLSgug20ja7a++lbN/4JlWLtcm5p8UWOrcmE2WtHr1gcXHK5T+2/JYmhAO1m4NzxBIkbmG1FASSw==
+"@code-hike/mini-editor@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0-next.13.tgz#1e7a05c835ec141f1d811fac3bf20925709a1094"
+  integrity sha512-jPgJibAeYvWT55yLEBjyVX0i559Vhrfu8VOmRin7BwkkGE+9Q3OiFpmIjdUqXEOh6w9PDgd3b4jePs0MkQWu+g==
   dependencies:
-    "@code-hike/classer" "0.3.0-next.12"
-    "@code-hike/mini-frame" "0.3.0-next.12"
-    "@code-hike/mini-terminal" "0.3.0-next.12"
-    "@code-hike/smooth-code" "0.3.0-next.12"
+    "@code-hike/classer" "0.3.0-next.13"
+    "@code-hike/mini-frame" "0.3.0-next.13"
+    "@code-hike/mini-terminal" "0.3.0-next.13"
+    "@code-hike/smooth-code" "0.3.0-next.13"
     use-spring "^0.2.3"
 
-"@code-hike/mini-frame@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0-next.12.tgz#113fcdbd4fe3dfd5b19b4e3a663ccd8eed86b453"
-  integrity sha512-BqnE2ZTVr0ggtm1d3DdAIlhPj7EstBRFGyp7rvNG7qaDdYar3RqWX4ebKS4Xq4qCLMajghUy22CJR1y6fDZWxw==
+"@code-hike/mini-frame@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0-next.13.tgz#58d7b889ff86b9331ffc951c51929a38d9492a88"
+  integrity sha512-B+n1Pfwjlc8Q/VDZfVXyJvj9l3BiPKwsr0D1K+lhAHLJn0ekj6l89OJFBMsaBiHGRnoklM0ibevHqH+AE9GhwA==
   dependencies:
-    "@code-hike/classer" "0.3.0-next.12"
+    "@code-hike/classer" "0.3.0-next.13"
 
-"@code-hike/mini-terminal@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0-next.12.tgz#74ca55fc31e35fa5bcc98d4d2179ba16efe32e77"
-  integrity sha512-+urHnjc/b9+2qWpZvJCAruf3R5zLD4aG2AuCkwbfzT52X0bTwiniGVPSWc6gNVuqUbthBISCsAT6QGJSgnRU1Q==
+"@code-hike/mini-terminal@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0-next.13.tgz#95473b0d5d7116319e15a266ff7edb0093623f71"
+  integrity sha512-ThcQQncJvLbC6qc9K2JnIuy2g9bTSU2WgA/2Bw6GeQs7BJuLlnrQrzkU0U9jpC8BmBtlW6xuomPjfW65V7zlIA==
   dependencies:
-    "@code-hike/mini-frame" "0.3.0-next.12"
+    "@code-hike/mini-frame" "0.3.0-next.13"
 
-"@code-hike/scroller@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/scroller/-/scroller-0.3.0-next.12.tgz#f7d5051a2fbdb091ef89bbf8b9298adbcd024154"
-  integrity sha512-wweVb/aZ81RGWU2frI6cQVY5vscgR5UlAUvRiOeoVn2WPAWQanisAjz5kBKAhHSRl+JVNyB+/w9KMDnWj/IZNw==
+"@code-hike/scroller@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/scroller/-/scroller-0.3.0-next.13.tgz#8d345bc134af6921b9bfdc88bd3bb5d099deca2e"
+  integrity sha512-7HOxjpUFxx61g8pRYEKPvtln7yTjszTlUZ/eOscb2q4W8sQZqaRYdHnGcn03SRIKfy+RAYPuorJzwYA0tAW0rQ==
 
-"@code-hike/smooth-code@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/smooth-code/-/smooth-code-0.3.0-next.12.tgz#e3ed63c9f18edc7247d7884dd0e777a9a3399ab8"
-  integrity sha512-N03mWqQP0ia84qbGfqy9DW+MMQ07MGDy21x10OMiG5qJMHokVKDu6xaf78DWckSzpHQlIbqTzb76hB8ufmDNuQ==
+"@code-hike/smooth-code@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/smooth-code/-/smooth-code-0.3.0-next.13.tgz#9c3138c4ca85bb4352c7b860e9ebc14b18203be5"
+  integrity sha512-ewDSpKwqRUkCBwrDa/eMzW6fmASxBjLSX6EW/9/6h2UTQ6KbiTc5rpXHKd+7/kpZLnYND5xGrHCn8IqmyinslQ==
   dependencies:
-    "@code-hike/highlighter" "0.3.0-next.12"
-    "@code-hike/utils" "0.3.0-next.12"
+    "@code-hike/highlighter" "0.3.0-next.13"
+    "@code-hike/utils" "0.3.0-next.13"
     diff "^4.0.2"
     use-spring "^0.2.3"
 
-"@code-hike/utils@0.3.0-next.12":
-  version "0.3.0-next.12"
-  resolved "https://registry.yarnpkg.com/@code-hike/utils/-/utils-0.3.0-next.12.tgz#b33a4585806a317488f82e05e235d86fc42067a8"
-  integrity sha512-aT0XwKciPNcztsY96r+ABnTfW86ziSOA3QA1P86KgRQ2rvdrP4lKRQrSOGSqCOP194qBup8I5YzW9p6yBIkZkg==
+"@code-hike/utils@0.3.0-next.13":
+  version "0.3.0-next.13"
+  resolved "https://registry.yarnpkg.com/@code-hike/utils/-/utils-0.3.0-next.13.tgz#d42e22581d61906ccd8f53da6d9c4ec666b90ec6"
+  integrity sha512-b7gGOTEzVEr9efFJcPzCqX7gFKmcosNeYk8xihIRipTl9/tuweb5RmroAjwolg9BipBrbGlH7K2boYp1BgqHIQ==
 
 "@codesandbox/sandpack-client@^0.1.20":
   version "0.1.20"
