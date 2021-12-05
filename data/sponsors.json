@@ -135,6 +135,14 @@
       "location": "Belgium",
       "url": "https://github.com/BenjaminRochez",
       "isOrg": false
+    },
+    {
+      "name": "Rich Haines",
+      "login": "molebox",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/22930449?s=128&u=94b9255742f07818cb41dd83d67911127dea24a8&v=4",
+      "location": "Örnsköldsvik, Sverige",
+      "url": "https://github.com/molebox",
+      "isOrg": false
     }
   ],
   "access": [
