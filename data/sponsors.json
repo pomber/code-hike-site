@@ -143,6 +143,14 @@
       "location": "Örnsköldsvik, Sverige",
       "url": "https://github.com/molebox",
       "isOrg": false
+    },
+    {
+      "name": "Frazer",
+      "login": "AlexFrazer",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1350392?s=128&u=8e643fdd6ca5e4b1798bc736346a38badd991452&v=4",
+      "location": "Nomadic",
+      "url": "https://github.com/AlexFrazer",
+      "isOrg": false
     }
   ],
   "access": [
