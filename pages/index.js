@@ -320,7 +320,7 @@ function Footer() {
   return (
     <footer className="mb-12">
       <a
-        href="https://vercel.com?utm_source=code-hike&utm_campaign=oss"
+        href="https://vercel.com?utm_source=codehike&utm_campaign=oss"
         target="_blank"
         rel="noopener noreferrer"
       >
