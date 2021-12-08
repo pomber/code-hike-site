@@ -151,6 +151,14 @@
       "location": "Nomadic",
       "url": "https://github.com/AlexFrazer",
       "isOrg": false
+    },
+    {
+      "name": "Daniel Gray",
+      "login": "DanielFGray",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/410447?s=128&v=4",
+      "location": "Galveston, TX",
+      "url": "https://github.com/DanielFGray",
+      "isOrg": false
     }
   ],
   "access": [
