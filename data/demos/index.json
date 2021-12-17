@@ -50,7 +50,9 @@
   {
     "id": "custom-annotations",
     "title": "Custom annotations",
-    "sponsors": [],
+    "sponsors": [
+      "cabljac"
+    ],
     "locked": true
   },
   {
