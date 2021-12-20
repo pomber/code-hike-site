@@ -51,7 +51,8 @@
     "id": "custom-annotations",
     "title": "Custom annotations",
     "sponsors": [
-      "cabljac"
+      "cabljac",
+      "scvnc"
     ],
     "locked": true
   },

@@ -167,6 +167,14 @@
       "location": null,
       "url": "https://github.com/cabljac",
       "isOrg": false
+    },
+    {
+      "name": "Vincent Schramer",
+      "login": "scvnc",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/885196?s=128&u=61ffec60543cea2cc04e657d2edccca7f0bd6c09&v=4",
+      "location": "Lincoln, NE",
+      "url": "https://github.com/scvnc",
+      "isOrg": false
     }
   ],
   "access": [
