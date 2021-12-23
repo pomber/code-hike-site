@@ -175,6 +175,14 @@
       "location": "Lincoln, NE",
       "url": "https://github.com/scvnc",
       "isOrg": false
+    },
+    {
+      "name": "Eduardo Reveles",
+      "login": "osiux",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/204463?s=128&u=938c78df4a3dfd3e1ec37082361a3703fc79d2f1&v=4",
+      "location": "CDMX",
+      "url": "https://github.com/osiux",
+      "isOrg": false
     }
   ],
   "access": [
