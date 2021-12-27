@@ -26,13 +26,7 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": [
-      "bdresser",
-      "davo",
-      "guicurcio",
-      "sw-yx",
-      "c0d3t3k"
-    ],
+    "sponsors": ["bdresser", "davo", "guicurcio", "sw-yx", "c0d3t3k"],
     "locked": false
   },
   {
@@ -50,12 +44,7 @@
   {
     "id": "custom-annotations",
     "title": "Custom annotations",
-    "sponsors": [
-      "cabljac",
-      "scvnc",
-      "osiux",
-      "ouiliame"
-    ],
+    "sponsors": ["cabljac", "scvnc", "osiux", "ouiliame"],
     "locked": true
   },
   {
@@ -85,6 +74,18 @@
   {
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
+    "sponsors": [],
+    "locked": true
+  },
+  {
+    "id": "slideshow",
+    "title": "Slideshow",
+    "sponsors": [],
+    "locked": true
+  },
+  {
+    "id": "slideshow-preview",
+    "title": "Slideshow & preview",
     "sponsors": [],
     "locked": true
   }

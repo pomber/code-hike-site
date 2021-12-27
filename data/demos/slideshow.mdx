@@ -1,0 +1,89 @@
+# Slideshow
+
+This is how to use the `<CH.Sildeshow>` component. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quia! Quidem, quisquam.
+
+<CH.Slideshow>
+
+```rust
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+#[allow(dead_code)]
+fn bad_add(a: i32, b: i32) -> i32 {
+    a - b
+}
+```
+
+---
+
+```rust
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+#[allow(dead_code)]
+fn bad_add(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+// focus(1:4)
+#[cfg(test)]
+mod tests {
+    use super::*;
+}
+```
+
+---
+
+```rust
+// focus(1:3)
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+#[allow(dead_code)]
+fn bad_add(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+// focus(1:4)
+    #[test]
+    fn test_add() {
+        assert_eq!(add(1, 2), 3);
+    }
+}
+```
+
+---
+
+```rust
+pub fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+// focus(1:4)
+#[allow(dead_code)]
+fn bad_add(a: i32, b: i32) -> i32 {
+    a - b
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_add() {
+        assert_eq!(add(1, 2), 3);
+    }
+// focus(1:4)
+    #[test]
+    fn test_bad_add() {
+        assert_eq!(bad_add(1, 2), 3);
+    }
+}
+```
+
+</CH.Slideshow>
