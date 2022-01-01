@@ -26,7 +26,13 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": ["bdresser", "davo", "guicurcio", "sw-yx", "c0d3t3k"],
+    "sponsors": [
+      "bdresser",
+      "davo",
+      "guicurcio",
+      "sw-yx",
+      "c0d3t3k"
+    ],
     "locked": false
   },
   {
@@ -34,17 +40,22 @@
     "title": "Comment annotations",
     "sponsors": [
       "stefanjudis",
-      "BenjaminRochez",
       "molebox",
       "AlexFrazer",
-      "DanielFGray"
+      "DanielFGray",
+      "molebox"
     ],
     "locked": false
   },
   {
     "id": "custom-annotations",
     "title": "Custom annotations",
-    "sponsors": ["cabljac", "scvnc", "osiux", "ouiliame"],
+    "sponsors": [
+      "cabljac",
+      "scvnc",
+      "osiux",
+      "ouiliame"
+    ],
     "locked": true
   },
   {
