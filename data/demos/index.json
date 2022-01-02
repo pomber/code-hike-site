@@ -40,12 +40,11 @@
     "title": "Comment annotations",
     "sponsors": [
       "stefanjudis",
-      "molebox",
       "AlexFrazer",
       "DanielFGray",
       "molebox"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "custom-annotations",
