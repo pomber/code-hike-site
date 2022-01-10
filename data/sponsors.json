@@ -191,6 +191,14 @@
       "location": "Columbus-5",
       "url": "https://github.com/ouiliame",
       "isOrg": false
+    },
+    {
+      "name": "Sascha Tandel",
+      "login": "sastan",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/514405?s=128&u=245a571222a9e43185d171e01296c16d0784ae29&v=4",
+      "location": "Berlin, Germany",
+      "url": "https://github.com/sastan",
+      "isOrg": false
     }
   ],
   "access": [

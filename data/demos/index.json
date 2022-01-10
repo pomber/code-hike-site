@@ -54,9 +54,10 @@
       "cabljac",
       "scvnc",
       "osiux",
-      "ouiliame"
+      "ouiliame",
+      "sastan"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "sections",
