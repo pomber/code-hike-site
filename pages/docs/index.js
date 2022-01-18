@@ -1,3 +1,7 @@
+import Head from "next/head";
+import Link from "next/link";
+import { CodeHikeLogo, GitHubLink, TwitterLink } from "../../src/logo";
+
 const section = [
   "Introduction",
   "Installation",
@@ -16,8 +20,34 @@ const section = [
 export default function Page() {
   return (
     <div>
+      <Head>
+        <title>Code Hike - Docs</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+      </Head>
       <div className="sticky top-0">
-        <nav className="bg-blue-400 max-w-7xl mx-auto h-16">Code Hike</nav>
+        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent">
+          <Link href="/">
+            <a className="flex items-center gap-2 mr-auto ml-4">
+              <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
+              <h1 className="text-3xl font-bold">Code Hike</h1>
+            </a>
+          </Link>
+
+          <input placeholder="Search" className="w-40" />
+          <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
+          <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
+        </nav>
       </div>
       <div className="max-w-7xl mx-auto flex">
         <aside className="w-64 sticky top-16 self-start flex-shrink-0 hidden 2cols:block">
