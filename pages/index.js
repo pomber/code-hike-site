@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
 import { CodeHikeLogo } from "../src/logo";
@@ -36,10 +37,16 @@ export default function Home({ homeDemoProps }) {
       <Nav />
 
       <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        <h1 className="md:text-6xl text-5xl font-bold md:my-32 my-20 text-center">
+        <h1 className="md:text-6xl text-5xl font-bold md:mt-32 mt-20 text-center">
           Not just a{" "}
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
+
+        <Link href={`/docs`}>
+          <a className="border-2 mt-20 mb-24 border-gray-600 hover:border-blue-600 text-xl md:w-72 p-2 rounded text-center">
+            Documentation
+          </a>
+        </Link>
 
         <HomeDemo {...homeDemoProps} />
 
