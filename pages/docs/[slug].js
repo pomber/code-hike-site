@@ -102,9 +102,6 @@ export default function Page({ slug, previewSource }) {
             style={{ width: "80ch", maxWidth: "80ch" }}
           >
             <MDXComponent code={previewSource} />
-            <Content />
-            <Content />
-            <Content />
           </main>
         </article>
         <aside className="w-64 top-16 shrink-0 hidden 3cols:block"></aside>
@@ -134,53 +131,5 @@ function Sidebar({ current }) {
         </li>
       ))}
     </ul>
-  );
-}
-
-function Content() {
-  const className = "leading-relaxed mt-6";
-  return (
-    <div>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-      <p className={className}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod,
-        urna eu aliquam gravida, nisi nisi fermentum nunc, eu consectetur nunc
-        ante eu nisi. Nulla facilisi. Nulla facilisi.
-      </p>
-    </div>
   );
 }
