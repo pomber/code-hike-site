@@ -55,11 +55,12 @@ export async function getStaticProps(context) {
   return {
     props: {
       previewSource: previewSource.code,
+      slug: filename,
     },
   };
 }
 
-export default function Page({ previewSource }) {
+export default function Page({ slug, previewSource }) {
   return (
     <div>
       <Head>
@@ -93,7 +94,7 @@ export default function Page({ previewSource }) {
       </div>
       <div className="max-w-7xl mx-auto flex">
         <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
-          <Sidebar />
+          <Sidebar current={slug} />
         </aside>
         <article className="min-w-0 flex-1">
           <main
@@ -116,13 +117,19 @@ function MDXComponent({ code }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
   return <Component />;
 }
-function Sidebar() {
+function Sidebar({ current }) {
   return (
-    <ul className="p-4">
+    <ul className="p-4 text-gray-700 text-sm">
       {section.map(([item, slug]) => (
-        <li key={item}>
+        <li
+          key={item}
+          className={
+            "-ml-2 rounded " +
+            (slug === current ? "bg-blue-100 text-black" : "hover:bg-gray-100")
+          }
+        >
           <Link href={`/docs/${slug}`}>
-            <a className="block w-full select-none px-1 py-2">{item}</a>
+            <a className="block w-full select-none py-2 my-1 pl-2">{item}</a>
           </Link>
         </li>
       ))}
