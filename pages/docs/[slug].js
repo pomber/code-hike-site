@@ -92,18 +92,21 @@ export default function Page({ previewSource }) {
         </nav>
       </div>
       <div className="max-w-7xl mx-auto flex">
-        <aside className="w-64 sticky top-16 self-start flex-shrink-0 hidden 2cols:block">
+        <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
           <Sidebar />
         </aside>
-        <article className="min-w-0 flex-1 prose">
-          <main className="mx-auto px-8 pt-4" style={{ width: "80ch" }}>
+        <article className="min-w-0 flex-1">
+          <main
+            className="mx-auto px-8 pt-4 prose"
+            style={{ width: "80ch", maxWidth: "80ch" }}
+          >
             <MDXComponent code={previewSource} />
             <Content />
             <Content />
             <Content />
           </main>
         </article>
-        <aside className="w-64 top-16 flex-shrink-0 hidden 3cols:block"></aside>
+        <aside className="w-64 top-16 shrink-0 hidden 3cols:block"></aside>
       </div>
     </div>
   );
