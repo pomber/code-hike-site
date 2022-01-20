@@ -16,7 +16,7 @@ const section = [
   ["<CH.Code>", "ch-code"],
   ["<CH.Section>", "ch-section"],
   ["<CH.Scrollycoding>", "ch-scrollycoding"],
-  ["<CH.Spotlight>", "ch-spotlight>"],
+  ["<CH.Spotlight>", "ch-spotlight"],
   ["<CH.Slideshow>", "ch-slideshow"],
   // ["Roadmap", "roadmap"],
   // ["Changelog", "changelog"],
