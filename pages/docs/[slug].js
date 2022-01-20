@@ -2,22 +2,64 @@ import Head from "next/head";
 import Link from "next/link";
 import { CodeHikeLogo, GitHubLink, TwitterLink } from "../../src/logo";
 
+import fs from "fs";
+import { remarkCodeHike } from "@code-hike/mdx";
+import { getMDXComponent } from "mdx-bundler/client";
+import { bundleMDX } from "mdx-bundler";
+import { useMemo } from "react";
+
 const section = [
-  "Introduction",
-  "Installation",
-  "Codeblocks",
-  "Annotations",
-  "<CH.Code>",
-  "<CH.Section>",
-  "<CH.Scrollycoding>",
-  "<CH.Spotlight>",
-  "<CH.Slideshow>",
-  "Roadmap",
-  "Changelog",
-  "Troubleshooting",
+  ["Introduction", "introduction"],
+  ["Installation", "installation"],
+  ["Codeblocks", "codeblocks"],
+  ["Annotations", "annotations"],
+  ["<CH.Code>", "ch-code"],
+  ["<CH.Section>", "ch-section"],
+  ["<CH.Scrollycoding>", "ch-scrollycoding"],
+  ["<CH.Spotlight>", "ch-spotlight>"],
+  ["<CH.Slideshow>", "ch-slideshow"],
+  // ["Roadmap", "roadmap"],
+  // ["Changelog", "changelog"],
+  ["Troubleshooting", "troubleshooting"],
 ];
 
-export default function Page() {
+export async function getStaticPaths() {
+  return {
+    paths: section.map(([, name]) => ({ params: { slug: name } })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const filename = context.params.slug || "introduction";
+  const mdxSource = await fs.promises.readFile(
+    `./docs/${filename}.mdx`,
+    "utf8"
+  );
+
+  const theme = await import(`shiki/themes/github-dark.json`).then(
+    (module) => module.default
+  );
+
+  const previewSource = await bundleMDX(mdxSource, {
+    esbuildOptions(options) {
+      options.platform = "node";
+      return options;
+    },
+    xdmOptions(options) {
+      options.remarkPlugins = [[remarkCodeHike, { theme }]];
+      return options;
+    },
+  });
+
+  return {
+    props: {
+      previewSource: previewSource.code,
+    },
+  };
+}
+
+export default function Page({ previewSource }) {
   return (
     <div>
       <Head>
@@ -36,7 +78,7 @@ export default function Page() {
         />
       </Head>
       <div className="sticky top-0">
-        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent">
+        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white z-10 3cols:bg-transparent">
           <Link href="/">
             <a className="flex items-center gap-2 mr-auto ml-4">
               <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
@@ -53,8 +95,9 @@ export default function Page() {
         <aside className="w-64 sticky top-16 self-start flex-shrink-0 hidden 2cols:block">
           <Sidebar />
         </aside>
-        <article className="min-w-0 flex-1">
+        <article className="min-w-0 flex-1 prose">
           <main className="mx-auto px-8 pt-4" style={{ width: "80ch" }}>
+            <MDXComponent code={previewSource} />
             <Content />
             <Content />
             <Content />
@@ -66,14 +109,18 @@ export default function Page() {
   );
 }
 
+function MDXComponent({ code }) {
+  const Component = useMemo(() => getMDXComponent(code), [code]);
+  return <Component />;
+}
 function Sidebar() {
   return (
     <ul className="p-4">
-      {section.map((item) => (
+      {section.map(([item, slug]) => (
         <li key={item}>
-          <a href="" className="block w-full select-none px-1 py-2">
-            {item}
-          </a>
+          <Link href={`/docs/${slug}`}>
+            <a className="block w-full select-none px-1 py-2">{item}</a>
+          </Link>
         </li>
       ))}
     </ul>
