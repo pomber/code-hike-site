@@ -62,7 +62,9 @@
   {
     "id": "sections",
     "title": "Code links",
-    "sponsors": [],
+    "sponsors": [
+      "zevaverbach"
+    ],
     "locked": true
   },
   {

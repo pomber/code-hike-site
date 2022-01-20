@@ -199,6 +199,14 @@
       "location": "Berlin, Germany",
       "url": "https://github.com/sastan",
       "isOrg": false
+    },
+    {
+      "name": "Zev Averbach",
+      "login": "zevaverbach",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2838836?s=128&u=c4e352dd67371eac5a6c0dde8e0073febf599ccd&v=4",
+      "location": "Geneva, Switzerland",
+      "url": "https://github.com/zevaverbach",
+      "isOrg": false
     }
   ],
   "access": [
