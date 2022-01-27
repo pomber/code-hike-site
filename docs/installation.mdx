@@ -1,4 +1,4 @@
-## Installation
+This unitless number is a ratio based on the font size. It functions just like the em unit. With a line-height of 1.2, each line will be 20% larger than the element's font size.
 
 1. First you need MDX v2 (or [xdm](https://github.com/wooorm/xdm/)). See [MDX v2 docs](https://mdxjs.com/docs/getting-started/) on how to set it up.
 2. Install Code Hike remark plugin with `yarn add @code-hike/mdx@next`
@@ -13,7 +13,7 @@ const theme = require("shiki/themes/monokai.json"); // any theme from shiki
 //      {
 //        loader: "@mdx-js/loader",
 //        options: {
-            remarkPlugins: [[remarkCodeHike, { theme }]],
+            remarkPlugins: [[remarkCodeHike, { theme, lineNumbers: false }]],
 //        },
 //      },
 // ...
@@ -28,3 +28,5 @@ import "@code-hike/mdx/dist/index.css";
 5. Create an mdx file and copy the code from any of the [demos](https://codehike.org/#demos) to see if it works
 
 Here is a [minimal Next.js example](https://github.com/pomber/code-hike-sample).
+
+### Options

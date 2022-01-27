@@ -1,3 +1,17 @@
+.docs .ch-frame-button {
+  border-color: #5c5c5c !important;
+  background-color: #535353 !important;
+}
+
+.docs .ch-codeblock,
+.docs .ch-codegroup {
+  margin: 0 -16px !important;
+}
+
+body {
+  overflow: overlay;
+}
+
 .source pre {
   white-space: pre-wrap;
 }

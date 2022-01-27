@@ -1,17 +1,19 @@
 import Head from "next/head";
 import Link from "next/link";
 import { CodeHikeLogo, GitHubLink, TwitterLink } from "../../src/logo";
+import theme from "../../src/ch-theme";
 
 import fs from "fs";
 import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
-import { useMemo } from "react";
+import React, { useMemo } from "react";
+import { BUNDLED_LANGUAGES } from "shiki";
 
 const section = [
   ["Introduction", "introduction"],
   ["Installation", "installation"],
-  ["Codeblocks", "codeblocks"],
+  ["Code Blocks", "codeblocks"],
   ["Annotations", "annotations"],
   ["<CH.Code>", "ch-code"],
   ["<CH.Section>", "ch-section"],
@@ -20,25 +22,25 @@ const section = [
   ["<CH.Slideshow>", "ch-slideshow"],
   // ["Roadmap", "roadmap"],
   // ["Changelog", "changelog"],
+  ["Styling", "styling"],
   ["Troubleshooting", "troubleshooting"],
 ];
 
 export async function getStaticPaths() {
   return {
-    paths: section.map(([, name]) => ({ params: { slug: name } })),
+    paths: section.map(([title, slug]) => ({
+      params: { slug, title },
+    })),
     fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
   const filename = context.params.slug || "introduction";
+  const title = section.find(([, item]) => item === filename)[0];
   const mdxSource = await fs.promises.readFile(
     `./docs/${filename}.mdx`,
     "utf8"
-  );
-
-  const theme = await import(`shiki/themes/github-dark.json`).then(
-    (module) => module.default
   );
 
   const previewSource = await bundleMDX(mdxSource, {
@@ -56,15 +58,16 @@ export async function getStaticProps(context) {
     props: {
       previewSource: previewSource.code,
       slug: filename,
+      title: title || null,
     },
   };
 }
 
-export default function Page({ slug, previewSource }) {
+export default function Page({ slug, previewSource, title }) {
   return (
-    <div>
+    <div className="docs">
       <Head>
-        <title>Code Hike - Docs</title>
+        <title>{title} - Code Hike Docs</title>
         <link
           rel="icon"
           type="image/png"
@@ -96,11 +99,12 @@ export default function Page({ slug, previewSource }) {
         <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
           <Sidebar current={slug} />
         </aside>
-        <article className="min-w-0 flex-1">
+        <article className="min-w-0 flex-1 3cols:-mt-16">
           <main
-            className="mx-auto px-8 pt-4 prose"
+            className="mx-auto px-8 pt-4 prose pb-24"
             style={{ width: "80ch", maxWidth: "80ch" }}
           >
+            <h1 className="text-2xl mt-1 mb-9 text-gray-800">{title}</h1>
             <MDXComponent code={previewSource} />
           </main>
         </article>
@@ -112,8 +116,49 @@ export default function Page({ slug, previewSource }) {
 
 function MDXComponent({ code }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component />;
+  return <Component components={{ LanguageList, SideBySide }} />;
 }
+
+function LanguageList() {
+  const languages = BUNDLED_LANGUAGES.map(({ id }) => id);
+  const lastLanguage = languages[languages.length - 1];
+  const headLanguages = languages.slice(0, languages.length - 1);
+
+  return (
+    <p>
+      Code Hike handles syntax highlighting for{" "}
+      <strong>{BUNDLED_LANGUAGES.length} languages</strong>:{" "}
+      {headLanguages.map((id) => (
+        <React.Fragment key={id}>
+          <span className="font-mono bg-gray-200 rounded px-1 py-0.5">
+            {id}
+          </span>
+          {", "}
+        </React.Fragment>
+      ))}
+      {"and "}
+      <span
+        key={lastLanguage}
+        className="font-mono bg-gray-200 rounded px-1 py-0.5"
+      >
+        {lastLanguage}
+      </span>
+      .
+    </p>
+  );
+}
+
+function SideBySide({ children }) {
+  // split children into two lists
+  const [left, right] = React.Children.toArray(children);
+  return (
+    <div className="flex flex-row gap-10">
+      <div className="flex-1 min-w-0">{left}</div>
+      <div className="flex-1 min-w-0">{right}</div>
+    </div>
+  );
+}
+
 function Sidebar({ current }) {
   return (
     <ul className="p-4 text-gray-700 text-sm">

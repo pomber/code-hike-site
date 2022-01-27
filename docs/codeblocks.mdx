@@ -1,12 +1,62 @@
-# Code Hike
+import { BUNDLED_LANGUAGES } from "shiki";
 
-Don't use Code Hike if:
+There are several ways to write code inside markdown. The most common is to wrap the code using triple backticks:
 
-- You don't need to.
+{/* prettier-ignore */}
+````mdx lorem.mdx focus=3:5
+## Lorem ipsum
 
-```js foo.js
-// Code Hike
-function foo() {
-  return "foo";
-}
 ```
+print("Hello, world!")
+```
+
+dolor **sit** amet
+````
+
+### Syntax highlighting
+
+If you specify a language after the <CH.InlineCode>```</CH.InlineCode> Code Hike will apply syntax highlighting to the code.
+
+<SideBySide>
+
+{/* prettier-ignore */}
+````mdx lorem.mdx focus=3:5 mark=3[4:9]
+### Lorem ipsum
+
+```python
+print("Hello, world!")
+```
+
+dolor **sit** amet
+````
+
+<CH.Preview
+  show="/docs/preview/codeblocks-1"
+  zoom={0.92}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+### Languages
+
+<LanguageList />
+
+Most of the syntax highlighting is done using [Shiki](https://github.com/shikijs/shiki), so it should be possible to add more languages if you have the corresponding TextMate grammar.
+
+### Filename
+
+If you add a filename after the language, Code Hike will show a different UI:
+
+````mdx lorem.mdx focus=3:5 mark=3[11:18]
+## Lorem ipsum
+
+```python hello.py
+print("Hello, world!")
+```
+
+dolor **sit** amet
+````
