@@ -1,6 +1,7 @@
 // based on https://github.com/dimitrisnl/nord-wave/blob/master/themes/Nord%20Wave-color-theme.json
 
 export default {
+  name: "code-hike-docs",
   type: "dark",
   colors: {
     "editor.background": "#212121",
