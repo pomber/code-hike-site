@@ -223,6 +223,14 @@
       "location": null,
       "url": "https://github.com/traviscooper",
       "isOrg": false
+    },
+    {
+      "name": "Alex Rosenkranz",
+      "login": "arosenkranz",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/29441497?s=128&u=f932857bfc986d4b6e9296367dd2cd7b2613d02f&v=4",
+      "location": "New Jersey",
+      "url": "https://github.com/arosenkranz",
+      "isOrg": false
     }
   ],
   "access": [
