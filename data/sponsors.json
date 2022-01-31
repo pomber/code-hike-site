@@ -231,6 +231,14 @@
       "location": "New Jersey",
       "url": "https://github.com/arosenkranz",
       "isOrg": false
+    },
+    {
+      "name": "Etienne Dldc",
+      "login": "etienne-dldc",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/14336608?s=128&u=cb3aeaa9596d9121312b7741a50cad80dce8b9e5&v=4",
+      "location": "Lyon, France",
+      "url": "https://github.com/etienne-dldc",
+      "isOrg": false
     }
   ],
   "access": [
