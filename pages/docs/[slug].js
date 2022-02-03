@@ -10,6 +10,7 @@ import { bundleMDX } from "mdx-bundler";
 import React, { useMemo } from "react";
 import { BUNDLED_LANGUAGES } from "shiki";
 import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const section = [
   ["Introduction", "introduction"],
@@ -50,7 +51,19 @@ export async function getStaticProps(context) {
       return options;
     },
     xdmOptions(options) {
-      options.rehypePlugins = [rehypeSlug];
+      options.rehypePlugins = [
+        rehypeSlug,
+        rehypeAutolinkHeadings,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "append",
+            properties: {
+              className: ["anchor"],
+            },
+          },
+        ],
+      ];
       options.remarkPlugins = [[remarkCodeHike, { theme }]];
       return options;
     },
