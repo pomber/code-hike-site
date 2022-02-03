@@ -231,6 +231,14 @@
       "location": "Lyon, France",
       "url": "https://github.com/etienne-dldc",
       "isOrg": false
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/79609753?s=128&v=4",
+      "login": "kickstartDS",
+      "name": "kickstartDS",
+      "location": null,
+      "url": "https://github.com/kickstartDS",
+      "isOrg": true
     }
   ],
   "access": [
