@@ -5,7 +5,22 @@
 
 .docs .ch-codeblock,
 .docs .ch-codegroup {
-  margin: 0 -16px !important;
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+}
+
+.docs .ch-cols .ch-codeblock,
+.docs .ch-cols .ch-codegroup {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 4rem;
+  margin: -4rem 0 0;
+  pointer-events: none;
 }
 
 body {

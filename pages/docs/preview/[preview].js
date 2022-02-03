@@ -6,7 +6,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import React, { useMemo } from "react";
 
-const previews = ["codeblocks-1"];
+const previews = ["codeblocks-1", "codeblocks-2"];
 
 export async function getStaticPaths() {
   return {

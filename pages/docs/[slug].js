@@ -9,6 +9,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import React, { useMemo } from "react";
 import { BUNDLED_LANGUAGES } from "shiki";
+import rehypeSlug from "rehype-slug";
 
 const section = [
   ["Introduction", "introduction"],
@@ -49,6 +50,7 @@ export async function getStaticProps(context) {
       return options;
     },
     xdmOptions(options) {
+      options.rehypePlugins = [rehypeSlug];
       options.remarkPlugins = [[remarkCodeHike, { theme }]];
       return options;
     },
@@ -152,7 +154,7 @@ function SideBySide({ children }) {
   // split children into two lists
   const [left, right] = React.Children.toArray(children);
   return (
-    <div className="flex flex-row gap-10">
+    <div className="flex flex-row gap-10 ch-cols">
       <div className="flex-1 min-w-0">{left}</div>
       <div className="flex-1 min-w-0">{right}</div>
     </div>

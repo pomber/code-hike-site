@@ -2,7 +2,17 @@ module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            "a:hover": {
+              color: "rgb(37 99 235)",
+            },
+          },
+        },
+      },
+    },
     screens: {
       md: "830px",
       "2cols": "982px",

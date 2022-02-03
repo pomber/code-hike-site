@@ -1,6 +1,6 @@
 import { BUNDLED_LANGUAGES } from "shiki";
 
-There are several ways to write code inside markdown. The most common is to wrap the code using triple backticks:
+The fundamental building block of Code Hike is the code block. There are several ways to write code blocks inside markdown. The most common way is to wrap the code using triple backticks:
 
 {/* prettier-ignore */}
 ````mdx lorem.mdx focus=3:5
@@ -32,7 +32,7 @@ dolor **sit** amet
 
 <CH.Preview
   show="/docs/preview/codeblocks-1"
-  zoom={0.92}
+  zoom={0.94}
   style={{
     margin: "0 -16px",
     height: "100%",
@@ -51,8 +51,11 @@ Most of the syntax highlighting is done using [Shiki](https://github.com/shikijs
 
 If you add a filename after the language, Code Hike will show a different UI:
 
+<SideBySide>
+
+{/* prettier-ignore */}
 ````mdx lorem.mdx focus=3:5 mark=3[11:18]
-## Lorem ipsum
+### Lorem ipsum
 
 ```python hello.py
 print("Hello, world!")
@@ -60,3 +63,14 @@ print("Hello, world!")
 
 dolor **sit** amet
 ````
+
+<CH.Preview
+  show="/docs/preview/codeblocks-2"
+  zoom={0.8}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
