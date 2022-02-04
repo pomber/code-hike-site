@@ -96,8 +96,8 @@ export default function Page({ slug, previewSource, title }) {
           href="/favicon-16x16.png"
         />
       </Head>
-      <div className="sticky top-0">
-        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white z-10 3cols:bg-transparent">
+      <div className="sticky top-0 z-10">
+        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent">
           <Link href="/">
             <a className="flex items-center gap-2 mr-auto ml-4">
               <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
@@ -110,7 +110,7 @@ export default function Page({ slug, previewSource, title }) {
           <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
         </nav>
       </div>
-      <div className="max-w-7xl mx-auto flex">
+      <div className="max-w-7xl mx-auto flex isolate">
         <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
           <Sidebar current={slug} />
         </aside>
