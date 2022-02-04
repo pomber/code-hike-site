@@ -80,7 +80,7 @@ export async function getStaticProps(context) {
 
 export default function Page({ slug, previewSource, title }) {
   return (
-    <div className="docs">
+    <div className="docs" style={{ minWidth: "80ch" }}>
       <Head>
         <title>{title} - Code Hike Docs</title>
         <link
@@ -140,7 +140,7 @@ function LanguageList() {
   const headLanguages = languages.slice(0, languages.length - 1);
 
   return (
-    <p>
+    <p className="text-justify">
       Code Hike handles syntax highlighting for{" "}
       <strong>{BUNDLED_LANGUAGES.length} languages</strong>:{" "}
       {headLanguages.map((id) => (
