@@ -114,6 +114,7 @@ export default function Page({ slug, previewSource, title }) {
         <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
           <Sidebar current={slug} />
         </aside>
+        <aside className="w-64 top-16 shrink-0 hidden 3cols:block order-last"></aside>
         <article className="min-w-0 flex-1 3cols:-mt-16">
           <main
             className="mx-auto px-8 pt-4 prose pb-24"
@@ -123,7 +124,6 @@ export default function Page({ slug, previewSource, title }) {
             <MDXComponent code={previewSource} />
           </main>
         </article>
-        <aside className="w-64 top-16 shrink-0 hidden 3cols:block"></aside>
       </div>
     </div>
   );
