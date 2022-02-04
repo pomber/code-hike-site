@@ -97,11 +97,11 @@ export default function Page({ slug, previewSource, title }) {
         />
       </Head>
       <div className="sticky top-0 z-10">
-        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent">
+        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
           <Link href="/">
-            <a className="flex items-center gap-2 mr-auto ml-4">
-              <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
-              <h1 className="text-3xl font-bold">Code Hike</h1>
+            <a className="flex items-center gap-2 mr-auto ml-6">
+              <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
+              <h1 className="text-2xl font-bold">Code Hike</h1>
             </a>
           </Link>
 
@@ -176,7 +176,7 @@ function SideBySide({ children }) {
 
 function Sidebar({ current }) {
   return (
-    <ul className="p-4 text-gray-700 text-sm">
+    <ul className="p-4 pl-6 text-gray-700 text-sm">
       {section.map(([item, slug]) => (
         <li
           key={item}
