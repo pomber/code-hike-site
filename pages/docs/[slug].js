@@ -120,7 +120,7 @@ export default function Page({ slug, previewSource, title }) {
             className="mx-auto px-8 pt-4 prose pb-24"
             style={{ width: "80ch", maxWidth: "80ch" }}
           >
-            <h1 className="text-2xl mt-1 mb-9 text-gray-800">{title}</h1>
+            <h1 className="text-2xl mt-0 mb-9 text-gray-800">{title}</h1>
             <MDXComponent code={previewSource} />
           </main>
         </article>
