@@ -74,7 +74,9 @@
   {
     "id": "spotlight",
     "title": "Spotlight",
-    "sponsors": [],
+    "sponsors": [
+      "nksaraf"
+    ],
     "locked": true
   },
   {
