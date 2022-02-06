@@ -247,6 +247,14 @@
       "location": "Mountain View, CA, USA",
       "url": "https://github.com/nksaraf",
       "isOrg": false
+    },
+    {
+      "name": "Hai Nguyen",
+      "login": "ng-hai",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/19520278?s=128&u=c2df7f787ccc6494d1de050e61f2ad40d80c46d1&v=4",
+      "location": "Saigon, Vietnam",
+      "url": "https://github.com/ng-hai",
+      "isOrg": false
     }
   ],
   "access": [
