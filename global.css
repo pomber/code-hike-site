@@ -1,3 +1,52 @@
+.docs .ch-frame-button {
+  border-color: #5c5c5c !important;
+  background-color: #535353 !important;
+}
+
+.docs .ch-codeblock,
+.docs .ch-codegroup {
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+}
+
+.docs .ch-cols .ch-codeblock,
+.docs .ch-cols .ch-codegroup {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: 4rem;
+  margin: -4rem 0 0;
+  pointer-events: none;
+}
+
+.prose .anchor {
+  visibility: hidden;
+  position: absolute;
+  margin-left: 0.4em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.prose :is(h1, h2, h3, h4, h5, h6):hover .anchor {
+  visibility: visible;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* for rehype-autolink-headings */
+.prose .anchor .icon-link:after {
+  content: "#";
+}
+
+body {
+  overflow: overlay;
+}
+
 .source pre {
   white-space: pre-wrap;
 }

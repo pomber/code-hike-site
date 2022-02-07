@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@code-hike/mdx": "0.3.0-next.17",
+    "@code-hike/mdx": "0.3.0-next.23",
     "@radix-ui/react-dialog": "^0.1.1",
     "@radix-ui/react-dropdown-menu": "^0.1.1",
     "@radix-ui/react-hover-card": "^0.1.1",
@@ -17,11 +17,14 @@
     "next-auth": "4.0.0-beta.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
     "shiki": "0.9.12"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.6",
-    "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4"
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.15"
   }
 }

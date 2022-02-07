@@ -55,7 +55,7 @@ export function HomeDemo({ code }) {
           <Arrow right />
         </div>
         <div style={{ height: 420.6, maxWidth: 372 }} className="mx-auto">
-          <MiniBrowser url="" loadUrl="/show">
+          <MiniBrowser url="" loadUrl="/show" theme={theme}>
             <video
               onTimeUpdate={onVideoProgress}
               onSeeking={onVideoProgress}
