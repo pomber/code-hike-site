@@ -51,18 +51,16 @@ body {
   white-space: pre-wrap;
 }
 
-.home-demo .ch-code-wrapper {
-  /* TODO remove from mdx/index.css */
-  border-radius: 0;
-}
-
 .home-demo .ch-frame-button {
   background: #d1d5db;
   border-color: #d1d5db;
 }
 
+.home-demo .ch-editor-frame,
 .home-demo .ch-frame {
   @apply shadow-lg;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .home-demo .ch-frame-title-bar {
