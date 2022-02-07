@@ -42,11 +42,13 @@ export default function Home({ homeDemoProps }) {
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
 
-        <Link href={`/docs/introduction`}>
+        {/* <Link href={`/docs/introduction`}>
           <a className="border-2 mt-20 mb-24 border-gray-600 hover:border-blue-600 text-xl md:w-72 p-2 rounded text-center">
             Documentation
           </a>
-        </Link>
+        </Link> */}
+
+        <div className="h-32" />
 
         <HomeDemo {...homeDemoProps} />
 

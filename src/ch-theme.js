@@ -15,6 +15,7 @@ export default {
     "editorGroup.border": "#1f1f1f",
     "editorGroupHeader.tabsBackground": "#323232",
     "editorLineNumber.foreground": "#424242",
+    "editor.selectionBackground": "#61616150",
     "codeHike.buttons": "#949494",
   },
   tokenColors: [

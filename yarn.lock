@@ -57,30 +57,30 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@code-hike/classer@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0--canary.116.056ec02.0.tgz#42aa8e64465eafa038f017a19753d0dd7bd4b39e"
-  integrity sha512-YPElcVHflu4ALQwB+UILqSZJlQURtP+YNefECU8bA+kRbRz3KCNcHWefWSz4HXfPFWlmajCTNqP/qoHqt1QVpw==
+"@code-hike/classer@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/classer/-/classer-0.3.0-next.23.tgz#69070beb5ab599d4fc6691aa9df52c55a76bf4b3"
+  integrity sha512-AukD7ZyB/NSgnnYSBsYJREhX0kUBe0QczrSlOpF283F1y+9YEMEickB+TgIfGpe3yW+7XNe/PUNi+MTGl67kog==
 
-"@code-hike/highlighter@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/highlighter/-/highlighter-0.3.0--canary.116.056ec02.0.tgz#cfd3b0951e844520325fe66ba3d259eac8f18e17"
-  integrity sha512-IWwRTrQR2g80WFVPQ9z+tEBD/Nd15Sy4wsENDpvsaTkJYHhb1PG1/9nS6eRZ6PEe+qAS8+n7DOrW63x77mW3AA==
+"@code-hike/highlighter@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/highlighter/-/highlighter-0.3.0-next.23.tgz#78bd703f3065c18e183dab6097da78cc49fefa5e"
+  integrity sha512-hCJnM2QvqaMrtahYqg60ewouQ6GLk2Lc1DkC6Ag+RrNAu8kxHRf5N/PBLcnWWde1OnLaD7Do1IrAk3+clil3bw==
   dependencies:
-    "@code-hike/utils" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/utils" "0.3.0-next.23"
     shiki "^0.9.14"
 
-"@code-hike/mdx@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.3.0--canary.116.056ec02.0.tgz#2a1671730ae50d2cff9d4b0f0c00f4fadcab9460"
-  integrity sha512-dc0oNtp4gRqt0DRgEa6EV6B9Fh00Vh/V0HUk1c7EkTuPxIWH3nAAvZVM6mqcP0V+ZEGf/xDdTo9jchzy0uI6fw==
+"@code-hike/mdx@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.3.0-next.23.tgz#5ec00e9bebb59b1d54e372ee491a04c9a69faf98"
+  integrity sha512-BmCkOY2GYw4LYdJ9Av+1zGL4LregosG7oebcJTu/5Pb7asnYIwCzAO7NehBYDSZbNvrJoobCaqNUI1xfx1MMsg==
   dependencies:
-    "@code-hike/highlighter" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/mini-browser" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/mini-editor" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/scroller" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/smooth-code" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/utils" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/highlighter" "0.3.0-next.23"
+    "@code-hike/mini-browser" "0.3.0-next.23"
+    "@code-hike/mini-editor" "0.3.0-next.23"
+    "@code-hike/scroller" "0.3.0-next.23"
+    "@code-hike/smooth-code" "0.3.0-next.23"
+    "@code-hike/utils" "0.3.0-next.23"
     "@codesandbox/sandpack-client" "^0.1.20"
     estree-util-value-to-estree "^1.3.0"
     hast-util-to-estree "^1.4.0"
@@ -89,61 +89,61 @@
     unified "^9.2.2"
     unist-util-visit "^2.0.0"
 
-"@code-hike/mini-browser@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0--canary.116.056ec02.0.tgz#2c709f0f942dcb330419467fc85308fb935c0a02"
-  integrity sha512-EguiLMM9cH5myxAz3qrLu5cN4OGdywUyoiGQLlkdAiQYDiNXpiPpK4hTble2WQn1eGl9fQ425e7BAkGFUSJrMQ==
+"@code-hike/mini-browser@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-browser/-/mini-browser-0.3.0-next.23.tgz#5fc9c0eef93130487a140ef6a222c58665e98b0f"
+  integrity sha512-J1519xf/fqzcQyKofXz1Jz1jIl9rXYmy9eKE8etYn7HVbZqU7/UhgK0lLojSxwspWYRyzo3x5VfdaMZndO/6mQ==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/mini-frame" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/utils" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/classer" "0.3.0-next.23"
+    "@code-hike/mini-frame" "0.3.0-next.23"
+    "@code-hike/utils" "0.3.0-next.23"
     use-spring "^0.2.3"
 
-"@code-hike/mini-editor@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0--canary.116.056ec02.0.tgz#33c9291756f25bab80b002811b087010d36eff7a"
-  integrity sha512-wIucnH/DzWG1N8oLFiVWVNTAp24hrK2Vk7iAjgk6RL5K1nYrOQpdhRIsEYvWbOAUf+2xie5Qed7t4/ZiY4KDQQ==
+"@code-hike/mini-editor@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-editor/-/mini-editor-0.3.0-next.23.tgz#a6185b5f78dab91fb9c31a2a2f51998bf11c9321"
+  integrity sha512-c/qaAd4pbzxaL4/dLjjrefOUuNzm/HANDu+4RqiIqcP7t04v0kfEn2e8nk4lEqHYDg7UW+Rys9fgR+504XtQkA==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/mini-frame" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/mini-terminal" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/smooth-code" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/classer" "0.3.0-next.23"
+    "@code-hike/mini-frame" "0.3.0-next.23"
+    "@code-hike/mini-terminal" "0.3.0-next.23"
+    "@code-hike/smooth-code" "0.3.0-next.23"
     use-spring "^0.2.3"
 
-"@code-hike/mini-frame@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0--canary.116.056ec02.0.tgz#069bfdc121b7d500a04224a9880240d897d99970"
-  integrity sha512-m9Pc8P5G5839Y7wZyTnKZ+VNP4ap0XX+YoMhPwwWgqmvpQMXB/fLJHKwsaqqXeMzbcc+0tq20sccTnY9p9qELQ==
+"@code-hike/mini-frame@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-frame/-/mini-frame-0.3.0-next.23.tgz#01a64311c996f5f5db2a6bbc54645003d93e6132"
+  integrity sha512-wjtFF8gg24pcyXj/GWfX00DdEmG3jzRc/mYAK8p0BwBvB0qUpLO27CJjhb3Dn42yr6E+6P5MhQmPtqCeLzcwCA==
   dependencies:
-    "@code-hike/classer" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/utils" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/classer" "0.3.0-next.23"
+    "@code-hike/utils" "0.3.0-next.23"
 
-"@code-hike/mini-terminal@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0--canary.116.056ec02.0.tgz#fff9eb3a70b68995537bd4c9a6c8adea9920e8a0"
-  integrity sha512-xwnCJ1FKfkztOxV/hWtzqqhhghBISza2SrI4NP1A8T+PeM1cehSTMH4W6nzUGNfcZ2l4bG6uIbrO0YmK0BwG7Q==
+"@code-hike/mini-terminal@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/mini-terminal/-/mini-terminal-0.3.0-next.23.tgz#0602e72d3736ad88a12c4ddbe60a0ee74cfbc9a2"
+  integrity sha512-0TsnX3YIv8TJMSYvey7ZT7LCAJvbDy3DoUOndMxqrKZdCj4oWGoMRGoqp99QlUz5tqN/l9HE4m+rKjcEcxTDqg==
   dependencies:
-    "@code-hike/mini-frame" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/mini-frame" "0.3.0-next.23"
 
-"@code-hike/scroller@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/scroller/-/scroller-0.3.0--canary.116.056ec02.0.tgz#32cb5a1d3801d0c7f1db6a39c97dc24dab905e9c"
-  integrity sha512-oqy9WVlz/jdee4ZGLeiPHzebKZq4gkexSae8uINlik19iMnLvt7vl62nuEtWAI3SyxN7p7l/jlM5piTdf7PZlg==
+"@code-hike/scroller@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/scroller/-/scroller-0.3.0-next.23.tgz#71ba5e0727a2c3d933ad8acb47e1af802d719b1c"
+  integrity sha512-an8IubLY69wySj7jDRyHKWDx5iIPDroDEh70F9NE7ryXIwDdS2nJkTPujePJvMH+7kaOed3QFOfxvBEWYti5Ww==
 
-"@code-hike/smooth-code@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/smooth-code/-/smooth-code-0.3.0--canary.116.056ec02.0.tgz#a4acf14e7a7f9ce24b9e064e131b3c037fbe0eaf"
-  integrity sha512-6muvzwU0A3++9r+gC+Rf9K18/mppr1CsnZhiPzN2Pm07qOgPMNzs8xru41A7ssNiUympKilBE7ERpB1o1JktOA==
+"@code-hike/smooth-code@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/smooth-code/-/smooth-code-0.3.0-next.23.tgz#fbfca6641755b4874d13990b79cb1bb63679880c"
+  integrity sha512-wyeIIcpj8RiDGUrWo0nK4NYtbhEJ6/p8zt/BBetaKN3vedA+gyevTes0b59ztvKL3/Es7h4iO+D4Txvcve0mow==
   dependencies:
-    "@code-hike/highlighter" "0.3.0--canary.116.056ec02.0"
-    "@code-hike/utils" "0.3.0--canary.116.056ec02.0"
+    "@code-hike/highlighter" "0.3.0-next.23"
+    "@code-hike/utils" "0.3.0-next.23"
     diff "^4.0.2"
     use-spring "^0.2.3"
 
-"@code-hike/utils@0.3.0--canary.116.056ec02.0":
-  version "0.3.0--canary.116.056ec02.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/utils/-/utils-0.3.0--canary.116.056ec02.0.tgz#3437a6ab189fc2a9e7571e2e0c6697ba18e7c4ef"
-  integrity sha512-Fz93FnnidaL5iFZXeMhOXKsf/i+S2DSAy3XckoaLCXYvvFG8+TcpJoGEcYGSL84ufGBZ+rU9nSa2Y5JPxXgnqQ==
+"@code-hike/utils@0.3.0-next.23":
+  version "0.3.0-next.23"
+  resolved "https://registry.yarnpkg.com/@code-hike/utils/-/utils-0.3.0-next.23.tgz#7cbab19c1972801a2231282a9f855180d5a08c3e"
+  integrity sha512-aze/39bKfnh/zLZzQ2yMSQ8Y50FwsDe4bUL/Hztft+rTS7e+sm1JRzfqeosdRTwD7sdP/PSHFzDncqk+GpEHAw==
 
 "@codesandbox/sandpack-client@^0.1.20":
   version "0.1.20"
