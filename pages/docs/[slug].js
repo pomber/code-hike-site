@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { IdProvider } from "@radix-ui/react-id";
 import {
   CodeHikeLogo,
   GitHubLink,
@@ -16,6 +17,8 @@ import React, { useMemo } from "react";
 import { BUNDLED_LANGUAGES } from "shiki";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import * as Dialog from "@radix-ui/react-dialog";
+import { useRouter } from "next/router";
 
 const section = [
   ["Introduction", "introduction"],
@@ -101,36 +104,38 @@ export default function Page({ slug, previewSource, title }) {
           href="/favicon-16x16.png"
         />
       </Head>
-      <div className="sticky top-0 z-10">
-        <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
-          <MenuIcon className="2cols:hidden cursor-pointer ml-6" />
-          <Link href="/">
-            <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
-              <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold">Code Hike</h1>
-            </a>
-          </Link>
+      <IdProvider>
+        <div className="sticky top-0 z-10">
+          <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
+            <MobileMenu current={slug} />
+            <Link href="/">
+              <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
+                <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
+                <h1 className="text-2xl font-bold">Code Hike</h1>
+              </a>
+            </Link>
 
-          <input placeholder="Search" className="w-40" />
-          <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
-          <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
-        </nav>
-      </div>
-      <div className="max-w-7xl mx-auto flex isolate">
-        <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
-          <Sidebar current={slug} />
-        </aside>
-        <aside className="w-64 top-16 shrink-0 hidden 3cols:block order-last"></aside>
-        <article className="min-w-0 flex-1 3cols:-mt-16">
-          <main
-            className="mx-auto px-8 pt-4 prose pb-24"
-            style={{ width: "80ch", maxWidth: "80ch" }}
-          >
-            <h1 className="text-2xl mt-0 mb-9 text-gray-800">{title}</h1>
-            <MDXComponent code={previewSource} />
-          </main>
-        </article>
-      </div>
+            <input placeholder="Search" className="w-40" />
+            <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
+            <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
+          </nav>
+        </div>
+        <div className="max-w-7xl mx-auto flex isolate">
+          <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
+            <Sidebar current={slug} />
+          </aside>
+          <aside className="w-64 top-16 shrink-0 hidden 3cols:block order-last"></aside>
+          <article className="min-w-0 flex-1 3cols:-mt-16">
+            <main
+              className="mx-auto px-8 pt-4 prose pb-24"
+              style={{ width: "80ch", maxWidth: "80ch" }}
+            >
+              <h1 className="text-2xl mt-0 mb-9 text-gray-800">{title}</h1>
+              <MDXComponent code={previewSource} />
+            </main>
+          </article>
+        </div>
+      </IdProvider>
     </div>
   );
 }
@@ -197,5 +202,22 @@ function Sidebar({ current }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function MobileMenu({ current }) {
+  const router = useRouter();
+
+  return (
+    <div key={router.asPath} className="2cols:hidden">
+      <Dialog.Root>
+        <Dialog.Trigger className="block ml-6">
+          <MenuIcon />
+        </Dialog.Trigger>
+        <Dialog.Content className="p-4 bg-white fixed inset-0 top-16">
+          <Sidebar current={current} />
+        </Dialog.Content>
+      </Dialog.Root>
+    </div>
   );
 }
