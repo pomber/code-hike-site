@@ -1,6 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import { CodeHikeLogo, GitHubLink, TwitterLink } from "../../src/logo";
+import {
+  CodeHikeLogo,
+  GitHubLink,
+  MenuIcon,
+  TwitterLink,
+} from "../../src/logo";
 import theme from "../../src/ch-theme";
 
 import fs from "fs";
@@ -98,8 +103,9 @@ export default function Page({ slug, previewSource, title }) {
       </Head>
       <div className="sticky top-0 z-10">
         <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
+          <MenuIcon className="2cols:hidden cursor-pointer ml-6" />
           <Link href="/">
-            <a className="flex items-center gap-2 mr-auto ml-6">
+            <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
               <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
               <h1 className="text-2xl font-bold">Code Hike</h1>
             </a>
