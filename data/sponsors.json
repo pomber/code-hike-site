@@ -255,6 +255,14 @@
       "location": "Saigon, Vietnam",
       "url": "https://github.com/ng-hai",
       "isOrg": false
+    },
+    {
+      "name": "Brendan Gibson",
+      "login": "obgibson",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/93726128?s=128&v=4",
+      "location": null,
+      "url": "https://github.com/obgibson",
+      "isOrg": false
     }
   ],
   "access": [
