@@ -86,7 +86,9 @@
   {
     "id": "spotlight-preview",
     "title": "Spotlight & preview",
-    "sponsors": [],
+    "sponsors": [
+      "LEDThereBeLight"
+    ],
     "locked": true
   },
   {
