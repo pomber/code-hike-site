@@ -142,7 +142,11 @@ export default function Page({ slug, previewSource, title }) {
 
 function MDXComponent({ code }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component components={{ LanguageList, SideBySide }} />;
+  return <Component components={{ LanguageList, LangCount, SideBySide }} />;
+}
+
+function LangCount() {
+  return BUNDLED_LANGUAGES.length;
 }
 
 function LanguageList() {

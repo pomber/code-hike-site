@@ -9,10 +9,20 @@
   margin-right: -16px !important;
 }
 
-.docs .ch-cols .ch-codeblock,
-.docs .ch-cols .ch-codegroup {
+.docs .ch-spotlight :is(.ch-codeblock, .ch-codegroup) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.docs
+  *:is(.ch-cols, .ch-spotlight)
+  :is(.ch-codeblock, .ch-codegroup, .ch-preview) {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+.docs .ch-spotlight-sticker {
+  width: 280px;
 }
 
 :target:before {
