@@ -158,11 +158,11 @@ function Collapsable({ children, openText = "Show", closeText = "Hide" }) {
     <Collapsible.Root onOpenChange={(open) => setOpen(open)}>
       <div className="flex mt-4">
         <div className="flex-1">{header?.props?.children}</div>
-        <Collapsible.Trigger>
-          {isOpen ? closeText : openText}
+        <Collapsible.Trigger className="bg-gray-200 px-2 rounded w-20 text-right">
+          <span className="pr-1">{isOpen ? closeText : openText}</span>
           <ChevronDownIcon
             aria-hidden
-            className="inline-block ml-2"
+            className="inline-block"
             style={{
               transition: "transform 300ms",
               transform: `rotate(${isOpen ? 180 : 0}deg)`,
