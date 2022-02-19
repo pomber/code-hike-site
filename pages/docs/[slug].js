@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { IdProvider } from "@radix-ui/react-id";
 import * as Collapsible from "@radix-ui/react-collapsible";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
 import {
   CodeHikeLogo,
   GitHubLink,
@@ -159,6 +160,14 @@ function Collapsable({ children, openText = "Show", closeText = "Hide" }) {
         <div className="flex-1">{header?.props?.children}</div>
         <Collapsible.Trigger>
           {isOpen ? closeText : openText}
+          <ChevronDownIcon
+            aria-hidden
+            className="inline-block ml-2"
+            style={{
+              transition: "transform 300ms",
+              transform: `rotate(${isOpen ? 180 : 0}deg)`,
+            }}
+          />
         </Collapsible.Trigger>
       </div>
       <Collapsible.Content className="collapsable-content">
