@@ -1,3 +1,47 @@
+/* docs collapsable */
+
+@keyframes open-collapsable {
+  from {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    height: var(--radix-collapsible-content-height);
+    overflow: hidden;
+    opacity: 1;
+  }
+}
+
+@keyframes close-collapsable {
+  from {
+    opacity: 1;
+    height: var(--radix-collapsible-content-height);
+    overflow: hidden;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+
+.docs .collapsable-content[data-state="open"] {
+  margin: -1px -2rem;
+  padding: 1px 2rem;
+  animation: open-collapsable 300ms ease-out;
+}
+.docs .collapsable-content[data-state="closed"] {
+  overflow: hidden;
+  margin: -1px -2rem;
+  padding: 1px 2rem;
+  animation: close-collapsable 300ms ease-out;
+}
+
+/* docs */
+
 .docs .ch-frame-button {
   border-color: #5c5c5c !important;
   background-color: #535353 !important;
@@ -52,6 +96,8 @@
 .prose .anchor .icon-link:after {
   content: "#";
 }
+
+/* home */
 
 body {
   overflow: overlay;

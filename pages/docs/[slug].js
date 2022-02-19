@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { IdProvider } from "@radix-ui/react-id";
+import * as Collapsible from "@radix-ui/react-collapsible";
 import {
   CodeHikeLogo,
   GitHubLink,
@@ -142,7 +143,29 @@ export default function Page({ slug, previewSource, title }) {
 
 function MDXComponent({ code }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component components={{ LanguageList, LangCount, SideBySide }} />;
+  return (
+    <Component
+      components={{ LanguageList, LangCount, SideBySide, Collapsable }}
+    />
+  );
+}
+
+function Collapsable({ children, openText = "Show", closeText = "Hide" }) {
+  const [isOpen, setOpen] = React.useState(false);
+  const [header, ...content] = React.Children.toArray(children);
+  return (
+    <Collapsible.Root onOpenChange={(open) => setOpen(open)}>
+      <div className="flex mt-4">
+        <div className="flex-1">{header?.props?.children}</div>
+        <Collapsible.Trigger>
+          {isOpen ? closeText : openText}
+        </Collapsible.Trigger>
+      </div>
+      <Collapsible.Content className="collapsable-content">
+        {content}
+      </Collapsible.Content>
+    </Collapsible.Root>
+  );
 }
 
 function LangCount() {
