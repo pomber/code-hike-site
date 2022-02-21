@@ -1,0 +1,80 @@
+Based on [Next.js official docs](https://nextjs.org/docs/advanced-features/using-mdx).
+
+Start by installing all the things:
+
+```bash
+npm install next react react-dom
+npm install @next/mdx @mdx-js/loader @code-hike/mdx@next
+```
+
+<CH.Scrollycoding>
+
+Create a next.config.js file at the root of your project.
+
+Here we use the @next/mdx plugin to set up MDX imports and pages.
+
+After this step you can create .mdx files, but you can't use Code Hike yet.
+
+{/* prettier-ignore */}
+```js next.config.js
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+  },
+})
+
+module.exports = withMDX({
+  pageExtensions: [
+    "ts", "tsx", "js", 
+    "jsx", "md", "mdx"
+  ],
+})
+```
+
+---
+
+To set up Code Hike you need to import the @code-hike/mdx plugin, and add it to the remarkPlugins array in the next.config.js file.
+
+{/* prettier-ignore */}
+```js next.config.js
+const { remarkCH } = require("@code-hike/mdx")
+const theme = require("shiki/themes/nord.json")
+
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [
+      [remarkCH, { theme }]
+    ],
+  },
+})
+
+module.exports = withMDX({
+  pageExtensions: [
+    "ts", "tsx", "js", 
+    "jsx", "md", "mdx"
+  ],
+})
+```
+
+---
+
+Then you need to create a `pages/_app.js` file if you don't have one.
+
+You can find more information about the `_app.js` file in the [Next.js official docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+{/* prettier-ignore */}
+```js pages/_app.js
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+</CH.Scrollycoding>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
+Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

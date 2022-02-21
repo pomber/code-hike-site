@@ -1,3 +1,12 @@
+/* docs frameworks */
+
+.docs .frameworks .ch-scrollycoding-sticker {
+  min-width: 410px;
+}
+.docs .frameworks .ch-scrollycoding-sticker :is(.ch-codegroup, .ch-codeblock) {
+  min-height: 50vh;
+}
+
 /* docs collapsable */
 
 @keyframes open-collapsable {
@@ -53,13 +62,13 @@
   margin-right: -16px !important;
 }
 
-.docs .ch-spotlight :is(.ch-codeblock, .ch-codegroup) {
+.docs :is(.ch-spotlight, .ch-scrollycoding) :is(.ch-codeblock, .ch-codegroup) {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 .docs
-  *:is(.ch-cols, .ch-spotlight)
+  *:is(.ch-cols, .ch-spotlight, .ch-scrollycoding)
   :is(.ch-codeblock, .ch-codegroup, .ch-preview) {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
