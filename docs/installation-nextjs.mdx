@@ -37,7 +37,7 @@ module.exports = withMDX({
 To set up Code Hike you need to import the @code-hike/mdx plugin, and add it to the remarkPlugins array in the next.config.js file.
 
 {/* prettier-ignore */}
-```js next.config.js
+```js next.config.js focus=1:2,7:9
 const { remarkCH } = require("@code-hike/mdx")
 const theme = require("shiki/themes/nord.json")
 
@@ -72,6 +72,38 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp
 ```
+
+---
+
+Then import codehike's css styles.
+
+{/* prettier-ignore */}
+```js pages/_app.js focus=1
+import "@code-hike/mdx/dist/index.css"
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+---
+
+Now you can create mdx files using codehike
+
+{/* prettier-ignore */}
+~~~md pages/my.mdx
+# Hello
+
+Lorem ipsum dolor sit amet.
+
+```python hello.py
+print("Rendered with Code Hike")
+```
+
+Lorem ipsum dolor sit amet.
+~~~
 
 </CH.Scrollycoding>
 

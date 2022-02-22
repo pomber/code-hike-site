@@ -1,10 +1,17 @@
 /* docs frameworks */
 
-.docs .frameworks .ch-scrollycoding-sticker {
-  min-width: 410px;
+.docs .frameworks {
+  --ch-scrollycoding-sticker-width: 390px;
+  --ch-scrollycoding-code-min-height: 460px;
 }
-.docs .frameworks .ch-scrollycoding-sticker :is(.ch-codegroup, .ch-codeblock) {
-  min-height: 50vh;
+
+.docs .frameworks .ch-scrollycoding-step-content {
+  margin-left: -1rem;
+  padding-left: 1rem;
+}
+
+.docs .frameworks .ch-scrollycoding-sticker {
+  margin-right: -1rem;
 }
 
 /* docs collapsable */
