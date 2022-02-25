@@ -1,17 +1,30 @@
-Based on [Next.js official docs](https://nextjs.org/docs/advanced-features/using-mdx).
+_Based on [Next.js official docs](https://nextjs.org/docs/advanced-features/using-mdx)._
 
-Start by installing all the things:
+Start by installing next and react on an empty directory:
 
 ```bash
 npm install next react react-dom
+```
+
+<CH.Section>
+
+Then also install the [mdx plugin for next](focus://1[13:21]), the [mdx loader](focus://1[23:36]), and [Code Hike](focus://1[38:56]).
+
+```bash
 npm install @next/mdx @mdx-js/loader @code-hike/mdx@next
 ```
+
+</CH.Section>
+
+<div style={{height: "0.5em"}}/>
 
 <CH.Scrollycoding>
 
 Create a next.config.js file at the root of your project.
 
-Here we use the @next/mdx plugin to set up MDX imports and pages.
+Here we use the @next/mdx plugin to set up MDX imports. 
+
+Also make sure you include md and mdx on the pageExtensions setting. 
 
 After this step you can create .mdx files, but you can't use Code Hike yet.
 
@@ -34,7 +47,11 @@ module.exports = withMDX({
 
 ---
 
-To set up Code Hike you need to import the @code-hike/mdx plugin, and add it to the remarkPlugins array in the next.config.js file.
+To set up Code Hike you need to [import the @code-hike/mdx plugin](focus://1,6[1:6]), and add it to the remarkPlugins array in the next.config.js file. 
+
+You will also want to import a theme. You can import one from shiki, or make a custom one. 
+
+Pass the theme into Code Hike's config object, there are a few more settings you can use, like lineNumbers for example.
 
 {/* prettier-ignore */}
 ```js next.config.js focus=1:2,7:9
@@ -75,7 +92,11 @@ export default MyApp
 
 ---
 
-Then import codehike's css styles.
+The pages/_app.js file is where you add global stylesheets in Next.js. 
+
+Here we need to import Code Hike's CSS.
+
+If you want to customize Code Hike's styles with a global stylesheet make sure to import it after this import to avoid specificity issues.
 
 {/* prettier-ignore */}
 ```js pages/_app.js focus=1
@@ -90,7 +111,9 @@ export default MyApp
 
 ---
 
-Now you can create mdx files using codehike
+Now you can create mdx files using codehike.
+
+Markdown (.md) files should also work.
 
 {/* prettier-ignore */}
 ~~~md pages/my.mdx

@@ -12,18 +12,18 @@ const options = [
   { name: "Next.js + mdx-bundler", logo: "nextjs" },
   { name: "Nextra", logo: "nextjs" },
   { name: "Remix", logo: "remix" },
-  { name: "Gatsby", logo: "gatsby" },
+  { name: "Vite", logo: "vite" },
 ];
 
 const soon = [
   { name: "Docusaurus", logo: "docusaurus" },
-  { name: "Vite", logo: "vite" },
+  { name: "Gatsby", logo: "gatsby" },
   { name: "Astro", logo: "astro" },
-  { name: "Webpack", logo: "webpack" },
-  { name: "Motif", logo: "motif" },
-  { name: "docs.page" },
+  // { name: "Webpack", logo: "webpack" },
   { name: "Create React App", logo: "cra" },
   { name: "Eleventy", logo: "11ty" },
+  { name: "Motif", logo: "motif" },
+  { name: "docs.page" },
 ];
 
 export function Frameworks() {
