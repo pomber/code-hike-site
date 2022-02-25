@@ -34,14 +34,27 @@ function findOption(id) {
 
 export function Frameworks() {
   const [selectedOption, setSelectedOption] = React.useState(options[0]);
+  React.useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (hash) {
+      const option = findOption(hash);
+      if (option) {
+        setSelectedOption(option);
+      }
+    }
+  }, []);
+
   const Content = selectedOption.component || NextJS;
   return (
     <div className="frameworks">
       <Select.Root
-        defaultValue="next"
-        onValueChange={(selectedValue) =>
-          setSelectedOption(findOption(selectedValue))
-        }
+        id={selectedOption.id}
+        defaultValue={selectedOption.id}
+        value={selectedOption.id}
+        onValueChange={(selectedValue) => {
+          window.location.hash = selectedValue;
+          setSelectedOption(findOption(selectedValue));
+        }}
       >
         <Select.Trigger asChild>
           <div className="rounded border border-blue-600 -mx-4 py-2 px-4">
