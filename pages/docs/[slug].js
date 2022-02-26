@@ -25,6 +25,7 @@ import { useRouter } from "next/router";
 const section = [
   ["Introduction", "introduction"],
   ["Installation", "installation"],
+  ["Configuration", "configuration"],
   ["Code Blocks", "codeblocks"],
   ["Annotations", "annotations"],
   ["<CH.Code>", "ch-code"],
