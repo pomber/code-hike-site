@@ -32,21 +32,7 @@ export function HomeDemo({ code }) {
     [code, focus]
   );
   return (
-    <div className="flex flex-col md:flex-row gap-6 w-full home-demo relative">
-      <div className="flex-1">
-        <div className="text-2xl flex md:justify-start justify-center md:ml-8 mb-2">
-          <Arrow />
-          <span>
-            Write with <span className="font-bold">MDX</span>
-          </span>
-        </div>
-        <div
-          className="unreset mx-auto"
-          style={{ height: 420.6, maxWidth: 372 }}
-        >
-          <EditorSpring {...props} />
-        </div>
-      </div>
+    <div className="flex flex-col-reverse md:flex-row-reverse gap-6 w-full home-demo relative">
       <div className="h-96 flex-1">
         <div className="flex text-2xl md:justify-end justify-center md:mr-8 mb-2">
           <span>
@@ -68,6 +54,20 @@ export function HomeDemo({ code }) {
               poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
             />
           </MiniBrowser>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="text-2xl flex md:justify-start justify-center md:ml-8 mb-2">
+          <Arrow />
+          <span>
+            Write with <span className="font-bold">MDX</span>
+          </span>
+        </div>
+        <div
+          className="unreset mx-auto"
+          style={{ height: 420.6, maxWidth: 372 }}
+        >
+          <EditorSpring {...props} />
         </div>
       </div>
     </div>
