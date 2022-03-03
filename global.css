@@ -1,3 +1,64 @@
+/* docs frameworks */
+
+.docs .frameworks {
+  --ch-scrollycoding-sticker-width: 390px;
+  --ch-scrollycoding-code-min-height: 460px;
+}
+
+.docs .frameworks .ch-scrollycoding-step-content {
+  margin-left: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.docs .frameworks .ch-scrollycoding-sticker {
+  margin-right: -1rem;
+}
+
+/* docs collapsable */
+
+@keyframes open-collapsable {
+  from {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  to {
+    height: var(--radix-collapsible-content-height);
+    overflow: hidden;
+    opacity: 1;
+  }
+}
+
+@keyframes close-collapsable {
+  from {
+    opacity: 1;
+    height: var(--radix-collapsible-content-height);
+    overflow: hidden;
+  }
+
+  to {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+
+.docs .collapsable-content[data-state="open"] {
+  margin: -1px -2rem;
+  padding: 1px 2rem;
+  animation: open-collapsable 300ms ease-out;
+}
+.docs .collapsable-content[data-state="closed"] {
+  overflow: hidden;
+  margin: -1px -2rem;
+  padding: 1px 2rem;
+  animation: close-collapsable 300ms ease-out;
+}
+
+/* docs */
+
 .docs .ch-frame-button {
   border-color: #5c5c5c !important;
   background-color: #535353 !important;
@@ -9,13 +70,13 @@
   margin-right: -16px !important;
 }
 
-.docs .ch-spotlight :is(.ch-codeblock, .ch-codegroup) {
+.docs :is(.ch-spotlight, .ch-scrollycoding) :is(.ch-codeblock, .ch-codegroup) {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 .docs
-  *:is(.ch-cols, .ch-spotlight)
+  *:is(.ch-cols, .ch-spotlight, .ch-scrollycoding)
   :is(.ch-codeblock, .ch-codegroup, .ch-preview) {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -52,6 +113,8 @@
 .prose .anchor .icon-link:after {
   content: "#";
 }
+
+/* home */
 
 body {
   overflow: overlay;

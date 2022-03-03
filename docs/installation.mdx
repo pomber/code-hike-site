@@ -1,3 +1,99 @@
+Code Hike is a remark plugin for [MDX v2](https://mdxjs.com/). The specific set up will depend on your stack, it usually involves five steps:
+
+<Collapsable>
+
+**1.** Set up MDX v2
+
+See the [MDX v2 documentation](https://mdxjs.com/docs/getting-started/).
+
+</Collapsable>
+<Collapsable>
+
+**2.** Install the Code Hike plugin
+
+```bash
+npm install @code-hike/mdx@next
 ```
-// TODO
+
+or
+
+```bash
+yarn add @code-hike/mdx@next
 ```
+
+</Collapsable>
+<Collapsable>
+
+**3.** Include Code Hike's CSS
+
+Depending on your stack, it could be:
+
+```js your.js
+import "@code-hike/mdx/dist/index.css";
+```
+
+</Collapsable>
+<Collapsable>
+
+**4.** Add the remark plugin to your MDX configuration
+
+Also depends on your stack. Find the right place to pass `remarkPlugins`.
+
+```js your.config.js focus=2,3,6,7,10
+const remarkSomething = require("remark-something");
+const { remarkCodeHike } = require("@code-hike/mdx");
+const theme = require("shiki/themes/github-dark.json"); // any theme from shiki
+
+mdxOptions = {
+  remarkPlugins: [
+    [remarkCodeHike, { theme, lineNumbers: false }],
+    remarkSomething,
+    remarkSomethingElse,
+  ],
+};
+```
+
+</Collapsable>
+<Collapsable>
+
+**5.** Copy and try one of the [demos](https://codehike.org/#demos) to test the set up.
+
+For example:
+
+````mdx your.mdx
+# Hello, world!
+
+<CH.Code>
+
+```js app.js focus=2:4
+function lorem(ipsum, dolor = 1) {
+  const sit = ipsum == null ? 0 : ipsum.sit;
+  dolor = sit - amet(dolor);
+  return sit ? consectetur(ipsum) : [];
+}
+```
+
+```python hello.py
+print("Hello, world!")
+```
+
+---
+
+```css styles.css
+.lorem {
+  color: #fff;
+  padding: 10px;
+  background: #000;
+}
+```
+
+</CH.Code>
+````
+
+</Collapsable>
+
+## Frameworks
+
+Installation guides for specific frameworks.
+
+<Frameworks />

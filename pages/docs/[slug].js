@@ -8,6 +8,8 @@ import {
   TwitterLink,
 } from "../../src/logo";
 import theme from "../../src/ch-theme";
+import { Collapsable } from "../../src/collapsable";
+import { Frameworks } from "../../src/frameworks";
 
 import fs from "fs";
 import { remarkCodeHike } from "@code-hike/mdx";
@@ -23,6 +25,7 @@ import { useRouter } from "next/router";
 const section = [
   ["Introduction", "introduction"],
   ["Installation", "installation"],
+  ["Configuration", "configuration"],
   ["Code Blocks", "codeblocks"],
   ["Annotations", "annotations"],
   ["<CH.Code>", "ch-code"],
@@ -36,6 +39,16 @@ const section = [
   ["Troubleshooting", "troubleshooting"],
 ];
 
+const stable = [
+  "introduction",
+  "installation",
+  "configuration",
+  "codeblocks",
+  "troubleshooting",
+];
+function isExperimental(slug) {
+  return !stable.includes(slug);
+}
 export async function getStaticPaths() {
   return {
     paths: section.map(([title, slug]) => ({
@@ -115,7 +128,7 @@ export default function Page({ slug, previewSource, title }) {
               </a>
             </Link>
 
-            <input placeholder="Search" className="w-40" />
+            {/* <input placeholder="Search" className="w-40" /> */}
             <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
             <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
           </nav>
@@ -142,7 +155,17 @@ export default function Page({ slug, previewSource, title }) {
 
 function MDXComponent({ code }) {
   const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component components={{ LanguageList, LangCount, SideBySide }} />;
+  return (
+    <Component
+      components={{
+        LanguageList,
+        LangCount,
+        SideBySide,
+        Collapsable,
+        Frameworks,
+      }}
+    />
+  );
 }
 
 function LangCount() {
@@ -201,11 +224,34 @@ function Sidebar({ current }) {
           }
         >
           <Link href={`/docs/${slug}`}>
-            <a className="block w-full select-none py-2 my-1 pl-2">{item}</a>
+            <a className="w-full select-none py-2 my-1 px-2 flex items-center">
+              <span className="flex-1">{item}</span>
+              {isExperimental(slug) && <ExperimentalIcon />}
+            </a>
           </Link>
         </li>
       ))}
     </ul>
+  );
+}
+
+function ExperimentalIcon() {
+  return (
+    <svg
+      className="w-4 h-4 block text-gray-500"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <title>Experimental</title>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+      />
+    </svg>
   );
 }
 
