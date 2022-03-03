@@ -72,7 +72,7 @@ export function Frameworks() {
       >
         <Select.Trigger asChild>
           <div className="rounded border border-blue-600 -mx-4 py-2 px-4">
-            <button className="items-center flex w-full outline-none focus:bg-blue-100">
+            <button className="items-center flex w-full outline-none focus:bg-blue-100 appearance-none">
               <Select.Value />
               <Select.Icon className="ml-auto">
                 <ChevronDownIcon />
