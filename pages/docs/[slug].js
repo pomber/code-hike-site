@@ -128,7 +128,7 @@ export default function Page({ slug, previewSource, title }) {
               </a>
             </Link>
 
-            <input placeholder="Search" className="w-40" />
+            {/* <input placeholder="Search" className="w-40" /> */}
             <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
             <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
           </nav>

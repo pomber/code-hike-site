@@ -9,6 +9,11 @@ module.exports = {
             "a:hover": {
               color: "rgb(37 99 235)",
             },
+            "code::before": false,
+            "code::after": false,
+            code: {
+              "font-weight": "unset",
+            },
           },
         },
       },
