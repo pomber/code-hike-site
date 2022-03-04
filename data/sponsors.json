@@ -303,6 +303,14 @@
       "location": "Toronto, ON",
       "url": "https://github.com/seanmay",
       "isOrg": false
+    },
+    {
+      "name": "Tatsuya Yamamoto",
+      "login": "yamatatsu",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/11013683?s=128&u=024745e4c0335faf05e3f81a9f30797fca0dc6a7&v=4",
+      "location": "Japan",
+      "url": "https://github.com/yamatatsu",
+      "isOrg": false
     }
   ],
   "access": [
