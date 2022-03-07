@@ -90,14 +90,17 @@
       "LEDThereBeLight",
       "Kishotta",
       "seanmay",
-      "yamatatsu"
+      "yamatatsu",
+      "Salakar"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "scrollycoding",
     "title": "Scrollycoding",
-    "sponsors": [],
+    "sponsors": [
+      "invertase"
+    ],
     "locked": true
   },
   {

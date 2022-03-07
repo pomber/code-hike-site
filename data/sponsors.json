@@ -311,6 +311,22 @@
       "location": "Japan",
       "url": "https://github.com/yamatatsu",
       "isOrg": false
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/13588260?s=128&v=4",
+      "login": "invertase",
+      "name": "Invertase",
+      "location": "United Kingdom",
+      "url": "https://github.com/invertase",
+      "isOrg": true
+    },
+    {
+      "name": "Mike Diarmid",
+      "login": "Salakar",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/5347038?s=128&u=f8284e33e1b7f16b4b7df8b681918dca4f5bdb56&v=4",
+      "location": "Cheshire",
+      "url": "https://github.com/Salakar",
+      "isOrg": false
     }
   ],
   "access": [
