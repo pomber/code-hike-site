@@ -76,10 +76,10 @@
     "title": "Spotlight",
     "sponsors": [
       "nksaraf",
-      "obgibson",
       "gordlea",
       "hamelsmu",
-      "obgibson"
+      "obgibson",
+      "Salakar"
     ],
     "locked": false
   },
@@ -90,10 +90,9 @@
       "LEDThereBeLight",
       "Kishotta",
       "seanmay",
-      "yamatatsu",
       "Salakar"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "scrollycoding",
