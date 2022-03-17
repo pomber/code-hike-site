@@ -41,9 +41,9 @@
     "sponsors": [
       "stefanjudis",
       "AlexFrazer",
-      "DanielFGray",
       "molebox",
-      "NukaCody"
+      "NukaCody",
+      "molebox"
     ],
     "locked": false
   },
@@ -89,8 +89,7 @@
     "sponsors": [
       "LEDThereBeLight",
       "Kishotta",
-      "seanmay",
-      "Salakar"
+      "seanmay"
     ],
     "locked": true
   },
