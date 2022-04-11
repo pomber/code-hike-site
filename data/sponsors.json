@@ -311,6 +311,14 @@
       "location": "Melbourne, Australia",
       "url": "https://github.com/glenngillen",
       "isOrg": false
+    },
+    {
+      "name": "Drew Hoang",
+      "login": "codentell",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/17861830?s=128&u=bbd19d82e5e11cb0a9e3ab32c2efcde77d034c6d&v=4",
+      "location": "San Francisco",
+      "url": "https://github.com/codentell",
+      "isOrg": false
     }
   ],
   "access": [
