@@ -319,6 +319,14 @@
       "location": "San Francisco",
       "url": "https://github.com/codentell",
       "isOrg": false
+    },
+    {
+      "name": "Siddharth Kanungo",
+      "login": "wzard",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/23156035?s=128&u=8779e2e8228ba6d114e08b2b2331ba08fb3b6825&v=4",
+      "location": "Bengaluru",
+      "url": "https://github.com/wzard",
+      "isOrg": false
     }
   ],
   "access": [
