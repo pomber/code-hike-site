@@ -351,6 +351,14 @@
       "location": "Orange County, California",
       "url": "https://github.com/NLKNguyen",
       "isOrg": false
+    },
+    {
+      "name": "Brian Espinosa",
+      "login": "brianespinosa",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/1161781?s=128&v=4",
+      "location": "Tacoma, WA",
+      "url": "https://github.com/brianespinosa",
+      "isOrg": false
     }
   ],
   "access": [
