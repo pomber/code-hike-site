@@ -66,21 +66,21 @@
       "zevaverbach",
       "may17",
       "traviscooper",
-      "arosenkranz"
+      "arosenkranz",
+      "gordlea"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight",
     "title": "Spotlight",
     "sponsors": [
-      "nksaraf",
       "gordlea",
       "hamelsmu",
       "obgibson",
       "Salakar"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight-preview",
