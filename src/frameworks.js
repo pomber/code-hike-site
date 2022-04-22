@@ -21,17 +21,18 @@ import * as Select from "@radix-ui/react-select";
 // prettier-ignore
 const options = [
   { id: "next", name: "Next.js", component: NextJS, logo: "nextjs" },
-  { id: "next-mdx-remote", name: "Next.js + next-mdx-remote", logo: "nextjs", component: MdxRemote },
-  { id: "contentlayer", name: "Next.js + Contentlayer", component: Contentlayer, logo: "nextjs" },
-  { id: "mdx-bundler", name: "Next.js + mdx-bundler", logo: "nextjs", component: MdxBundler },
+  { id: "docusaurus", name: "Docusaurus", logo: "docusaurus", component: Docusaurus },
   { id: "nextra", name: "Nextra", logo: "nextjs", component: Nextra },
   { id: "remix", name: "Remix", logo: "remix", component: Remix },
   { id: "vite", name: "Vite", logo: "vite", component: Vite },
+  { id: "contentlayer", name: "Next.js + Contentlayer", component: Contentlayer, logo: "contentlayer" },
+  { id: "docspage", name: "docs.page", logo: "github", component: DocsPage },
+  { id: "mdx-bundler", name: "Next.js + mdx-bundler", logo: "mdx-bundler", component: MdxBundler },
+  { id: "next-mdx-remote", name: "Next.js + next-mdx-remote", logo: "nextjs", component: MdxRemote },
 ];
 
 // prettier-ignore
 const soon = [
-  { id: "docusaurus", name: "Docusaurus", logo: "docusaurus", component: Docusaurus },
   { id: "gatsby", name: "Gatsby", logo: "gatsby", component: Gatsby },
   { id: "astro", name: "Astro", logo: "astro", component: Astro },
   { id: "parcel", name: "Parcel", logo: 'parcel', component: Parcel },
@@ -39,7 +40,6 @@ const soon = [
   { id: "cra", name: "Create React App", logo: "cra", component: Cra },
   { id: "eleventy", name: "Eleventy", logo: "11ty", component: Eleventy },
   // { id: "motif", name: "Motif", logo: "motif" },
-  { id: "docspage", name: "docs.page", logo: "github", component: DocsPage },
 ];
 
 function findOption(id) {
