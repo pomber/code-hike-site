@@ -1,4 +1,4 @@
-import { highlight } from "@code-hike/highlighter";
+import { highlight } from "@code-hike/mdx";
 import theme from "shiki/themes/github-light.json";
 import fs from "fs";
 
