@@ -27,6 +27,11 @@ module.exports = {
         destination: "/docs/introduction",
         permanent: true,
       },
+      {
+        source: "/docs/installation",
+        destination: "/docs/installation/nextjs",
+        permanent: true,
+      },
     ];
   },
 };

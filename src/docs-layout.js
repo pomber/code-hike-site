@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export const sidebar = [
   ["Introduction", "introduction"],
-  ["Installation", "installation"],
+  ["Installation", "installation/nextjs"],
   ["Configuration", "configuration"],
   ["Code Blocks", "codeblocks"],
   ["Annotations", "annotations"],
@@ -24,7 +24,7 @@ export const sidebar = [
 
 const stable = [
   "introduction",
-  "installation",
+  "installation/nextjs",
   "configuration",
   "codeblocks",
   "troubleshooting",
@@ -88,6 +88,7 @@ export function DocsLayout({ title, slug, children }) {
 }
 
 function Sidebar({ current }) {
+  const currentSlug = current.split("/")[0];
   return (
     <ul className="p-4 pl-6 text-gray-700 text-sm">
       {sidebar.map(([item, slug]) => (
@@ -95,7 +96,9 @@ function Sidebar({ current }) {
           key={item}
           className={
             "-ml-2 rounded " +
-            (slug === current ? "bg-blue-100 text-black" : "hover:bg-gray-100")
+            (slug.split("/")[0] === currentSlug
+              ? "bg-blue-100 text-black"
+              : "hover:bg-gray-100")
           }
         >
           <Link href={`/docs/${slug}`}>

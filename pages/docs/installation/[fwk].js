@@ -19,7 +19,7 @@ import Nextra from "../../../docs/installation-nextra.mdx";
 import Parcel from "../../../docs/installation-parcel.mdx";
 import Remix from "../../../docs/installation-remix.mdx";
 import Vite from "../../../docs/installation-vite.mdx";
-import { DocsLayout, sidebar } from "../../../src/docs-layout";
+import { DocsLayout } from "../../../src/docs-layout";
 import { mdxToCode } from "../../../src/docs-mdx";
 
 // prettier-ignore
@@ -60,7 +60,6 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const filename = "installation";
   const fwk = context.params.fwk;
-  const title = sidebar.find(([, item]) => item === filename)[0];
 
   const introCode = await mdxToCode(filename);
   const fwkCode = await mdxToCode("installation-" + fwk);
@@ -70,7 +69,7 @@ export async function getStaticProps(context) {
       introCode,
       fwkCode,
       slug: filename,
-      title: title || null,
+      title: "Installation",
       fwk,
     },
   };
