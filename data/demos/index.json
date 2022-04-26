@@ -75,10 +75,10 @@
     "id": "spotlight",
     "title": "Spotlight",
     "sponsors": [
-      "gordlea",
       "hamelsmu",
       "obgibson",
-      "Salakar"
+      "Salakar",
+      "hamelsmu"
     ],
     "locked": true
   },
