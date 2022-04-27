@@ -10,6 +10,7 @@ export function SEO({
   title = "Code Hike",
   description = "Marvellous code walkthroughs",
 }) {
+  const imageUrl = `${baseUrl}/cards/${cardId}.png`;
   return (
     <Head>
       <title>{title}</title>
@@ -25,11 +26,16 @@ export function SEO({
         sizes="16x16"
         href="/favicon-16x16.png"
       />
-      <meta property="og:image" content={`${baseUrl}/cards/${cardId}.png`} />
+
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@codehike_" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="image" content={imageUrl} />
+      <meta itemprop="image" content={imageUrl} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta property="og:image" content={imageUrl} />
+
       {children}
     </Head>
   );
