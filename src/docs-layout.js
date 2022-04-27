@@ -4,6 +4,7 @@ import { IdProvider } from "@radix-ui/react-id";
 import { CodeHikeLogo, GitHubLink, MenuIcon, TwitterLink } from "./logo";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useRouter } from "next/router";
+import { SEO } from "./seo";
 
 export const sidebar = [
   ["Introduction", "introduction"],
@@ -33,24 +34,10 @@ function isExperimental(slug) {
   return !stable.includes(slug);
 }
 
-export function DocsLayout({ title, slug, children }) {
+export function DocsLayout({ title, h1, slug, children, cardId, description }) {
   return (
     <div className="docs" style={{ minWidth: "80ch" }}>
-      <Head>
-        <title>{title} - Code Hike Docs</title>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-      </Head>
+      <SEO title={title} cardId={cardId} description={description} />
       <IdProvider>
         <div className="sticky top-0 z-10">
           <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
@@ -77,7 +64,7 @@ export function DocsLayout({ title, slug, children }) {
               className="mx-auto px-8 pt-4 prose pb-24"
               style={{ width: "80ch", maxWidth: "80ch" }}
             >
-              <h1 className="text-2xl mt-0 mb-9 text-gray-800">{title}</h1>
+              <h1 className="text-2xl mt-0 mb-9 text-gray-800">{h1}</h1>
               {children}
             </main>
           </article>

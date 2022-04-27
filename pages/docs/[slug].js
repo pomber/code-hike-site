@@ -34,7 +34,7 @@ export async function getStaticProps(context) {
 
 export default function Page({ slug, previewSource, title }) {
   return (
-    <DocsLayout title={title} slug={slug}>
+    <DocsLayout h1={title} title={title + " - Code Hike Docs"} slug={slug}>
       <MDXComponent
         code={previewSource}
         components={{

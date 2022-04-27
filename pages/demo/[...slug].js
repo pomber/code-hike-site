@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { CodeHikeLogo } from "../../src/logo";
 import Link from "next/link";
 import React from "react";
@@ -14,6 +13,7 @@ import { bundleMDX } from "mdx-bundler";
 import sponsorsData from "../../data/sponsors.json";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { signIn, useSession } from "next-auth/react";
+import { SEO } from "../../src/seo";
 
 const themes = ["github-light", "poimandres"];
 const DEFAULT_THEME = "material-palenight";
@@ -125,25 +125,12 @@ export default function Page({ sourceTabs, previewSource, demo, allThemes }) {
   return (
     <IdProvider>
       <div className="flex flex-col min-h-screen" style={{ minWidth: 1332 }}>
-        <Head>
-          <title>{demo.title} - Code Hike</title>
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
+        <SEO title={`${demo.title} - Code Hike`}>
           <link
             href="https://unpkg.com/placeholdifier/placeholdifier.css"
             rel="stylesheet"
           />
-        </Head>
+        </SEO>
         <nav className="flex w-full h-14 items-center gap-4 text-gray-200 bg-black">
           <Link href="/">
             <a className="flex items-center gap-2 ml-4 mr-2">

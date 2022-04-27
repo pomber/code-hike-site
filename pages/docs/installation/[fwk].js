@@ -9,7 +9,7 @@ import { mdxToCode } from "../../../src/docs-mdx";
 
 // prettier-ignore
 const options = [
-  { id: "nextjs", name: "Next.js", logo: "nextjs" },
+  { id: "nextjs", name: "Next.js", logo: "nextjs", cardId: 'nextjs', title: "How to use Code Hike with Next.js" },
   { id: "docusaurus", name: "Docusaurus", logo: "docusaurus" },
   { id: "nextra", name: "Nextra", logo: "nextjs" },
   { id: "remix", name: "Remix", logo: "remix" },
@@ -61,8 +61,15 @@ export async function getStaticProps(context) {
 }
 
 export default function Page({ slug, introCode, title, fwkCode, fwk }) {
+  const option = useMemo(() => allOptions.find(({ id }) => id === fwk), [fwk]);
   return (
-    <DocsLayout title={title} slug={slug}>
+    <DocsLayout
+      h1={title}
+      title={option.title || title + " - Code Hike Docs"}
+      description={option.description || ""}
+      slug={slug}
+      cardId={option.cardId}
+    >
       <MDXComponent code={introCode} components={{ Collapsable }} />
       <Frameworks loadId={fwk} />
       <div className="frameworks">
