@@ -7,35 +7,86 @@ import React, { useMemo } from "react";
 import { DocsLayout } from "../../../src/docs-layout";
 import { mdxToCode } from "../../../src/docs-mdx";
 
-// prettier-ignore
-const options = [
-  { id: "nextjs", name: "Next.js", logo: "nextjs", cardId: 'nextjs', title: "How to use Code Hike with Next.js" },
-  { id: "docusaurus", name: "Docusaurus", logo: "docusaurus" },
-  { id: "nextra", name: "Nextra", logo: "nextjs" },
-  { id: "remix", name: "Remix", logo: "remix" },
-  { id: "vite", name: "Vite", logo: "vite" },
-  { id: "contentlayer", name: "Next.js + Contentlayer", logo: "contentlayer" },
-  { id: "docspage", name: "docs.page", logo: "github" },
-  { id: "next-mdx-bundler", name: "Next.js + mdx-bundler", logo: "mdx-bundler" },
-  { id: "next-mdx-remote", name: "Next.js + next-mdx-remote", logo: "nextjs" },
+const all = [
+  {
+    id: "nextjs", // should match mdx file and logo
+    name: "Next.js", // used in the dropdown menu text
+    cardId: "nextjs", // if it has a custom card inside /public/cards/{cardId}.png
+    title: "How to use Code Hike with Next.js", // used in the SEO title
+    description:
+      "Use Code Hike syntax highlighting and components in your Next.js pages", // used in the SEO description
+  },
+  {
+    id: "docusaurus",
+    name: "Docusaurus",
+    cardId: "docusaurus",
+    title: "How to use Code Hike with Docusaurus",
+    description:
+      "Add Code Hike syntax highlighting and components in your Docusaurus mdx",
+  },
+  {
+    id: "nextra",
+    name: "Nextra",
+  },
+  {
+    id: "remix",
+    name: "Remix",
+  },
+  {
+    id: "vite",
+    name: "Vite",
+  },
+  {
+    id: "contentlayer",
+    name: "Next.js + Contentlayer",
+  },
+  {
+    id: "docspage",
+    name: "docs.page",
+  },
+  {
+    id: "mdx-bundler",
+    name: "Next.js + MDX Bundler",
+  },
+  {
+    id: "next-mdx-remote",
+    name: "Next MDX Remote",
+  },
+  {
+    id: "gatsby",
+    name: "Gatsby",
+    soon: true,
+  },
+  {
+    id: "astro",
+    name: "Astro",
+    soon: true,
+  },
+  {
+    id: "parcel",
+    name: "Parcel",
+    soon: true,
+  },
+  {
+    id: "cra",
+    name: "Create React App",
+    soon: true,
+  },
+  {
+    id: "eleventy",
+    name: "Eleventy",
+    soon: true,
+  },
+  // {
+  //   id: 'motif',
+  //   name: 'Motif',
+  //   soon: true,
+  // },
 ];
-
-// prettier-ignore
-const soon = [
-  { id: "gatsby", name: "Gatsby", logo: "gatsby" },
-  { id: "astro", name: "Astro", logo: "astro" },
-  { id: "parcel", name: "Parcel", logo: 'parcel' },
-  // { id: "webpack", name: "Webpack", logo: "webpack" },
-  { id: "cra", name: "Create React App", logo: "cra" },
-  { id: "eleventy", name: "Eleventy", logo: "11ty" },
-  // { id: "motif", name: "Motif", logo: "motif" },
-];
-
-const allOptions = [...options, ...soon];
 
 export async function getStaticPaths() {
   return {
-    paths: allOptions.map(({ id }) => ({
+    paths: all.map(({ id }) => ({
       params: { fwk: id },
     })),
     fallback: false,
@@ -61,7 +112,7 @@ export async function getStaticProps(context) {
 }
 
 export default function Page({ slug, introCode, title, fwkCode, fwk }) {
-  const option = useMemo(() => allOptions.find(({ id }) => id === fwk), [fwk]);
+  const option = useMemo(() => all.find(({ id }) => id === fwk), [fwk]);
   return (
     <DocsLayout
       h1={title}
@@ -71,7 +122,7 @@ export default function Page({ slug, introCode, title, fwkCode, fwk }) {
       cardId={option.cardId}
     >
       <MDXComponent code={introCode} components={{ Collapsable }} />
-      <Frameworks loadId={fwk} />
+      <Frameworks loadId={fwk} options={all} />
       <div className="frameworks">
         <MDXComponent code={fwkCode} components={{ SideBySide }} />
       </div>

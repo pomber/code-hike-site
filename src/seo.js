@@ -27,6 +27,7 @@ export function SEO({
         href="/favicon-16x16.png"
       />
 
+      <meta property="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta name="twitter:site" content="@codehike_" />
