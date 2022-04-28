@@ -33,7 +33,7 @@ export function SEO({
       <meta name="twitter:site" content="@codehike_" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="image" content={imageUrl} />
-      <meta itemprop="image" content={imageUrl} />
+      <meta itemProp="image" content={imageUrl} />
       <meta name="twitter:image" content={imageUrl} />
       <meta property="og:image" content={imageUrl} />
 
