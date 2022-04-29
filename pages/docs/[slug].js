@@ -1,5 +1,4 @@
 import { Collapsable } from "../../src/collapsable";
-import { Frameworks } from "../../src/frameworks";
 
 import React, { useMemo } from "react";
 import { BUNDLED_LANGUAGES } from "shiki";
@@ -42,7 +41,6 @@ export default function Page({ slug, previewSource, title }) {
           LangCount,
           SideBySide,
           Collapsable,
-          Frameworks,
         }}
       />
     </DocsLayout>

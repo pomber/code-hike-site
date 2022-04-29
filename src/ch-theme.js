@@ -14,8 +14,9 @@ module.exports = {
     // "tab.border": "#212121",
     "editorGroup.border": "#1f1f1f",
     "editorGroupHeader.tabsBackground": "#323232",
-    "editorLineNumber.foreground": "#424242",
+    "editorLineNumber.foreground": "#aaaaaa",
     "editor.selectionBackground": "#61616150",
+    "editor.selectionHighlightBackground": "#292929",
     "codeHike.buttons": "#949494",
   },
   tokenColors: [

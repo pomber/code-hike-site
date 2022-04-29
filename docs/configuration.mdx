@@ -1,1 +1,63 @@
-Configuration docs are coming soon.
+<CH.Section>
+
+Somewhere in your code you'll have a _`remarkPlugins`_ array, there you'll find Code Hike's [config object](focus://9:13). If you haven't already set Code Hike up, see the [installation docs](installation) first.
+
+```js your.config.js
+const remarkSomething = require("remark-something")
+// focus
+const { remarkCodeHike } = require("@code-hike/mdx")
+const someTheme = require("shiki/themes/nord.json")
+
+mdxOptions = {
+  remarkPlugins: [
+    // focus(1:8)
+    [
+      remarkCodeHike,
+      {
+        // link[9:24] #theme
+        theme: someTheme,
+        // link[9:26] #line-numbers
+        lineNumbers: false,
+        // link[9:24] #auto-import
+        autoImport: true,
+      },
+    ],
+    remarkSomething,
+    remarkSomethingElse,
+  ],
+}
+```
+
+</CH.Section>
+
+## Line Numbers
+
+<LineNumbersSection />
+
+## Auto Import
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+## Theme
+
+Theme docs
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
