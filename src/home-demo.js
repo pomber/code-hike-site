@@ -1,7 +1,8 @@
-import { EditorSpring } from "@code-hike/mini-editor";
-import { MiniBrowser } from "@code-hike/mini-browser";
+import { internal } from "@code-hike/mdx/components";
 import theme from "shiki/themes/min-light.json";
 import React from "react";
+
+const { EditorSpring, MiniBrowser } = internal;
 
 export function HomeDemo({ code }) {
   const [focus, setFocus] = React.useState(focuses[0][0]);

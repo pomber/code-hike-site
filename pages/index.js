@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
@@ -6,6 +5,7 @@ import { CodeHikeLogo, GitHubLink, TwitterLink } from "../src/logo";
 import React from "react";
 import { DemoGrid } from "../src/demo-grid";
 import sponsorsData from "../data/sponsors.json";
+import { SEO } from "../src/seo";
 
 export async function getStaticProps() {
   return {
@@ -18,21 +18,7 @@ export async function getStaticProps() {
 export default function Home({ homeDemoProps }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 md:px-0 px-4">
-      <Head>
-        <title>Code Hike</title>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-      </Head>
+      <SEO />
 
       <Nav />
 
@@ -66,23 +52,6 @@ export default function Home({ homeDemoProps }) {
         <Sponsors sponsors={sponsorsData.sponsors} />
         <Footer />
       </main>
-    </div>
-  );
-}
-
-function Draft() {
-  return (
-    <div className="absolute flex flex-col items-center justify-center text-red-900  md:-right-16 md:top-2 -right-8 font-bold max-w-md">
-      <div className="border-2 border-red-900 rounded-xl p-4 w-3/4 rotate-12 bg-red-50 bg-opacity-60">
-        <div className="text-3xl text-center pb-4">DRAFT</div>
-        <div className="text-xl text-center">
-          This is the next version of{" "}
-          <a href="https://codehike.org" className="underline">
-            codehike.org
-          </a>
-          . Still work in progress.
-        </div>
-      </div>
     </div>
   );
 }
@@ -121,8 +90,6 @@ function Quote({ text, author, url, avatar, job }) {
 
   return (
     <a
-      target="_blank"
-      rel="noopener noreferrer"
       target="_blank"
       rel="noopener noreferrer"
       href={url}

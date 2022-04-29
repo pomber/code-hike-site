@@ -1,1 +1,226 @@
-Waiting for [Docusaurus migration to MDX v2](https://github.com/facebook/docusaurus/issues/4029).
+Docusaurus is a static-site generator with a focus on documentation sites.
+
+Let's start by creating a new Docusaurus website inside the `my-website` directory with this command:
+
+```
+npx create-docusaurus@latest my-website classic
+```
+
+To use Code Hike we need to add these dependencies:
+
+```
+cd my-website
+npm i @mdx-js/react@2 docusaurus-theme-mdx-v2 @code-hike/mdx
+```
+
+<CH.Scrollycoding>
+
+```js docusaurus.config.js focus=2,7,16
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  presets: [
+    // ...
+  ],
+
+  themes: ["mdx-v2"],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        // ...
+      },
+    }),
+};
+
+module.exports = config;
+```
+
+### MDX v2 theme
+
+Code Hike requires MDX v2 but Docusaurus [doesn't support it yet](https://github.com/facebook/docusaurus/issues/4029). That's why we are using the [MDX v2 theme](https://github.com/pomber/docusaurus-mdx-2).
+
+We've already added the dependency, now we need to add the theme to the `docusaurus.config.js` file with _`themes: ["mdx-v2"]`_.
+
+There may be a few Docusuaurus features that don't work with mdx v2 yet, make sure to check the [known issues](https://github.com/pomber/docusaurus-mdx-2#known-issues).
+
+---
+
+{/* prettier-ignore */}
+```js docusaurus.config.js focus=2:5,14:16
+
+const theme = require("shiki/themes/nord.json")
+const {
+  remarkCodeHike,
+} = require("@code-hike/mdx")
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          beforeDefaultRemarkPlugins: [
+            [remarkCodeHike, { theme }],
+          ],
+          sidebarPath: require.resolve("./sidebars.js"),
+        },
+      },
+    ],
+  ],
+
+  themes: ["mdx-v2"],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        // ...
+      },
+    }),
+};
+
+module.exports = config;
+```
+
+### Remark plugin
+
+Now that Docusaurus can render MDX v2 we can add Code Hike to the `docusaurus.config.js`.
+
+We need to import the `remarkCodeHike` function from the _`@code-hike/mdx`_ package, and add it to the _`beforeDefaultRemarkPlugins`_ array.
+
+Next to the plugin you can pass a [config object](focus://2,15[30:38]). Almost always you'll want to pass a theme there. You can import one from shiki, or make a custom one.
+
+You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
+
+---
+
+{/* prettier-ignore */}
+```js docusaurus.config.js focus=19,20,22
+const theme = require("shiki/themes/nord.json")
+const {
+  remarkCodeHike,
+} = require("@code-hike/mdx")
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  presets: [
+    [
+      "classic",
+      {
+        docs: {
+          beforeDefaultRemarkPlugins: [
+            [remarkCodeHike, { theme }],
+          ],
+          sidebarPath: require.resolve("./sidebars.js"),
+        },
+        theme: {
+          customCss: [
+            require.resolve("@code-hike/mdx/styles.css"),
+            require.resolve("./src/css/custom.css"),
+          ],
+        },
+      },
+    ],
+  ],
+
+  themes: ["mdx-v2"],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      navbar: {
+        // ...
+      },
+    }),
+};
+
+module.exports = config;
+```
+
+### Styles
+
+Then we need to import Code Hike's stylesheet.
+
+There's a `customCSS` property in the theme config. You can replace it with an array and add Code Hike's stylesheet to it.
+
+If you want to customize Code Hike's styles with a global stylesheet make sure to import it after this import to avoid specificity issues.
+
+You can learn more about customizing Code Hike styles in the [styling docs](/docs/intro).
+
+---
+
+```text blog/2019-05-29-long-blog-post.md focus=12
+---
+slug: long-blog-post
+title: Long Blog Post
+authors: endi
+tags: [hello, docusaurus]
+---
+
+This is the summary of a very long blog post,
+
+Use a comment to limit blog post size in the list view.
+
+<!--truncate-->
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque elementum dignissim ultricies. Fusce rhoncus
+ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Pellentesque elementum dignissim ultricies. Fusce rhoncus
+ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet
+
+```
+
+### MDX v2 breaking changes
+
+MDX v2 has some breaking changes in the syntax. So if you already have content using mdx v1 make sure to migrate to the new syntax. You can find [the migration guide on the mdx website](https://mdxjs.com/migrating/v2/).
+
+If you are following this guide with the Docusaurus template the only change we need to make is one comment in the blog post `2019-05-29-long-blog-post.md`.
+
+Change it from `<!--truncate-->` to `{/* truncate */}`.
+
+---
+
+````md docs/intro.md
+---
+sidebar_position: 1
+---
+
+### Lorem ipsum
+
+```python hello.py
+# mark[22:30]
+print("This is Code Hike")
+```
+
+Lorem ipsum dolor sit amet.
+````
+
+Now go and edit a page and add some Code Hike components.
+
+For example, let's replace the markdown in `docs/intro.md`.
+
+If you run the website (with `npm run start`) and go to `localhost:3000/docs/intro` you should see the Code Hike components rendered:
+
+<CH.Preview
+  show="/docs/preview/installation-1"
+  zoom={0.8}
+  style={{
+    height: 200,
+    width: "100%",
+  }}
+/>
+
+You can find more things to try on the [demos page](https://codehike.org/#demos).
+
+</CH.Scrollycoding>
+ 
+<div style={{ height: 20 }} />
+
+A demo of Code Hike + Docusaurus is available on [GitHub](https://github.com/code-hike/codehike/tree/main/examples/docusaurus). You can also try it out from your browser on [StackBlitz](https://stackblitz.com/github/code-hike/codehike/tree/main/examples/docusaurus?file=docs/intro.md&initialpath=docs/intro).
+
+<div style={{ height: 200 }} />
