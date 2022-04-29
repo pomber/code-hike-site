@@ -1,6 +1,6 @@
 Docusaurus is a static-site generator with a focus on documentation sites.
 
-This command will create a new Docusaurus website inside the `my-website` directory.
+Let's start by creating a new Docusaurus website inside the `my-website` directory with this command:
 
 ```
 npx create-docusaurus@latest my-website classic
@@ -42,7 +42,7 @@ Code Hike requires MDX v2 but Docusaurus [doesn't support it yet](https://github
 
 We've already added the dependency, now we need to add the theme to the `docusaurus.config.js` file with _`themes: ["mdx-v2"]`_.
 
-There may be a few docusaurs features that don't work with mdx v2 yet, make sure to check the [known issues](https://github.com/pomber/docusaurus-mdx-2#known-issues).
+There may be a few Docusuaurus features that don't work with mdx v2 yet, make sure to check the [known issues](https://github.com/pomber/docusaurus-mdx-2#known-issues).
 
 ---
 
@@ -90,9 +90,9 @@ Now that Docusaurus can render MDX v2 we can add Code Hike to the `docusaurus.co
 
 We need to import the `remarkCodeHike` function from the _`@code-hike/mdx`_ package, and add it to the _`beforeDefaultRemarkPlugins`_ array.
 
-Next to the plugin you can pass a [config object](focus://14[30:38]). Almost always you'll want to pass a theme there. You can import one from shiki, or make a custom one.
+Next to the plugin you can pass a [config object](focus://2,15[30:38]). Almost always you'll want to pass a theme there. You can import one from shiki, or make a custom one.
 
-You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/intro) for more information.
+You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
 
 ---
 
