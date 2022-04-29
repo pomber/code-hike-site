@@ -36,16 +36,39 @@ mdxOptions = {
 
 ## Auto Import
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+<CH.Section>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+By default, any Code Hike component used in your mdx files will be automatically imported. But there are some tools that doesn't work well with imports in mdx files, so you can disable this feature by setting _`autoImport: false`_.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```js
+mdxOptions = {
+  remarkPlugins: [
+    [
+      remarkCodeHike,
+      {
+        theme: someTheme,
+        // focus
+        // mark[21:25]
+        autoImport: false,
+      },
+    ],
+  ],
+}
+```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CH.Section>
+
+Then you'll need to pass Code Hike components as a prop like this:
+
+```js
+import Example from "./example.mdx"
+import { CH } from "@code-hike/mdx/components"
+
+function App() {
+  // mark[19:37]
+  return <Example components={{ CH }} />
+}
+```
 
 ## Theme
 
