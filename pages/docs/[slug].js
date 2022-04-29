@@ -9,7 +9,10 @@ import { getMDXComponent } from "mdx-bundler/client";
 export async function getStaticPaths() {
   return {
     paths: sidebar
-      .filter(([title, slug]) => !slug.startsWith("installation"))
+      .filter(
+        ([title, slug]) =>
+          !slug.startsWith("installation") && !slug.startsWith("configuration")
+      )
       .map(([title, slug]) => ({
         params: { slug, title },
       })),
