@@ -15,6 +15,17 @@
   margin-right: -1rem;
 }
 
+.docs .configuration-themes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 48px;
+  /* grid-row-gap: 16px; */
+}
+.docs .configuration-themes > .ch-codegroup {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 /* docs collapsable */
 
 @keyframes open-collapsable {
