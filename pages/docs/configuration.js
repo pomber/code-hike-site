@@ -42,7 +42,9 @@ function getCodeSection(themeCodes) {
     const Component = getMDXComponent(code);
     return (
       <div key={i}>
-        <h3>{themeName}</h3>
+        <h4>
+          <code>shiki/themes/{themeName}.json</code>
+        </h4>
         {Component()}
       </div>
     );
