@@ -1,0 +1,22 @@
+<CH.Section>
+
+Line numbers are turned off by default (I'm not a fan of line numbers). You can turn them on by setting _`lineNumbers: true`_.
+
+```js
+mdxOptions = {
+  remarkPlugins: [
+    [
+      remarkCodeHike,
+      {
+        theme: someTheme,
+        // focus
+        // mark[22:25]
+        // label but do you really need line numbers?
+        lineNumbers: true,
+      },
+    ],
+  ],
+}
+```
+
+</CH.Section>

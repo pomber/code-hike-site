@@ -5,7 +5,7 @@ import theme from "./ch-theme";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
-export async function mdxToCode(filename) {
+export async function mdxToCode(filename, config = {}) {
   const mdxSource = await fs.promises.readFile(
     `./docs/${filename}.mdx`,
     "utf8"
@@ -30,7 +30,7 @@ export async function mdxToCode(filename) {
           },
         ],
       ];
-      options.remarkPlugins = [[remarkCodeHike, { theme }]];
+      options.remarkPlugins = [[remarkCodeHike, { theme, ...config }]];
       return options;
     },
   });

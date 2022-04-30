@@ -1,5 +1,4 @@
 import { Collapsable } from "../../src/collapsable";
-import { Frameworks } from "../../src/frameworks";
 
 import React, { useMemo } from "react";
 import { BUNDLED_LANGUAGES } from "shiki";
@@ -10,7 +9,10 @@ import { getMDXComponent } from "mdx-bundler/client";
 export async function getStaticPaths() {
   return {
     paths: sidebar
-      .filter(([title, slug]) => !slug.startsWith("installation"))
+      .filter(
+        ([title, slug]) =>
+          !slug.startsWith("installation") && !slug.startsWith("configuration")
+      )
       .map(([title, slug]) => ({
         params: { slug, title },
       })),
@@ -42,7 +44,6 @@ export default function Page({ slug, previewSource, title }) {
           LangCount,
           SideBySide,
           Collapsable,
-          Frameworks,
         }}
       />
     </DocsLayout>
