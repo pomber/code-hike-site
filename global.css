@@ -26,6 +26,14 @@
   margin-bottom: 0px !important;
 }
 
+.hide-copy .ch-copy-button {
+  display: none;
+}
+
+.hide-copy:hover .ch-copy-button {
+  display: block;
+}
+
 /* docs collapsable */
 
 @keyframes open-collapsable {

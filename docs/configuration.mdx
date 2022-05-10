@@ -16,6 +16,8 @@ mdxOptions = {
       {
         // link[9:26] #line-numbers
         lineNumbers: false,
+        // link[9:29] #copy-button
+        showCopyButton: false,
         // link[9:24] #auto-import
         autoImport: true,
         // link[9:24] #theme
@@ -33,6 +35,46 @@ mdxOptions = {
 ## Line Numbers
 
 <LineNumbersSection />
+
+## Copy Button
+
+To add a copy button to your code, set _`showCopyButton`_ to _`true`_.
+
+<CH.Code showCopyButton={true}>
+
+```js your.config.js
+mdxOptions = {
+  remarkPlugins: [
+    [
+      remarkCodeHike,
+      {
+        theme: someTheme,
+        // focus
+        // mark[25:28]
+        showCopyButton: true,
+      },
+    ],
+  ],
+}
+```
+
+</CH.Code>
+
+A common pattern is to have the copy button hidden by default, but show it when the user hovers over the code. You can do it with this CSS:
+
+<CH.Code showCopyButton={true} className="hide-copy">
+
+```css
+.ch-codeblock .ch-copy-button {
+  display: none;
+}
+
+.ch-codeblock:hover .ch-copy-button {
+  display: block;
+}
+```
+
+</CH.Code>
 
 ## Auto Import
 

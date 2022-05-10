@@ -19,6 +19,7 @@ export async function getStaticProps() {
       const code = await mdxToCode("configuration/theme", {
         theme,
         lineNumbers: true,
+        showCopyButton: true,
       });
       return { themeName, code };
     }
