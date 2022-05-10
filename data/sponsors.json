@@ -1,11 +1,19 @@
 {
   "sponsors": [
     {
-      "name": "Facebook Open Source",
+      "name": "Meta",
       "login": "facebook",
       "avatarUrl": "https://avatars.githubusercontent.com/u/69631?v=4",
       "location": "Menlo Park, California",
       "url": "https://github.com/facebook",
+      "isOrg": true
+    },
+    {
+      "name": "Outerbounds",
+      "login": "outerbounds",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/82194325?v=4",
+      "location": "",
+      "url": "https://github.com/outerbounds",
       "isOrg": true
     },
     {
