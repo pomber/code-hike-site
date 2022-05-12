@@ -351,6 +351,14 @@
       "location": "Vancouver, Canada",
       "url": "https://github.com/loopholelabs",
       "isOrg": true
+    },
+    {
+      "name": "Jamie Rolfs",
+      "login": "jrolfs",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/288160?s=128&v=4",
+      "location": "San Francisco, California",
+      "url": "https://github.com/jrolfs",
+      "isOrg": false
     }
   ],
   "access": [

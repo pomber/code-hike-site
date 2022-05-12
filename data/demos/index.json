@@ -78,9 +78,10 @@
       "obgibson",
       "Salakar",
       "hamelsmu",
-      "loopholelabs"
+      "loopholelabs",
+      "jrolfs"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight-preview",
