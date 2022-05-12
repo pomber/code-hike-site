@@ -1,1 +1,379 @@
-See this [example](https://github.com/code-hike/examples/tree/main/contentlayer). Guide coming soon.
+[Contentlayer](https://www.contentlayer.dev/) is a content preprocessor that transforms MDX files into type-safe JSON you can easily import into your application.
+
+> A demo of Code Hike + Contentlayer is available on [GitHub](https://github.com/code-hike/codehike/tree/main/examples/contentlayer). You can also try it out from your browser on [StackBlitz](https://stackblitz.com/github/code-hike/codehike/tree/main/examples/contentlayer?file=posts/one.mdx&initialpath=posts/one).
+
+We are going to use it together with Next.js, so let's start by installing it:
+
+```bash
+npm install react react-dom next
+```
+
+We also need the dependencies for Contentlayer and its plugin:
+
+```bash
+npm install contentlayer next-contentlayer
+```
+
+And, of course, we need Code Hike:
+
+```bash
+npm install @code-hike/mdx
+```
+
+<CH.Scrollycoding>
+
+<CH.Code>
+
+````mdx posts/one.mdx
+---
+title: Post one
+---
+
+This is the first post.
+
+```python hello.py
+# mark[22:30]
+print("This is Code Hike")
+```
+````
+
+````mdx posts/two.mdx
+---
+title: Post two
+---
+
+This is the second post.
+
+```js foo.js
+const x = 2
+```
+````
+
+</CH.Code>
+
+### `./posts`
+
+Let's start with the content.
+
+Create a `./posts/` folder with some files in it. For example, `posts/one.mdx` and `posts/two.mdx`.
+
+We can add some metadata, like a title, using frontmatter. Contentlayer will understand that out of the box.
+
+---
+
+```js next.config.js
+const {
+  withContentlayer,
+} = require("next-contentlayer")
+
+module.exports = withContentlayer({})
+```
+
+### `next.config.js`
+
+Then create a `next.config.js` file at the root of your project.
+
+Here we tell Next.js that we want to use Contentlayer using the _`withContentlayer`_ plugin from _`"next-contentlayer"`_.
+
+The _`{}`_ parameter is the Next.js configuration object. So if you need to set any option, you can do it there.
+
+---
+
+```js contentlayer.config.js
+import {
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files"
+
+const Post = defineDocumentType(() => ({
+  name: "Post",
+  filePathPattern: `**/*.mdx`,
+  contentType: "mdx",
+}))
+export default makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post],
+})
+```
+
+### `contentlayer.config.js`
+
+Contentlayer needs its own configuration file.
+
+Create a `contentlayer.config.js` file.
+
+---
+
+```js contentlayer.config.js
+import {
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files"
+// focus(1:6)
+import { remarkCodeHike } from "@code-hike/mdx"
+import { createRequire } from "module"
+const require = createRequire(
+  import.meta.url
+)
+const theme = require("shiki/themes/nord.json")
+
+const Post = defineDocumentType(() => ({
+  name: "Post",
+  filePathPattern: `**/*.mdx`,
+  contentType: "mdx",
+}))
+// focus
+export default makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post],
+  // focus(1:5)
+  mdx: {
+    remarkPlugins: [
+      [remarkCodeHike, { theme }],
+    ],
+  },
+})
+```
+
+More config 1
+
+---
+
+```js contentlayer.config.js
+import {
+  defineDocumentType,
+  makeSource,
+} from "contentlayer/source-files"
+import { remarkCodeHike } from "@code-hike/mdx"
+import { createRequire } from "module"
+const require = createRequire(
+  import.meta.url
+)
+const theme = require("shiki/themes/nord.json")
+
+const Post = defineDocumentType(() => ({
+  name: "Post",
+  filePathPattern: `**/*.mdx`,
+  contentType: "mdx",
+  // focus(1:13)
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (doc) =>
+        `/posts/${doc._raw.flattenedPath}`,
+    },
+  },
+}))
+export default makeSource({
+  contentDirPath: "posts",
+  documentTypes: [Post],
+  mdx: {
+    remarkPlugins: [
+      [remarkCodeHike, { theme }],
+    ],
+  },
+})
+```
+
+Add fields
+
+---
+
+```js pages/_app.js
+import "@code-hike/mdx/dist/index.css"
+
+function MyApp({
+  Component,
+  pageProps,
+}) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+### `pages/_app.js`
+
+add styles
+
+---
+
+```json jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
+      ]
+    }
+  }
+}
+```
+
+### `jsconfig.json`
+
+Add jsconfig file
+
+---
+
+```js pages/index.js
+import { allPosts } from "contentlayer/generated"
+
+export async function getStaticProps() {
+  return { props: { posts: allPosts } }
+}
+
+export default function Home({
+  posts,
+}) {
+  return (
+    <div>
+      <h1>A Blog</h1>
+    </div>
+  )
+}
+```
+
+### `pages/index.js`
+
+the index static props
+
+---
+
+```js pages/index.js focus=17:26
+import Link from "next/link"
+import {
+  allPosts,
+  Post,
+} from "contentlayer/generated"
+
+export async function getStaticProps() {
+  // focus[12:37]
+  return { props: { posts: allPosts } }
+}
+
+// focus(1:3)
+export default function Home({
+  posts,
+}) {
+  return (
+    <div>
+      <h1>A Blog</h1>
+      Posts:
+      <ul>
+        {posts.map((post, idx) => (
+          <li key={idx}>
+            <Link href={post.url}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+the index post list
+
+---
+
+```js pages/posts/[slug].js
+import { useMDXComponent } from "next-contentlayer/hooks"
+import { allPosts } from "contentlayer/generated"
+
+// focus(1:18)
+export async function getStaticPaths() {
+  const paths: string[] = allPosts.map(
+    (post) => post.url
+  )
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({
+  params,
+}) {
+  const post = allPosts.find(
+    (post) =>
+      post._raw.flattenedPath ===
+      params.slug
+  )
+  return { props: { post } }
+}
+
+const PostLayout = ({ post }) => {
+  const MDXContent = useMDXComponent(
+    post.body.code
+  )
+  return (
+    <article style={{ width: 600 }}>
+      <h1>{post.title}</h1>
+      <MDXContent />
+    </article>
+  )
+}
+
+export default PostLayout
+```
+
+### `pages/posts/[slug].js`
+
+the post layout static
+
+---
+
+```js pages/posts/[slug].js
+import { allPosts } from "contentlayer/generated"
+import { useMDXComponent } from "next-contentlayer/hooks"
+
+export async function getStaticPaths() {
+  const paths: string[] = allPosts.map(
+    (post) => post.url
+  )
+  return { paths, fallback: false }
+}
+
+export async function getStaticProps({
+  params,
+}) {
+  const post = allPosts.find(
+    (post) =>
+      post._raw.flattenedPath ===
+      params.slug
+  )
+  return { props: { post } }
+}
+
+// focus(1:13)
+const PostLayout = ({ post }) => {
+  const MDXContent = useMDXComponent(
+    post.body.code
+  )
+  return (
+    <article style={{ width: 600 }}>
+      <h1>{post.title}</h1>
+      <MDXContent />
+    </article>
+  )
+}
+
+export default PostLayout
+//
+```
+
+the post layout
+
+</CH.Scrollycoding>
+
+<div style={{ height: 20 }} />
+
+Again, a demo of Code Hike + Contentlayer is available on [GitHub](https://github.com/code-hike/codehike/tree/main/examples/contentlayer). You can also try it out from your browser on [StackBlitz](https://stackblitz.com/github/code-hike/codehike/tree/main/examples/contentlayer?file=posts/one.mdx&initialpath=posts/one).
+
+<div style={{ height: 200 }} />
