@@ -53,9 +53,9 @@ const x = 2
 
 ### `./posts`
 
-Let's start with the content.
+We are going to build a very minimal blog. Let's start with the content.
 
-Create a `./posts/` folder with some files in it. For example, `posts/one.mdx` and `posts/two.mdx`.
+**Create a `./posts/` folder with some files in it.** For example, `posts/one.mdx` and `posts/two.mdx`.
 
 We can add some metadata, like a title, using frontmatter. Contentlayer will understand that out of the box.
 
@@ -71,7 +71,7 @@ module.exports = withContentlayer({})
 
 ### `next.config.js`
 
-Then create a `next.config.js` file at the root of your project.
+Then **create a `next.config.js` file at the root of your project**.
 
 Here we tell Next.js that we want to use Contentlayer using the _`withContentlayer`_ plugin from _`"next-contentlayer"`_.
 
@@ -98,23 +98,22 @@ export default makeSource({
 
 ### `contentlayer.config.js`
 
-Contentlayer needs its own configuration file.
+Contentlayer lets you have different types of content, each with its own schema. In our case, we'll have only one type of content: posts.
 
-Create a `contentlayer.config.js` file.
+**Create a configuration file for Contentlayer** at the root of your project, and use `defnineDocumentType` and `makeSource` to define that [the content comes from the `./posts` folder](focus://8,12), that [it should be treated as mdx](focus://8,9).
 
 ---
 
+{/* prettier-ignore */}
 ```js contentlayer.config.js
 import {
   defineDocumentType,
   makeSource,
 } from "contentlayer/source-files"
-// focus(1:6)
+// focus(1:4)
 import { remarkCodeHike } from "@code-hike/mdx"
 import { createRequire } from "module"
-const require = createRequire(
-  import.meta.url
-)
+const require = createRequire(import.meta.url)
 const theme = require("shiki/themes/nord.json")
 
 const Post = defineDocumentType(() => ({
@@ -135,10 +134,15 @@ export default makeSource({
 })
 ```
 
-More config 1
+Now we add Code Hike configuration.
+
+**Import _`remarkCodeHike`_ and a theme.** You may need a little [import/require dance](focus://6:8) to import a json file. For more information about themes, see the [themes docs](/docs/configuration#theme).
+
+Then **add the Code Hike plugin to the [mdx options](focus://18:22)**. You can pass more options inside the configuration object if you need to, see the [configuration docs](/docs/configuration).
 
 ---
 
+{/* prettier-ignore */}
 ```js contentlayer.config.js
 import {
   defineDocumentType,
@@ -146,9 +150,7 @@ import {
 } from "contentlayer/source-files"
 import { remarkCodeHike } from "@code-hike/mdx"
 import { createRequire } from "module"
-const require = createRequire(
-  import.meta.url
-)
+const require = createRequire(import.meta.url)
 const theme = require("shiki/themes/nord.json")
 
 const Post = defineDocumentType(() => ({
@@ -181,26 +183,13 @@ export default makeSource({
 })
 ```
 
-Add fields
+There's one more thing we need to add to the contentlayer config: information about the document metadata.
 
----
+**We add two fields:**
 
-```js pages/_app.js
-import "@code-hike/mdx/dist/index.css"
+**One [for the title](focus://14:19)**, that comes directly from [the post frontmatter](focus://posts/one.mdx#1:3).
 
-function MyApp({
-  Component,
-  pageProps,
-}) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
-```
-
-### `pages/_app.js`
-
-add styles
+And **another one [for the URL](focus://20:26)**, this one is computed from the path of the file.
 
 ---
 
@@ -219,12 +208,45 @@ add styles
 
 ### `jsconfig.json`
 
-Add jsconfig file
+We need to **create one more config file**.
+
+Contentlayer generates files in the `.contentlayer/generated` folder. To import those files, we need a `jsconfig.json` file that tells the compiler where to look for the generated files.
+
+If you are using typescript, you need the same but for the `tsconfig.json` file.
 
 ---
 
+```js pages/_app.js
+import "@code-hike/mdx/dist/index.css"
+
+function MyApp({
+  Component,
+  pageProps,
+}) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+### `pages/_app.js`
+
+Then we **use `pages/_app.js` file to import Code Hike's stylesheet**.
+
+You can find more information about the `_app.js` file in the [Next.js official docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+If you want to customize Code Hike's styles with a global stylesheet make sure to import it after this import to avoid specificity issues.
+
+You can learn more about customizing Code Hike styles in the [styling docs](/docs/styling).
+
+---
+
+{/* prettier-ignore */}
 ```js pages/index.js
-import { allPosts } from "contentlayer/generated"
+import Link from "next/link"
+import { 
+  allPosts 
+} from "contentlayer/generated"
 
 export async function getStaticProps() {
   return { props: { posts: allPosts } }
@@ -243,15 +265,36 @@ export default function Home({
 
 ### `pages/index.js`
 
-the index static props
+Now we can add a page to our Next.js app.
+
+In `pages/index.js`, we want to show a list of all the posts. So we import _`allPosts`_ from the generated files, and pass it as a prop to the page using _`getStaticProps`_.
+
+The _`posts`_ array will be something like this:
+
+```js
+[
+  {
+    title: "Post one",
+    _id: "one.mdx",
+    _raw: { ... },
+    body: { ... },
+    type: "Post",
+    url: "/posts/one",
+  },
+  {
+    title: "Post two",
+    ...
+  },
+]
+```
 
 ---
 
-```js pages/index.js focus=17:26
+{/* prettier-ignore */}
+```js pages/index.js focus=16:25
 import Link from "next/link"
 import {
-  allPosts,
-  Post,
+  allPosts
 } from "contentlayer/generated"
 
 export async function getStaticProps() {
@@ -268,8 +311,8 @@ export default function Home({
       <h1>A Blog</h1>
       Posts:
       <ul>
-        {posts.map((post, idx) => (
-          <li key={idx}>
+        {posts.map((post) => (
+          <li key={post._id}>
             <Link href={post.url}>
               <a>{post.title}</a>
             </Link>
@@ -281,13 +324,23 @@ export default function Home({
 }
 ```
 
-the index post list
+Now we **render the lists of posts** using the fields we defined in the document type: the post url and title.
+
+If you run the app now, you should see the following:
+
+<CH.Preview
+  show="https://nextjs-trtthd--3000.local.webcontainer.io/"
+  style={{
+    height: 220,
+    width: "100%",
+  }}
+/>
 
 ---
 
 ```js pages/posts/[slug].js
-import { useMDXComponent } from "next-contentlayer/hooks"
 import { allPosts } from "contentlayer/generated"
+import { useMDXComponent } from "next-contentlayer/hooks"
 
 // focus(1:18)
 export async function getStaticPaths() {
@@ -325,7 +378,9 @@ export default PostLayout
 
 ### `pages/posts/[slug].js`
 
-the post layout static
+To render a specific post, we use [Next.js dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) and create a `[slug].js` page inside the `pages/posts/` folder (the name of the `posts` folder should be the same that we used when we created the [`url` field](focus://contentlayer.config.js#24[10:16])).
+
+We use _`getStaticPaths`_ to tell Next.js the post URLs, and _`getStaticProps`_ to pass the post data to the page.
 
 ---
 
@@ -368,7 +423,19 @@ export default PostLayout
 //
 ```
 
-the post layout
+Then we finally render the post.
+
+We use the _`useMDXComponent`_ hook [from Contentlayer](focus://2). It transforms the _`post.body.code`_ into a React component.
+
+Now if we open the post in the browser, we should see the following:
+
+<CH.Preview
+  show="https://nextjs-trtthd--3000.local.webcontainer.io/posts/one"
+  style={{
+    height: 220,
+    width: "100%",
+  }}
+/>
 
 </CH.Scrollycoding>
 

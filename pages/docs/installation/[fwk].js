@@ -25,6 +25,13 @@ const all = [
       "Add Code Hike syntax highlighting and components in your Docusaurus mdx",
   },
   {
+    id: "contentlayer",
+    name: "Next.js + Contentlayer",
+    title: "How to use Code Hike with Contentlayer",
+    description:
+      "Use Code Hike syntax highlighting and components with Contentlayer",
+  },
+  {
     id: "nextra",
     name: "Nextra",
   },
@@ -35,10 +42,6 @@ const all = [
   {
     id: "vite",
     name: "Vite",
-  },
-  {
-    id: "contentlayer",
-    name: "Next.js + Contentlayer",
   },
   {
     id: "docspage",
