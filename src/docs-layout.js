@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { IdProvider } from "@radix-ui/react-id";
 import { CodeHikeLogo, GitHubLink, MenuIcon, TwitterLink } from "./logo";
