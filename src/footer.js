@@ -1,7 +1,9 @@
 export function Footer() {
   return (
     <footer className="mb-12 text-center flex items-center gap-4">
-      Powered by
+      <span title="as in: they are letting Code Hike use their services for free">
+        Powered by
+      </span>
       <a
         href="https://vercel.com?utm_source=codehike&utm_campaign=oss"
         target="_blank"
