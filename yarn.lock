@@ -30,10 +30,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@code-hike/mdx@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.5.0.tgz#764097cfd4f758591d617bda15214e02b9a711ba"
-  integrity sha512-Ny4xC+itXyg96DWJx3yMJX97cLsqaSPhgyO96UzR6Z29gvMdhJxi5qo72ttAn+tHolCM7lmvfXlHRk4A5KjZEw==
+"@code-hike/mdx@0.5.1--canary.179.943ad1d.0":
+  version "0.5.1--canary.179.943ad1d.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.5.1--canary.179.943ad1d.0.tgz#597cd6854260e603fc23ee7ed309a2822a31e1cf"
+  integrity sha512-PIWDNvfHyDTC8UFpB+ifS032f4toJyTc0j2/JWk1IsdrQiqXbOrtyD1Y9RecMNawdl8ySpIIP27B4j6n77f8bA==
   dependencies:
     hast-util-to-estree "^1.4.0"
     is-plain-obj "^3.0.0"

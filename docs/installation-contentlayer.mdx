@@ -61,6 +61,8 @@ We can add some metadata, like a title, using frontmatter. Contentlayer will und
 
 ---
 
+<CH.Code show={["posts/one.mdx","next.config.js"]}>
+
 ```js next.config.js
 const {
   withContentlayer,
@@ -68,6 +70,8 @@ const {
 
 module.exports = withContentlayer({})
 ```
+
+</CH.Code>
 
 ### `next.config.js`
 
@@ -78,6 +82,8 @@ Here we tell Next.js that we want to use Contentlayer using the _`withContentlay
 The _`{}`_ parameter is the Next.js configuration object. So if you need to set any option, you can do it there.
 
 ---
+
+<CH.Code show={["posts/one.mdx","contentlayer.config.js"]}>
 
 ```js contentlayer.config.js
 import {
@@ -95,6 +101,8 @@ export default makeSource({
   documentTypes: [Post],
 })
 ```
+
+</CH.Code>
 
 ### `contentlayer.config.js`
 
@@ -193,6 +201,8 @@ And **another one [for the URL](focus://20:26)**, this one is computed from the 
 
 ---
 
+<CH.Code show={["contentlayer.config.js","jsconfig.json"]}>
+
 ```json jsconfig.json
 {
   "compilerOptions": {
@@ -206,6 +216,8 @@ And **another one [for the URL](focus://20:26)**, this one is computed from the 
 }
 ```
 
+</CH.Code>
+
 ### `jsconfig.json`
 
 We need to **create one more config file**.
@@ -215,6 +227,8 @@ Contentlayer generates files in the `.contentlayer/generated` folder. To import 
 If you are using typescript, you need the same but for the `tsconfig.json` file.
 
 ---
+
+<CH.Code show={["contentlayer.config.js","pages/_app.js"]}>
 
 ```js pages/_app.js
 import "@code-hike/mdx/dist/index.css"
@@ -229,6 +243,8 @@ function MyApp({
 export default MyApp
 ```
 
+</CH.Code>
+
 ### `pages/_app.js`
 
 Then we **use `pages/_app.js` file to import Code Hike's stylesheet**.
@@ -240,6 +256,8 @@ If you want to customize Code Hike's styles with a global stylesheet make sure t
 You can learn more about customizing Code Hike styles in the [styling docs](/docs/styling).
 
 ---
+
+<CH.Code show={["contentlayer.config.js","pages/index.js"]}>
 
 {/* prettier-ignore */}
 ```js pages/index.js
@@ -262,6 +280,8 @@ export default function Home({
   )
 }
 ```
+
+</CH.Code>
 
 ### `pages/index.js`
 
@@ -338,13 +358,15 @@ If you run the app now, you should see the following:
 
 ---
 
+<CH.Code show={["contentlayer.config.js","pages/posts/[slug].js"]}>
+
 ```js pages/posts/[slug].js
 import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
 // focus(1:18)
 export async function getStaticPaths() {
-  const paths: string[] = allPosts.map(
+  const paths = allPosts.map(
     (post) => post.url
   )
   return { paths, fallback: false }
@@ -376,6 +398,8 @@ const PostLayout = ({ post }) => {
 export default PostLayout
 ```
 
+</CH.Code>
+
 ### `pages/posts/[slug].js`
 
 To render a specific post, we use [Next.js dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) and create a `[slug].js` page inside the `pages/posts/` folder (the name of the `posts` folder should be the same that we used when we created the [`url` field](focus://contentlayer.config.js#24[10:16])).
@@ -389,7 +413,7 @@ import { allPosts } from "contentlayer/generated"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
 export async function getStaticPaths() {
-  const paths: string[] = allPosts.map(
+  const paths = allPosts.map(
     (post) => post.url
   )
   return { paths, fallback: false }
