@@ -27,6 +27,7 @@ const all = [
   {
     id: "contentlayer",
     name: "Next.js + Contentlayer",
+    cardId: "contentlayer",
     title: "How to use Code Hike with Contentlayer",
     description:
       "Use Code Hike syntax highlighting and components with Contentlayer",
