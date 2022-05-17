@@ -351,6 +351,14 @@
       "location": "San Francisco, California",
       "url": "https://github.com/jrolfs",
       "isOrg": false
+    },
+    {
+      "name": "Randall Hunt",
+      "login": "ranman",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/175163?s=128&u=774ff2b326c54b94a270dca60cffffea1197064a&v=4",
+      "location": "Los Angeles, CA",
+      "url": "https://github.com/ranman",
+      "isOrg": false
     }
   ],
   "access": [
