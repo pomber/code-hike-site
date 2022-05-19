@@ -3,13 +3,14 @@
     {
       "files": ["*.mdx"],
       "options": {
-        "semi": false
+        "semi": false,
+        "printWidth": 40
       }
     },
     {
       "files": ["show.mdx"],
       "options": {
-        "printWidth": 40,
+        "printWidth": 54,
         "semi": false
       }
     },

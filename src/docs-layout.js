@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import { IdProvider } from "@radix-ui/react-id";
 import { CodeHikeLogo, GitHubLink, MenuIcon, TwitterLink } from "./logo";
@@ -45,7 +44,12 @@ export function DocsLayout({ title, h1, slug, children, cardId, description }) {
             <Link href="/">
               <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
                 <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
-                <h1 className="text-2xl font-bold">Code Hike</h1>
+                <h1 className="text-2xl font-bold">
+                  Code Hike
+                  <span className="text-sm pl-2 font-normal text-gray-700">
+                    v0.5.1
+                  </span>
+                </h1>
               </a>
             </Link>
 

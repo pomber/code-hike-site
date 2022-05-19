@@ -17,6 +17,11 @@ module.exports = {
     "editorLineNumber.foreground": "#aaaaaa",
     "editor.selectionBackground": "#61616150",
     "editor.selectionHighlightBackground": "#292929",
+    "sideBar.border": "#444444",
+    "sideBar.background": "#292929",
+    "sideBar.foreground": "#a0a0a0",
+    "list.hoverForeground": "#ffffff",
+    "list.hoverBackground": "#323232",
     "codeHike.buttons": "#949494",
   },
   tokenColors: [
