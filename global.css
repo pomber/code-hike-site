@@ -26,11 +26,11 @@
   margin-bottom: 0px !important;
 }
 
-.hide-copy .ch-copy-button {
+.hide-copy .ch-code-button {
   display: none;
 }
 
-.hide-copy:hover .ch-copy-button {
+.hide-copy:hover .ch-code-button {
   display: block;
 }
 
