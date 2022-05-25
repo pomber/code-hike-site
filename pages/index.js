@@ -29,12 +29,19 @@ export default function Home({ homeDemoProps }) {
           <span className="text-blue-600 font-bold">syntax highlighter</span>.
         </h1>
 
-        <Link href={`/docs/introduction`}>
-          <a className="border-2 mt-20 mb-24 border-gray-600 hover:border-blue-600 text-xl md:w-72 p-2 rounded text-center">
-            Documentation
+        <div className="mt-20 mb-24 text-xl text-center">
+          <Link href={`/docs/introduction`}>
+            <a className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 mb-4 md:mb-0 rounded block md:inline-block">
+              Documentation
+            </a>
+          </Link>
+          <a
+            href="https://play.codehike.org"
+            className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 rounded block md:inline-block"
+          >
+            Playground
           </a>
-        </Link>
-
+        </div>
         {/* <div className="h-32" /> */}
 
         <HomeDemo {...homeDemoProps} />
@@ -61,27 +68,32 @@ function Testimonials() {
   return (
     <section className="w-full" id="testimonials">
       <Quote
-        text="This looks like the future of documentation"
+        text="This looks like the future of documentation."
         author="Guillermo Rauch"
         url="https://twitter.com/rauchg/status/1367199228494155786"
         avatar="https://github.com/rauchg.png"
         job="Vercel CEO"
       />
       <Quote
-        text="This is one of the most impressive tools for teaching I've seen in quite
-      some time"
+        text="This is one of the most impressive tools for teaching I've seen in quite some time."
         author="Tomasz Łakomy"
         url="https://twitter.com/tlakomy/status/1298686860785573888"
         avatar="https://github.com/tlakomy.png"
         job="Egghead instructor"
       />
       <Quote
-        text="This would definitely raise the bar on the formatting of technical
-        content"
+        text="This would definitely raise the bar on the formatting of technical content."
         author="Cassie Evans"
         url="https://twitter.com/cassiecodes/status/1277152181280485376"
         avatar="https://github.com/cassieevans.png"
         job="SVG magician"
+      />
+      <Quote
+        text="Code Hike is such a refreshing experience. I honestly think you will start to see these patterns everywhere across docs over the next few years."
+        author="David Boyne"
+        url="https://twitter.com/boyney123/status/1529444678554337280"
+        avatar="https://github.com/boyney123.png"
+        job="AWS developer advocate"
       />
     </section>
   );
