@@ -110,7 +110,9 @@
   {
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
-    "sponsors": [],
+    "sponsors": [
+      "berber1016"
+    ],
     "locked": true
   },
   {
