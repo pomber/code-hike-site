@@ -26,6 +26,10 @@
   margin-bottom: 0px !important;
 }
 
+.line-through * {
+  text-decoration: line-through;
+}
+
 .hide-copy .ch-code-button {
   display: none;
 }
