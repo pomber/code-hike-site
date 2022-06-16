@@ -33,12 +33,12 @@ There are two ways to add annotations:
 
 </CH.Spotlight>
 
-_`focus`_ is only one of the possible annotations. The full list is:
+`focus` is only one of the possible annotations. The full list is:
 
-- _`focus`_: keep the targeted code bright while dimming the rest
-- _`mark`_: add a background color to the targeted tokens
-- _`link`_: add links inside the code
-- _`withClass`_: add a class to the targeted code
+- [_`focus`_](#focus-annotation): keep the targeted code bright while dimming the rest
+- [_`mark`_](#mark-annotation): add a background color to the targeted tokens
+- [_`withClass`_](#withClass-annotation): add a class to the targeted code
+- [_`link`_](#link-annotation): add links inside the code
 
 First let's see the syntax to target different parts of the code.
 
@@ -178,6 +178,48 @@ aaaaaaaaaaaaaaaaaa
 
 Currently comment annotations are only supported on c-style (_`// some comment`_) syntax or bash like syntax (_`# some comment`_). In the future, all languages will be supported, you can follow [this issue](https://github.com/code-hike/codehike/issues/109) for updates.
 
+## Focus annotation
+
+<CH.Section>
+
+With the `focus` annotation, you can highlight a specific part of the code and dim the rest.
+
+The other functionality of the `focus` annotation is to make sure the focused code is visible without the need to scroll.
+
+</CH.Section>
+
+## Mark annotation
+
+Sometimes you want to highlight code without dimming the rest. You can use the `mark` annotation to do that.
+
+You can use it for lines:
+
+Or you can use inline, for tokens:
+
+## WithClass annotation
+
+If you want to add a CSS class to a part of the code, without the default styles of `mark`, you can use the `withClass` annotation.
+
+`withClass` annotations can only be used as comments.
+
 ## Link annotation
 
-Link annotations are only used as comments
+<CH.Section>
+
+You can add links inside the code using the `link` annotation.
+The link URL could be [external](focus://2,3[7:14]) or [internal](focus://4,5[10:17]).
+
+```py
+function lorem() {
+  // link[7:14] https://codehike.org
+  # link[7:14] https://codehike.org
+  let codehike = "be great";
+  // link[10:17] #mark-annotation
+  # link[10:17] #mark-annotation
+  return codehike
+}
+```
+
+`link` annotations can only be used as comments and with the column syntax (`link[x:y]`).
+
+</CH.Section>
