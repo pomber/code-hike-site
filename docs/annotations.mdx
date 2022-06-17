@@ -2,13 +2,14 @@ Annotations allow you to change how the code is displayed and also to add intera
 
 <CH.Spotlight>
 
-````mdx mark=1[7:13],5[1:7]
-```py focus=2
+````mdx mark=1[7:13],1[15:25],5[1:7],7[1:26]
+```py focus=2 mark=4[6:8]
 print(1)
 print(2)
 print(3)
 # focus
 print(4)
+# link[1:8] http://foo.com
 print(5)
 ```
 ````
@@ -17,7 +18,7 @@ There are two ways to add annotations:
 
 ---
 
-```mdx mark=1[7:13],5[1:7] focus=1
+```mdx mark=1[7:13],1[15:25],5[1:7],7[1:26] focus=1
 
 ```
 
@@ -25,7 +26,7 @@ There are two ways to add annotations:
 
 ---
 
-```mdx mark=1[7:13],5[1:7] focus=5
+```mdx mark=1[7:13],1[15:25],5[1:7],7[1:26] focus=5,7
 
 ```
 
@@ -33,7 +34,7 @@ There are two ways to add annotations:
 
 </CH.Spotlight>
 
-`focus` is only one of the possible annotations. The current list of stable annotations is:
+The current stable annotations are:
 
 - [_`focus`_](#focus-annotation): keep the targeted code bright while dimming the rest
 - [_`mark`_](#mark-annotation): add a background color to the targeted tokens
@@ -202,39 +203,58 @@ The other functionality of the `focus` annotation is to make sure the focused co
 
 Sometimes you want to highlight code without dimming the rest. You can use the `mark` annotation to do that.
 
-You can use it for lines:
+You can use it to highlight lines:
 
-````md
+<SideBySide>
+
+````md your.mdx
 ```py
-print("This is Code Hike")
+print("This is line 1")
 # mark
-print("This is Code Hike")
-print("This is Code Hike")
+print("This is line 2")
+print("This is line 3")
 ```
 ````
 
-```py
-print("This is Code Hike")
-# mark
-print("This is Code Hike")
-print("This is Code Hike")
-```
+<CH.Preview
+  show="/docs/preview/mark-1"
+  zoom={1.1}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
 
-Or you can use inline, for tokens:
+</SideBySide>
 
-````md
+Or you can use it inline, for tokens:
+
+<SideBySide>
+
+````md your.mdx
 ```py
-# mark[16:24]
-print("This is Code Hike")
+# mark[7:11]
+class Lorem:
+  def dolor(self):
+    # mark[5:10]
+    return "sit"
 ```
 ````
 
-```py
-# mark[16:24]
-print("This is Code Hike")
-```
+<CH.Preview
+  show="/docs/preview/mark-2"
+  zoom={1.1}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
 
 If you want to change the background or any other style, you can pass a CSS class to the annotation:
+
+<SideBySide>
 
 <CH.Code>
 
@@ -255,10 +275,16 @@ print("This is Code Hike")
 
 </CH.Code>
 
-```py
-# mark[16:24]
-print("This is Code Hike")
-```
+<CH.Preview
+  show="/docs/preview/mark-3"
+  zoom={1.1}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
 
 ## `withClass` annotation
 
