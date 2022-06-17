@@ -204,7 +204,61 @@ Sometimes you want to highlight code without dimming the rest. You can use the `
 
 You can use it for lines:
 
+````md
+```py
+print("This is Code Hike")
+# mark
+print("This is Code Hike")
+print("This is Code Hike")
+```
+````
+
+```py
+print("This is Code Hike")
+# mark
+print("This is Code Hike")
+print("This is Code Hike")
+```
+
 Or you can use inline, for tokens:
+
+````md
+```py
+# mark[16:24]
+print("This is Code Hike")
+```
+````
+
+```py
+# mark[16:24]
+print("This is Code Hike")
+```
+
+If you want to change the background or any other style, you can pass a CSS class to the annotation:
+
+<CH.Code>
+
+````md your.mdx
+```py
+# mark[16:24] my-colors
+print("This is Code Hike")
+```
+````
+
+---
+
+```css your.css
+.my-colors {
+  background: #f00 !important;
+}
+```
+
+</CH.Code>
+
+```py
+# mark[16:24]
+print("This is Code Hike")
+```
 
 ## `withClass` annotation
 
@@ -217,7 +271,7 @@ If you want to add a CSS class to a part of the code, without the default styles
 <CH.Section>
 
 You can add links inside the code using the `link` annotation.
-The link URL could be [external](focus://2,3[7:14]) or [internal](focus://4,5[10:17]).
+The link URL could be [absolute](focus://2,3[7:14]) or [relative](focus://4,5[10:17]).
 
 ```py
 function lorem() {
