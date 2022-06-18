@@ -13,6 +13,7 @@ const previews = [
   "mark-1",
   "mark-2",
   "mark-3",
+  "with-class",
 ];
 
 export async function getStaticPaths() {
@@ -57,6 +58,17 @@ export default function Page({ previewSource }) {
           .my-colors {
             outline: 2px solid red;
             background: #400 !important;
+          }
+
+          .my-class {
+            display: inline-block;
+            border-radius: 4px;
+            outline: dotted 1px;
+            transition: 0.2s;
+          }
+
+          .my-class:hover {
+            transform: scale(1.5) rotate(-14deg);
           }
         `}
       </style>

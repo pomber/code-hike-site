@@ -291,7 +291,46 @@ print("This is Code Hike")
 
 If you want to add a CSS class to a part of the code, without the default styles of `mark`, you can use the `withClass` annotation.
 
-`withClass` annotations can only be used as comments.
+<SideBySide>
+
+<CH.Code>
+
+````md your.mdx mark=2[19:26]
+```py
+# withClass[7:16] my-class
+print("hover me")
+```
+````
+
+---
+
+```css your.css mark=1[1:9],8[1:9]
+.my-class {
+  display: inline-block;
+  border-radius: 4px;
+  outline: dotted 1px;
+  transition: 0.2s;
+}
+
+.my-class:hover {
+  transform: scale(1.5) rotate(-14deg);
+}
+```
+
+</CH.Code>
+
+<CH.Preview
+  show="/docs/preview/with-class"
+  zoom={1.2}
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+You can only use `withClass` annotations as comments.
 
 ## `link` annotation
 
