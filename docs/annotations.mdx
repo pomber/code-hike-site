@@ -177,7 +177,7 @@ _`// focus(1,3[3:8])`_ selects the next line and the columns 3 to 8 of the third
 aaaaaaaaaaaaaaaaaa
 123456789012345678
 aaaaaaaaaaaaaaaaaa
-// focus(1,3[3:5])
+// focus(1,3[3:8])
 123456789012345678
 aaaaaaaaaaaaaaaaaa
 123456789012345678
@@ -258,7 +258,7 @@ If you want to change the background or any other style, you can pass a CSS clas
 
 <CH.Code>
 
-````md your.mdx
+````md your.mdx mark=2[15:23]
 ```py
 # mark[16:24] my-colors
 print("This is Code Hike")
@@ -267,9 +267,10 @@ print("This is Code Hike")
 
 ---
 
-```css your.css
+```css your.css mark=1[1:10]
 .my-colors {
-  background: #f00 !important;
+  outline: 2px solid red;
+  background: #400 !important;
 }
 ```
 

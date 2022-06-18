@@ -52,6 +52,14 @@ export async function getStaticProps(context) {
 export default function Page({ previewSource }) {
   return (
     <div className="prose m-4">
+      <style jsx global>
+        {`
+          .my-colors {
+            outline: 2px solid red;
+            background: #400 !important;
+          }
+        `}
+      </style>
       <MDXComponent code={previewSource} />
     </div>
   );
