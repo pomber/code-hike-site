@@ -56,8 +56,8 @@ export default function Page({ previewSource }) {
       <style jsx global>
         {`
           .my-colors {
-            outline: 2px solid red;
-            background: #400 !important;
+            outline: 2px solid royalblue;
+            background: navy !important;
           }
 
           .my-class {
