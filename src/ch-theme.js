@@ -47,7 +47,7 @@ module.exports = {
       name: "Comment",
       scope: "comment",
       settings: {
-        foreground: "#4C566A",
+        foreground: "#99a3b6",
       },
     },
     {

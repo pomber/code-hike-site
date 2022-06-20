@@ -6,7 +6,15 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import React, { useMemo } from "react";
 
-const previews = ["codeblocks-1", "codeblocks-2", "installation-1"];
+const previews = [
+  "codeblocks-1",
+  "codeblocks-2",
+  "installation-1",
+  "mark-1",
+  "mark-2",
+  "mark-3",
+  "with-class",
+];
 
 export async function getStaticPaths() {
   return {
@@ -45,6 +53,25 @@ export async function getStaticProps(context) {
 export default function Page({ previewSource }) {
   return (
     <div className="prose m-4">
+      <style jsx global>
+        {`
+          .my-colors {
+            outline: 2px solid royalblue;
+            background: navy !important;
+          }
+
+          .my-class {
+            display: inline-block;
+            border-radius: 4px;
+            outline: dotted 1px;
+            transition: 0.2s;
+          }
+
+          .my-class:hover {
+            transform: scale(1.5) rotate(-14deg);
+          }
+        `}
+      </style>
       <MDXComponent code={previewSource} />
     </div>
   );
