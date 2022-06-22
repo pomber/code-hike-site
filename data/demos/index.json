@@ -63,11 +63,11 @@
     "id": "sections",
     "title": "Code links",
     "sponsors": [
-      "zevaverbach",
       "may17",
       "traviscooper",
       "arosenkranz",
-      "gordlea"
+      "gordlea",
+      "may17"
     ],
     "locked": false
   },
