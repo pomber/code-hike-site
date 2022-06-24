@@ -63,11 +63,11 @@
     "id": "sections",
     "title": "Code links",
     "sponsors": [
-      "may17",
       "traviscooper",
       "arosenkranz",
       "gordlea",
-      "may17"
+      "may17",
+      "github"
     ],
     "locked": false
   },
