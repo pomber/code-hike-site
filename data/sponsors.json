@@ -172,7 +172,7 @@
       "name": "William Chen",
       "login": "ouiliame",
       "avatarUrl": "https://avatars.githubusercontent.com/u/990030?s=128&u=dc439405ffa4bcd6ea58e2c32c7a5d3626aef8ed&v=4",
-      "location": "Seoul, Republic of Korea",
+      "location": "Los Angeles, CA",
       "url": "https://github.com/ouiliame",
       "isOrg": false
     },
@@ -366,6 +366,14 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/18446907?s=128&v=4",
       "location": "Berlin",
       "url": "https://github.com/MarkusWendorf",
+      "isOrg": false
+    },
+    {
+      "name": "Cameron Yick",
+      "login": "hydrosquall",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/9020979?s=128&u=241fbda3ae2604a7ff5380ec20e3c293acefadc6&v=4",
+      "location": "New York, NY",
+      "url": "https://github.com/hydrosquall",
       "isOrg": false
     }
   ],
