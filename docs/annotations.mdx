@@ -40,6 +40,7 @@ The current stable annotations are:
 - [_`mark`_](#mark-annotation): add a background color to the targeted tokens
 - [_`withClass`_](#withClass-annotation): add a class to the targeted code
 - [_`link`_](#link-annotation): add links inside the code
+- [_`from`_](#from-annotation): include code from external files
 
 First, let's see the syntax to target different parts of the code.
 
@@ -319,8 +320,8 @@ print("This is Code Hike")
 
 ```css your.css mark=1[2:10]
 .my-colors {
-  outline: 2px solid red;
-  background: #400 !important;
+  outline: 2px solid royalblue;
+  background: navy !important;
 }
 ```
 
@@ -403,3 +404,15 @@ function lorem() {
 You can only use `link` annotations as comments.
 
 </CH.Section>
+
+## `from` annotation
+
+Instead of writing the code inside the MDX file, you can use the `from` annotation to import it from another file.
+
+````md src/your.mdx
+```py hello.py
+# from ./assets/my-file.py
+```
+````
+
+The path is relative to the MDX file.
