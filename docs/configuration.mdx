@@ -11,7 +11,7 @@ const someTheme = require("shiki/themes/nord.json")
 
 mdxOptions = {
   remarkPlugins: [
-    // focus(1:8)
+    // focus(1:10)
     [
       remarkCodeHike,
       {
@@ -21,6 +21,8 @@ mdxOptions = {
         showCopyButton: false,
         // link[9:24] #auto-import
         autoImport: true,
+        // link[9:35] #skip-languages
+        skipLanguages: ["mermaid"],
         // link[9:24] #theme
         theme: someTheme,
       },
@@ -112,6 +114,29 @@ function App() {
   return <Example components={{ CH }} />
 }
 ```
+
+## Skip Languages
+
+<CH.Section>
+
+If you want Code Hike to skip certain languages, you can set _`skipLanguages`_. This is useful when you have other plugins that handle those languages, like [mermaid](https://github.com/mermaid-js/mermaid).
+
+```js
+mdxOptions = {
+  remarkPlugins: [
+    [
+      remarkCodeHike,
+      {
+        theme: someTheme,
+        // focus
+        skipLanguages: ["", "mermaid"],
+      },
+    ],
+  ],
+}
+```
+
+</CH.Section>
 
 ## Theme
 
