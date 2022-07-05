@@ -6,20 +6,12 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { bundleMDX } from "mdx-bundler";
 import React, { useMemo } from "react";
 
-const previews = [
-  "codeblocks-1",
-  "codeblocks-2",
-  "installation-1",
-  "mark-1",
-  "mark-2",
-  "mark-3",
-  "with-class",
-];
-
 export async function getStaticPaths() {
+  const filenames = await fs.promises.readdir("docs/preview");
+
   return {
-    paths: previews.map((preview) => ({
-      params: { preview },
+    paths: filenames.map((filename) => ({
+      params: { preview: filename.slice(0, -4) },
     })),
     fallback: false,
   };

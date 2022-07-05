@@ -28,6 +28,7 @@ const stable = [
   "configuration",
   "codeblocks",
   "annotations",
+  "ch-code",
   "troubleshooting",
 ];
 function isExperimental(slug) {

@@ -1,5 +1,81 @@
-**This feature is experimental.**
+With _`<CH.Code>`_ you can show code files in [tabs](#tabs) or [panels](#panels). You can also pass props to [override configuration](#override-configuration) or [customize styling](#styling-props).
 
-For a sneak peek, see the demos:
+## Tabs
 
-- [Filenames demo](/demo/filenames)
+When you include more than one code blocks inside a _`<CH.Code>`_, Code Hike will show them as tabs.
+
+<SideBySide>
+
+```mdx your.mdx
+// from ../docs/preview/ch-code-1.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-1"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+## Panels
+
+You can also show two files at the same time in two panels. Use a divider _`---`_ to separate the top tabs from the bottom tabs.
+
+<SideBySide>
+
+```mdx your.mdx focus=1,7,13
+// from ../docs/preview/ch-code-2.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-2"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+## Override configuration
+
+You can override some of the [configuration](configuration) options by passing props to _`<CH.Code>`_.
+
+<SideBySide>
+
+```mdx your.mdx focus=1,9 mark=1[10:27]
+// from ../docs/preview/ch-code-3.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-3"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+## Styling props
+
+Then there are the _`style`_ and _`className`_ props. You can use them to customize the styles of the component.
+
+<SideBySide>
+
+```mdx your.mdx focus=1,9 mark=1[10:30]
+// from ../docs/preview/ch-code-4.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-4"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
