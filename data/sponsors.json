@@ -169,7 +169,7 @@
       "isOrg": false
     },
     {
-      "name": "William Chen",
+      "name": "William C. D. Chen",
       "login": "ouiliame",
       "avatarUrl": "https://avatars.githubusercontent.com/u/990030?s=128&u=dc439405ffa4bcd6ea58e2c32c7a5d3626aef8ed&v=4",
       "location": "Los Angeles, CA",
@@ -374,6 +374,14 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/9020979?s=128&u=241fbda3ae2604a7ff5380ec20e3c293acefadc6&v=4",
       "location": "New York, NY",
       "url": "https://github.com/hydrosquall",
+      "isOrg": false
+    },
+    {
+      "name": "Albert Sebastian",
+      "login": "albseb511",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/12158859?s=128&u=3c50a3170604db0ac9329b9d5d887dda9571f989&v=4",
+      "location": "Bangalore",
+      "url": "https://github.com/albseb511",
       "isOrg": false
     }
   ],
