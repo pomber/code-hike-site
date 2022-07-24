@@ -353,14 +353,6 @@
       "isOrg": false
     },
     {
-      "avatarUrl": "https://avatars.githubusercontent.com/u/9919?s=128&v=4",
-      "login": "github",
-      "name": "GitHub",
-      "location": "San Francisco, CA",
-      "url": "https://github.com/github",
-      "isOrg": true
-    },
-    {
       "name": "Markus Wendorf",
       "login": "MarkusWendorf",
       "avatarUrl": "https://avatars.githubusercontent.com/u/18446907?s=128&v=4",
