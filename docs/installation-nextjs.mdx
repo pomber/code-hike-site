@@ -2,17 +2,25 @@ _Based on [Next.js official docs](https://nextjs.org/docs/advanced-features/usin
 
 Start by installing next and react on an empty directory:
 
+<CH.Code showCopyButton>
+
 ```bash
 npm install next react react-dom
 ```
+
+</CH.Code>
 
 <CH.Section>
 
 Then also install the [mdx plugin for next](focus://1[13:21]), the [mdx loader](focus://1[23:36]), and [Code Hike](focus://1[38:56]).
 
+<CH.Code showCopyButton>
+
 ```bash
 npm install @next/mdx @mdx-js/loader @code-hike/mdx
 ```
+
+</CH.Code>
 
 </CH.Section>
 
@@ -117,12 +125,14 @@ export default MyApp
 
 And now you should be able to use Code Hike inside your mdx files.
 
-For example, create an `my.mdx` file in your `pages` directory, and run Next with `npx next`. If you open _`localhost:3000/my`_ on your browser you should see Code Hike's syntax highlighting.
+For example, create an `index.mdx` file in your `pages` directory, and run Next with `npx next`.
+
+If you open _`localhost:3000`_ on your browser you should see Code Hike's syntax highlighting.
 
 Markdown (.md) files should also work.
 
 {/* prettier-ignore */}
-~~~md pages/my.mdx
+~~~md pages/index.mdx
 # Hello
 
 Lorem ipsum dolor sit amet.
