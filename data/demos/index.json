@@ -66,9 +66,10 @@
       "traviscooper",
       "arosenkranz",
       "gordlea",
-      "may17"
+      "may17",
+      "hydrosquall"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight",
@@ -110,7 +111,6 @@
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
     "sponsors": [
-      "MarkusWendorf",
       "hydrosquall",
       "albseb511",
       "kliukovkin"
