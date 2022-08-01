@@ -76,10 +76,10 @@
     "title": "Spotlight",
     "sponsors": [
       "obgibson",
-      "Salakar",
       "hamelsmu",
       "loopholelabs",
-      "jrolfs"
+      "jrolfs",
+      "albseb511"
     ],
     "locked": false
   },
@@ -111,9 +111,9 @@
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
     "sponsors": [
-      "hydrosquall",
       "albseb511",
-      "kliukovkin"
+      "kliukovkin",
+      "hamelsmu"
     ],
     "locked": true
   },
