@@ -77,9 +77,9 @@
     "sponsors": [
       "obgibson",
       "hamelsmu",
-      "loopholelabs",
       "jrolfs",
-      "albseb511"
+      "albseb511",
+      "jrolfs"
     ],
     "locked": false
   },
@@ -111,7 +111,6 @@
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
     "sponsors": [
-      "kliukovkin",
       "kliukovkin"
     ],
     "locked": true
