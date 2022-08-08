@@ -11,15 +11,23 @@ See the [MDX v2 documentation](https://mdxjs.com/docs/getting-started/).
 
 **2.** Install the Code Hike plugin
 
+<CH.Code showCopyButton>
+
 ```bash
-npm install @code-hike/mdx@next
+npm install @code-hike/mdx
 ```
+
+</CH.Code>
 
 or
 
+<CH.Code showCopyButton>
+
 ```bash
-yarn add @code-hike/mdx@next
+yarn add @code-hike/mdx
 ```
+
+</CH.Code>
 
 </Collapsable>
 <Collapsable>
@@ -28,9 +36,13 @@ yarn add @code-hike/mdx@next
 
 Depending on your stack, it could be:
 
+<CH.Code showCopyButton>
+
 ```js your.js
-import "@code-hike/mdx/dist/index.css";
+import "@code-hike/mdx/dist/index.css"
 ```
+
+</CH.Code>
 
 </Collapsable>
 <Collapsable>
@@ -39,6 +51,7 @@ import "@code-hike/mdx/dist/index.css";
 
 Also depends on your stack. Find the right place to pass `remarkPlugins`.
 
+{/* prettier-ignore */}
 ```js your.config.js focus=2,3,6,7,10
 const remarkSomething = require("remark-something");
 const { remarkCodeHike } = require("@code-hike/mdx");
@@ -60,6 +73,7 @@ mdxOptions = {
 
 For example:
 
+{/* prettier-ignore */}
 ````mdx your.mdx
 # Hello, world!
 
