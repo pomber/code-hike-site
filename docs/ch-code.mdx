@@ -79,3 +79,51 @@ Then there are the _`style`_ and _`className`_ props. You can use them to custom
 />
 
 </SideBySide>
+
+## Height
+
+<CH.Section>
+
+By default, `<CH.Code>` will take the height needed to fit all the lines of the given code. As we saw in the previous example, you can use CSS to set a fixed height.
+
+Instead of setting the height with CSS, you can also use the _`rows`_ prop. You pass the number of lines you want to show, and Code Hike will set the height accordingly.
+
+<SideBySide>
+
+```mdx your.mdx focus=1 mark=1[10:17]
+// from ../docs/preview/ch-code-5.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-5"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+</CH.Section>
+
+<CH.Section>
+
+In addition to the number of lines, you can also pass _`"focus"`_, then the height of the code will match the height of the focused lines.
+
+<SideBySide>
+
+```mdx your.mdx focus=1 mark=1[10:21]
+// from ../docs/preview/ch-code-6.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-code-6"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+</CH.Section>
