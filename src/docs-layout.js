@@ -29,6 +29,7 @@ const stable = [
   "codeblocks",
   "annotations",
   "ch-code",
+  "ch-section",
   "troubleshooting",
 ];
 function isExperimental(slug) {

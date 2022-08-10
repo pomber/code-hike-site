@@ -1,5 +1,71 @@
-**This feature is experimental.**
+Sometimes it is useful to reference code from a section of text. Since the code may be below or above the text, we need to wrap the text and the code inside an element: _`<CH.Section>`_.
 
-For a sneak peek, see the demos:
+With the `<CH.Section>` component you can reference code in two ways:
 
-- [Code links demo](/demo/sections)
+- [Inline code](#inline-code)
+- [Code mentions](#code-mentions)
+
+## Inline code
+
+With Code Hike, you have two options to render inline code:
+
+- You can use the standard markdown syntax where you wrap the code in backticks: `` `var x = 10` ``, which won't be syntax-highlighted.
+- Or use a special syntax where you wrap the code with underscores and backticks: _`` _`var x = 10`_ ``_, which will be syntax-highlighted as _`var x = 10`_.
+
+Usually, the syntax depends on the context and the language. If you use the special inline code inside a `<CH.Section>` component, Code Hike will copy the highlighting from the code to the text:
+
+<SideBySide>
+
+```mdx your.mdx mark=8[11:30]
+// from ../docs/preview/ch-section-1.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-section-1"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+## Code mentions
+
+Code mentions are a way to link code and the text. We borrow the link syntax from markdown to create hoverable links to the code. It's easier to show than to explain:
+
+<SideBySide>
+
+```mdx your.mdx focus=1,8[8:34],10
+// from ../docs/preview/ch-section-2.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-section-2"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
+
+The syntax is the same as a markdown link, but instead of an URL, you use `focus://` as the protocol, and then pass a [focus string](annotations#metastring-syntax).
+
+Code mentions are useful when you have more than one file. To specify the file, you prepend the name before the focus string and separate them with a `#`:
+
+<SideBySide>
+
+```mdx your.mdx focus=1,18,19,21 mark=18[20:34],19[20:33]
+// from ../docs/preview/ch-section-3.mdx
+```
+
+<CH.Preview
+  show="/docs/preview/ch-section-3"
+  style={{
+    margin: "0 -16px",
+    height: "100%",
+  }}
+/>
+
+</SideBySide>
