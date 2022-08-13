@@ -345,18 +345,10 @@
       "isOrg": false
     },
     {
-      "name": "Albert Sebastian",
-      "login": "albseb511",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/12158859?s=128&u=3c50a3170604db0ac9329b9d5d887dda9571f989&v=4",
-      "location": "Bangalore",
-      "url": "https://github.com/albseb511",
-      "isOrg": false
-    },
-    {
       "name": "Georgii Kliukovkin",
       "login": "kliukovkin",
       "avatarUrl": "https://avatars.githubusercontent.com/u/26343726?s=128&v=4",
-      "location": null,
+      "location": "San Jose, California",
       "url": "https://github.com/kliukovkin",
       "isOrg": false
     }
