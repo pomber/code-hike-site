@@ -78,9 +78,10 @@
       "obgibson",
       "hamelsmu",
       "jrolfs",
-      "kiliman"
+      "kiliman",
+      "codeSTACKr"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight-preview",
