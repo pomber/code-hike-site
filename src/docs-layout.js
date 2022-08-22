@@ -50,7 +50,7 @@ export function DocsLayout({ title, h1, slug, children, cardId, description }) {
                 <h1 className="text-2xl font-bold">
                   Code Hike
                   <span className="text-sm pl-2 font-normal text-gray-700">
-                    v0.7.3
+                    v0.7.4
                   </span>
                 </h1>
               </a>
