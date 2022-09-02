@@ -30,7 +30,7 @@
       "bdresser",
       "davo",
       "guicurcio",
-      "c0d3t3k",
+      "kickstartDS",
       "kickstartDS"
     ],
     "locked": false
@@ -90,10 +90,9 @@
       "LEDThereBeLight",
       "Kishotta",
       "seanmay",
-      "rohald89",
       "rohald89"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "scrollycoding",
