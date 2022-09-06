@@ -30,10 +30,9 @@
       "bdresser",
       "davo",
       "guicurcio",
-      "kickstartDS",
       "kickstartDS"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
