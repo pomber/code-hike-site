@@ -87,10 +87,10 @@
     "id": "spotlight-preview",
     "title": "Spotlight & preview",
     "sponsors": [
-      "LEDThereBeLight",
       "Kishotta",
       "seanmay",
-      "rohald89"
+      "rohald89",
+      "Kishotta"
     ],
     "locked": true
   },
