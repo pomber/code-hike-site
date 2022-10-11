@@ -100,12 +100,11 @@
     "title": "Scrollycoding",
     "sponsors": [
       "invertase",
-      "brian-jensen",
       "brianespinosa",
       "ranman",
       "brian-jensen"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "scrollycoding-preview",
