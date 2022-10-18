@@ -27,11 +27,11 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "davo",
       "guicurcio",
       "kickstartDS",
       "gheorghitahurmuz",
-      "davo"
+      "davo",
+      "mkubilayk"
     ],
     "locked": false
   },
