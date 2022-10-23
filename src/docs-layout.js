@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { IdProvider } from "@radix-ui/react-id";
-import { CodeHikeLogo, GitHubLink, MenuIcon, TwitterLink } from "./logo";
+import {
+  CodeHikeLogo,
+  DiscordLink,
+  GitHubLink,
+  MenuIcon,
+  TwitterLink,
+} from "./logo";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useRouter } from "next/router";
 import { SEO } from "./seo";
@@ -57,6 +63,8 @@ export function DocsLayout({ title, h1, slug, children, cardId, description }) {
             </Link>
 
             {/* <input placeholder="Search" className="w-40" /> */}
+
+            <DiscordLink className="hover:text-gray-500 transition-colors duration-200" />
             <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
             <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
           </nav>
