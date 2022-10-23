@@ -33,15 +33,15 @@ const all = [
       "Use Code Hike syntax highlighting and components with Contentlayer",
   },
   {
+    id: "nextra",
+    name: "Nextra",
+  },
+  {
     id: "gatsby",
     name: "Gatsby",
     cardId: "gatsby",
     title: "How to use Code Hike with Gatsby",
     description: "Use Code Hike syntax highlighting and components in Gatsby",
-  },
-  {
-    id: "nextra",
-    name: "Nextra",
   },
   {
     id: "remix",
@@ -52,16 +52,16 @@ const all = [
     name: "Vite",
   },
   {
-    id: "docspage",
-    name: "docs.page",
-  },
-  {
     id: "mdx-bundler",
     name: "Next.js + MDX Bundler",
   },
   {
     id: "next-mdx-remote",
     name: "Next MDX Remote",
+  },
+  {
+    id: "docspage",
+    name: "docs.page",
   },
   {
     id: "astro",
