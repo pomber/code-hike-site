@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { HomeDemo } from "../src/home-demo";
 import { getHomeDemoProps } from "../src/home-demo-server";
-import { CodeHikeLogo, GitHubLink, TwitterLink } from "../src/logo";
+import {
+  CodeHikeLogo,
+  DiscordLink,
+  GitHubLink,
+  TwitterLink,
+} from "../src/logo";
 import React from "react";
 import { DemoGrid } from "../src/demo-grid";
 import sponsorsData from "../data/sponsors.json";
@@ -266,8 +271,8 @@ function Nav() {
         <CodeHikeLogo className="block h-10 w-10 text-blue-600" />
         <h1 className="text-3xl font-bold">Code Hike</h1>
       </div>
+      <DiscordLink className="hover:text-gray-500 transition-colors duration-200" />
       <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
-
       <GitHubLink className="hover:text-gray-500 transition-colors duration-200" />
     </nav>
   );
