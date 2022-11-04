@@ -65,11 +65,10 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "may17",
       "hydrosquall",
       "may17"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight",
