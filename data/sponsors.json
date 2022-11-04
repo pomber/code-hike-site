@@ -201,14 +201,6 @@
       "isOrg": false
     },
     {
-      "name": "Gord Lea",
-      "login": "gordlea",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/782154?s=128&v=4",
-      "location": "Vancouver, BC",
-      "url": "https://github.com/gordlea",
-      "isOrg": false
-    },
-    {
       "name": "Hamel Husain",
       "login": "hamelsmu",
       "avatarUrl": "https://avatars.githubusercontent.com/u/1483922?s=128&u=32e639cf2398fd1d723f0a728979d24e3996f4de&v=4",
@@ -268,7 +260,7 @@
       "name": "Brian Jensen",
       "login": "brian-jensen",
       "avatarUrl": "https://avatars.githubusercontent.com/u/31598338?s=128&v=4",
-      "location": null,
+      "location": "Arizona",
       "url": "https://github.com/brian-jensen",
       "isOrg": false
     },
