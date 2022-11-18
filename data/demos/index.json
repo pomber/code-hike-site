@@ -31,7 +31,7 @@
       "kickstartDS",
       "gheorghitahurmuz",
       "davo",
-      "mkubilayk"
+      "melodyclue"
     ],
     "locked": false
   },
@@ -112,12 +112,10 @@
     "title": "Scrollycoding & preview",
     "sponsors": [
       "kliukovkin",
-      "evanorti",
       "melodyclue",
-      "donghhan",
-      "evanorti"
+      "donghhan"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "slideshow",
