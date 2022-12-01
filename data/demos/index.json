@@ -42,9 +42,10 @@
       "stefanjudis",
       "AlexFrazer",
       "glenngillen",
-      "molebox"
+      "molebox",
+      "1rodriguez"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "custom-annotations",
