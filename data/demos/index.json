@@ -19,7 +19,7 @@
       "nberger",
       "codecrafters-io",
       "uidotdev",
-      "josepot"
+      "kasterra"
     ],
     "locked": false
   },
@@ -30,8 +30,8 @@
       "guicurcio",
       "kickstartDS",
       "davo",
-      "melodyclue",
-      "davo"
+      "davo",
+      "samedskulj"
     ],
     "locked": false
   },
@@ -76,10 +76,10 @@
     "title": "Spotlight",
     "sponsors": [
       "obgibson",
-      "hamelsmu",
       "jrolfs",
       "kiliman",
-      "codeSTACKr"
+      "codeSTACKr",
+      "codebender828"
     ],
     "locked": false
   },
@@ -90,7 +90,7 @@
       "seanmay",
       "rohald89",
       "Kishotta",
-      "Corei13",
+      "MildTomato",
       "MildTomato"
     ],
     "locked": false
@@ -111,10 +111,10 @@
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
     "sponsors": [
-      "kliukovkin",
       "donghhan",
       "zaphod72",
-      "nabeelkausari"
+      "nabeelkausari",
+      "jrolfs"
     ],
     "locked": true
   },

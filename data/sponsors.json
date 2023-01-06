@@ -73,14 +73,6 @@
       "isOrg": false
     },
     {
-      "name": "Josep M Sobrepere",
-      "login": "josepot",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/8620144?s=128&u=e2a5b7f00c32b723d88ae344ce0aad619d7d6753&v=4",
-      "location": "Barcelona",
-      "url": "https://github.com/josepot",
-      "isOrg": false
-    },
-    {
       "avatarUrl": "https://avatars.githubusercontent.com/u/59406945?s=128&v=4",
       "login": "uidotdev",
       "name": "ui.dev",
@@ -193,14 +185,6 @@
       "isOrg": false
     },
     {
-      "name": "Hamel Husain",
-      "login": "hamelsmu",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/1483922?s=128&u=32e639cf2398fd1d723f0a728979d24e3996f4de&v=4",
-      "location": "Portland, OR",
-      "url": "https://github.com/hamelsmu",
-      "isOrg": false
-    },
-    {
       "name": "Connor Eaves",
       "login": "Kishotta",
       "avatarUrl": "https://avatars.githubusercontent.com/u/6186407?s=128&v=4",
@@ -289,14 +273,6 @@
       "isOrg": false
     },
     {
-      "name": "Georgii Kliukovkin",
-      "login": "kliukovkin",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/26343726?s=128&v=4",
-      "location": "San Jose, California",
-      "url": "https://github.com/kliukovkin",
-      "isOrg": false
-    },
-    {
       "name": "Michael Carter",
       "login": "kiliman",
       "avatarUrl": "https://avatars.githubusercontent.com/u/47168?s=128&u=8145112c847d2037790aff83e057f5be79acb5c5&v=4",
@@ -310,14 +286,6 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/52665907?s=128&u=d1e3d1a88b44b3f1b3d5b1328b9b90990b395701&v=4",
       "location": null,
       "url": "https://github.com/codeSTACKr",
-      "isOrg": false
-    },
-    {
-      "name": "Dhananjoy Biswas",
-      "login": "Corei13",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/4954380?s=128&u=4d2f7c797ddeef7a8b4ebb4a41c3b625366f9f0a&v=4",
-      "location": null,
-      "url": "https://github.com/Corei13",
       "isOrg": false
     },
     {
@@ -339,25 +307,9 @@
     {
       "name": "Lucas de França",
       "login": "luxonauta",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/48334856?s=128&u=9480d122128d6415f3109ce9e35e5e7962299366&v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/48334856?s=128&u=096e498ae7268b6948562ba6598bdf0b7d0e5906&v=4",
       "location": "São Paulo, Brasil",
       "url": "https://github.com/luxonauta",
-      "isOrg": false
-    },
-    {
-      "name": "reo",
-      "login": "melodyclue",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/117662771?s=128&u=2ab37eb8f37cb1c9bf77fe3bc6fb24bcf57d1efe&v=4",
-      "location": "Japan",
-      "url": "https://github.com/melodyclue",
-      "isOrg": false
-    },
-    {
-      "name": "Apensia",
-      "login": "donghhan",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/84304078?s=128&u=8adba45090840e04fc21a5b9453deb0fc44e542d&v=4",
-      "location": "South Korea",
-      "url": "https://github.com/donghhan",
       "isOrg": false
     },
     {
@@ -377,11 +329,35 @@
       "isOrg": false
     },
     {
-      "name": null,
+      "name": "Juan Rodriguez (jrodri89)",
       "login": "1rodriguez",
       "avatarUrl": "https://avatars.githubusercontent.com/u/44001844?s=128&v=4",
       "location": null,
       "url": "https://github.com/1rodriguez",
+      "isOrg": false
+    },
+    {
+      "name": "Jonathan Bakebwa",
+      "login": "codebender828",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/21237954?s=128&u=8d33f80968b1e2582b530af74e26e4cb94d1a90b&v=4",
+      "location": "Beijing Institute of Technology, Beijing, CN",
+      "url": "https://github.com/codebender828",
+      "isOrg": false
+    },
+    {
+      "name": "Samed Skulj",
+      "login": "samedskulj",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/63544749?s=128&u=57e52cb4aa0dcebc471fee17dce332faa7f489a2&v=4",
+      "location": "Kakanj",
+      "url": "https://github.com/samedskulj",
+      "isOrg": false
+    },
+    {
+      "name": "Huichan Lee",
+      "login": "kasterra",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/74085452?s=128&u=1417ee27a02ffcb98215994d5f3318fcd62d633a&v=4",
+      "location": "Busan, Korea",
+      "url": "https://github.com/kasterra",
       "isOrg": false
     }
   ],
