@@ -30,7 +30,7 @@
       "guicurcio",
       "kickstartDS",
       "davo",
-      "davo",
+      "samedskulj",
       "samedskulj"
     ],
     "locked": false
@@ -91,7 +91,7 @@
       "rohald89",
       "Kishotta",
       "MildTomato",
-      "MildTomato"
+      "zaphod72"
     ],
     "locked": false
   },
@@ -111,10 +111,8 @@
     "id": "scrollycoding-preview",
     "title": "Scrollycoding & preview",
     "sponsors": [
-      "donghhan",
       "zaphod72",
-      "nabeelkausari",
-      "jrolfs"
+      "nabeelkausari"
     ],
     "locked": true
   },
