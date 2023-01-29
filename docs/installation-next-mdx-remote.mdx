@@ -1,3 +1,147 @@
 ## Next MDX Remote + Code Hike
 
-See this [example](https://github.com/code-hike/examples/tree/main/next-mdx-remote). Guide coming soon.
+_Based on [Next.js official docs](https://nextjs.org/docs/advanced-features/using-mdx) and [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)._
+
+Start by installing next and react on an empty directory:
+
+<CH.Code showCopyButton>
+
+```bash
+npm install next react react-dom
+```
+
+</CH.Code>
+
+<CH.Section>
+
+Then also install the [next-mdx-remote](focus://1[7:21]) plugin.
+
+<CH.Code showCopyButton>
+
+```bash
+npm i next-mdx-remote
+```
+
+</CH.Code>
+
+</CH.Section>
+
+<div style={{ height: "0.5em" }} />
+
+<CH.Scrollycoding>
+
+First, you need to create a `pages/_app.js` file if you don't have one.
+
+The _`MyApp`_ component is where you put global stuff that applies to all pages.
+
+You can find more information about the `_app.js` file in the [Next.js official docs](https://nextjs.org/docs/advanced-features/custom-app).
+
+{/* prettier-ignore */}
+```js pages/_app.js
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+---
+
+We use `pages/_app.js` file to import Code Hike's stylesheet.
+
+If you want to customize Code Hike's styles with a global stylesheet make sure to import it after this import to avoid specificity issues.
+
+You can learn more about customizing Code Hike styles in the [styling docs](/docs/styling).
+
+{/* prettier-ignore */}
+```js pages/_app.js focus=1
+import "@code-hike/mdx/dist/index.css"
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+---
+
+Next, create a page for rendering your MDX content.
+
+You can learn more about parsing MDX content from remote locations in the [next-mdx-remote docs](https://github.com/hashicorp/next-mdx-remote);
+
+```js pages/content.js
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+
+import Test from '../components/test'
+
+const components = {}
+
+export default function TestPage({ source }) {
+  return (
+    <div className="wrapper">
+      <MDXRemote {...source} components={components} />
+    </div>
+  )
+}
+
+export async function getStaticProps() {
+  // MDX text - can be from a local file, database, anywhere
+  const source = 'Some **mdx** text, <p>using an HTML element</p>'
+  const mdxSource = await serialize(source)
+  return { props: { source: mdxSource } }
+}
+```
+
+---
+
+To set up Code Hike you need to import the `@code-hike/mdx`` plugin, and add it to the `remarkPlugins`` array in the `serialize` function. 
+
+Next to the plugin you can pass [a config object](focus://10[24:32]). Almost always you'll want to pass a `theme` there. You can import one from shiki, or make a custom one.
+
+You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
+
+```js pages/content.js focus=3:5,7,20:25
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import { remarkCodeHike } from "@code-hike/mdx"
+import { CH } from '@code-hike/mdx/components'
+import theme from "shiki/themes/material-default.json"
+
+const components = { CH }
+
+export default function TestPage({ source }) {
+  return (
+    <div className="wrapper">
+      <MDXRemote {...source} components={components} />
+    </div>
+  )
+}
+
+export async function getStaticProps() {
+  // MDX text - can be from a local file, database, anywhere
+  const source = 'Some **mdx** text, <p>using an HTML element</p>'
+  const mdxSource = await serialize(source, {
+    mdxOptions: {
+      remarkPlugins: [[remarkCodeHike, { autoImport: false, theme }]],
+      useDynamicImport: true,
+    },
+  })
+  return { props: { source: mdxSource } }
+}
+```
+
+---
+
+And now you can import mdx files from anywhere.
+
+For examples on importing files from your local file system or a database, refer to the `next-mdx-remote` [docs](https://github.com/hashicorp/next-mdx-remote).
+
+</CH.Scrollycoding>
+
+<div style={{ height: 20 }} />
+
+A demo of Code Hike + NextJS is available on [GitHub](https://github.com/code-hike/codehike/tree/next/examples/next-mdx-remote). You can also try it out from your browser on [StackBlitz](https://github.com/code-hike/codehike/tree/next/examples/next-mdx-remote?file=pages%2Findex.mdx).
+
+<div style={{ height: 200 }} />
