@@ -289,14 +289,6 @@
       "isOrg": false
     },
     {
-      "name": "Jonathan Summers-Muir",
-      "login": "MildTomato",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/8291514?s=128&u=2960d72247d0460343d4fd9acbbf02c6abf1dd51&v=4",
-      "location": "Earth",
-      "url": "https://github.com/MildTomato",
-      "isOrg": false
-    },
-    {
       "name": "Darren Kennedy",
       "login": "zaphod72",
       "avatarUrl": "https://avatars.githubusercontent.com/u/11624963?s=128&v=4",
@@ -316,7 +308,7 @@
       "name": "Jonathan Bakebwa",
       "login": "codebender828",
       "avatarUrl": "https://avatars.githubusercontent.com/u/21237954?s=128&u=86eb5e05dff7ee8418e107e542836a08877c1491&v=4",
-      "location": "Paris",
+      "location": "Paris, France",
       "url": "https://github.com/codebender828",
       "isOrg": false
     },
