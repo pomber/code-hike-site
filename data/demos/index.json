@@ -6,9 +6,10 @@
       "facebook",
       "fmvilas",
       "MatthiasZepper",
-      "cassieevans"
+      "cassieevans",
+      "zaphod72"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "filenames",
@@ -87,11 +88,10 @@
     "sponsors": [
       "seanmay",
       "rohald89",
-      "Kishotta",
       "zaphod72",
       "Kliton"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "scrollycoding",
