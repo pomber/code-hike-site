@@ -77,10 +77,9 @@
       "obgibson",
       "jrolfs",
       "kiliman",
-      "codeSTACKr",
-      "codebender828"
+      "codeSTACKr"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight-preview",
