@@ -65,9 +65,9 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "hydrosquall",
       "may17",
-      "ZTMLuisRamirez"
+      "ZTMLuisRamirez",
+      "may17"
     ],
     "locked": false
   },
@@ -88,8 +88,7 @@
     "title": "Spotlight & preview",
     "sponsors": [
       "seanmay",
-      "rohald89",
-      "Kliton"
+      "rohald89"
     ],
     "locked": true
   },
@@ -98,8 +97,7 @@
     "title": "Scrollycoding",
     "sponsors": [
       "invertase",
-      "brianespinosa",
-      "brian-jensen"
+      "brianespinosa"
     ],
     "locked": true
   },
