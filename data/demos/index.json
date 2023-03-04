@@ -6,9 +6,10 @@
       "facebook",
       "fmvilas",
       "MatthiasZepper",
-      "zaphod72"
+      "zaphod72",
+      "Kliton"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "filenames",
@@ -77,9 +78,10 @@
       "obgibson",
       "jrolfs",
       "kiliman",
-      "codeSTACKr"
+      "codeSTACKr",
+      "brian-jensen"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight-preview",
@@ -87,7 +89,6 @@
     "sponsors": [
       "seanmay",
       "rohald89",
-      "zaphod72",
       "Kliton"
     ],
     "locked": true
@@ -98,7 +99,6 @@
     "sponsors": [
       "invertase",
       "brianespinosa",
-      "ranman",
       "brian-jensen"
     ],
     "locked": true
