@@ -65,11 +65,10 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "may17",
       "ZTMLuisRamirez",
       "may17"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight",
@@ -78,10 +77,9 @@
       "obgibson",
       "jrolfs",
       "kiliman",
-      "codeSTACKr",
-      "brian-jensen"
+      "codeSTACKr"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight-preview",
