@@ -27,11 +27,11 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "guicurcio",
       "kickstartDS",
       "davo",
       "nabeelkausari",
-      "mrboen94"
+      "mrboen94",
+      "kickstartDS"
     ],
     "locked": false
   },
