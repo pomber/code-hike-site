@@ -27,13 +27,12 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "kickstartDS",
       "davo",
       "nabeelkausari",
       "mrboen94",
       "kickstartDS"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
