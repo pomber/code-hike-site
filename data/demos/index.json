@@ -27,10 +27,10 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "davo",
       "nabeelkausari",
       "mrboen94",
-      "kickstartDS"
+      "kickstartDS",
+      "nabeelkausari"
     ],
     "locked": true
   },
