@@ -27,7 +27,6 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "nabeelkausari",
       "mrboen94",
       "kickstartDS",
       "nabeelkausari"
@@ -64,8 +63,7 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "ZTMLuisRamirez",
-      "may17"
+      "ZTMLuisRamirez"
     ],
     "locked": true
   },
