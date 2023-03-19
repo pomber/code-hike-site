@@ -29,7 +29,8 @@
     "sponsors": [
       "mrboen94",
       "kickstartDS",
-      "nabeelkausari"
+      "nabeelkausari",
+      "rohald89"
     ],
     "locked": true
   },
@@ -82,7 +83,6 @@
     "id": "spotlight-preview",
     "title": "Spotlight & preview",
     "sponsors": [
-      "seanmay",
       "rohald89"
     ],
     "locked": true
