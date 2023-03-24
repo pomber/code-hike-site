@@ -2,8 +2,14 @@
   {
     "id": "code",
     "title": "Code and focus",
-    "sponsors": ["facebook", "fmvilas", "MatthiasZepper", "zaphod72"],
-    "locked": true
+    "sponsors": [
+      "facebook",
+      "fmvilas",
+      "MatthiasZepper",
+      "zaphod72",
+      "codentell"
+    ],
+    "locked": false
   },
   {
     "id": "filenames",
@@ -20,8 +26,14 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": ["mrboen94", "kickstartDS", "nabeelkausari", "rohald89"],
-    "locked": true
+    "sponsors": [
+      "mrboen94",
+      "kickstartDS",
+      "nabeelkausari",
+      "rohald89",
+      "ouiliame"
+    ],
+    "locked": false
   },
   {
     "id": "comment-annotations",
@@ -38,14 +50,26 @@
   {
     "id": "sections",
     "title": "Code links",
-    "sponsors": ["traviscooper", "arosenkranz", "ZTMLuisRamirez"],
-    "locked": true
+    "sponsors": [
+      "traviscooper",
+      "arosenkranz",
+      "ZTMLuisRamirez",
+      "scvnc",
+      "cabljac"
+    ],
+    "locked": false
   },
   {
     "id": "spotlight",
     "title": "Spotlight",
-    "sponsors": ["obgibson", "jrolfs", "kiliman", "codeSTACKr"],
-    "locked": true
+    "sponsors": [
+      "obgibson",
+      "jrolfs",
+      "kiliman",
+      "codeSTACKr",
+      "outerbounds"
+    ],
+    "locked": false
   },
   {
     "id": "spotlight-preview",
@@ -56,7 +80,10 @@
   {
     "id": "scrollycoding",
     "title": "Scrollycoding",
-    "sponsors": ["invertase", "brianespinosa"],
+    "sponsors": [
+      "invertase",
+      "brianespinosa"
+    ],
     "locked": true
   },
   {
