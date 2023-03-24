@@ -2,12 +2,7 @@
   {
     "id": "code",
     "title": "Code and focus",
-    "sponsors": [
-      "facebook",
-      "fmvilas",
-      "MatthiasZepper",
-      "zaphod72"
-    ],
+    "sponsors": ["facebook", "fmvilas", "MatthiasZepper", "zaphod72"],
     "locked": true
   },
   {
@@ -25,12 +20,7 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": [
-      "mrboen94",
-      "kickstartDS",
-      "nabeelkausari",
-      "rohald89"
-    ],
+    "sponsors": ["mrboen94", "kickstartDS", "nabeelkausari", "rohald89"],
     "locked": true
   },
   {
@@ -46,36 +36,15 @@
     "locked": false
   },
   {
-    "id": "custom-annotations",
-    "title": "Custom annotations",
-    "sponsors": [
-      "cabljac",
-      "scvnc",
-      "codentell",
-      "ouiliame",
-      "outerbounds"
-    ],
-    "locked": false
-  },
-  {
     "id": "sections",
     "title": "Code links",
-    "sponsors": [
-      "traviscooper",
-      "arosenkranz",
-      "ZTMLuisRamirez"
-    ],
+    "sponsors": ["traviscooper", "arosenkranz", "ZTMLuisRamirez"],
     "locked": true
   },
   {
     "id": "spotlight",
     "title": "Spotlight",
-    "sponsors": [
-      "obgibson",
-      "jrolfs",
-      "kiliman",
-      "codeSTACKr"
-    ],
+    "sponsors": ["obgibson", "jrolfs", "kiliman", "codeSTACKr"],
     "locked": true
   },
   {
@@ -87,10 +56,7 @@
   {
     "id": "scrollycoding",
     "title": "Scrollycoding",
-    "sponsors": [
-      "invertase",
-      "brianespinosa"
-    ],
+    "sponsors": ["invertase", "brianespinosa"],
     "locked": true
   },
   {
