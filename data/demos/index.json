@@ -74,14 +74,15 @@
   {
     "id": "spotlight-preview",
     "title": "Spotlight & preview",
-    "sponsors": [],
+    "sponsors": [
+      "brianespinosa"
+    ],
     "locked": true
   },
   {
     "id": "scrollycoding",
     "title": "Scrollycoding",
     "sponsors": [
-      "invertase",
       "brianespinosa"
     ],
     "locked": true
