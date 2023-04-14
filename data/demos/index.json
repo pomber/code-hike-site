@@ -40,10 +40,10 @@
     "title": "Comment annotations",
     "sponsors": [
       "stefanjudis",
-      "AlexFrazer",
       "glenngillen",
       "molebox",
-      "oli-kitty"
+      "oli-kitty",
+      "glenngillen"
     ],
     "locked": false
   },
