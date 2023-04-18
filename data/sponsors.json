@@ -239,6 +239,14 @@
       "location": null,
       "url": "https://github.com/ZTMLuisRamirez",
       "isOrg": false
+    },
+    {
+      "name": "Igor Gassmann",
+      "login": "IGassmann",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/4291707?s=128&u=b2c1bd2ecf74cad26f6eb4d9e2b13112a3499437&v=4",
+      "location": "Switzerland",
+      "url": "https://github.com/IGassmann",
+      "isOrg": false
     }
   ],
   "access": [
