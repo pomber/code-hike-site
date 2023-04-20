@@ -247,6 +247,14 @@
       "location": "Switzerland",
       "url": "https://github.com/IGassmann",
       "isOrg": false
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/71734578?s=128&v=4",
+      "login": "drivly",
+      "name": "Driv.ly",
+      "location": "United States of America",
+      "url": "https://github.com/drivly",
+      "isOrg": true
     }
   ],
   "access": [
