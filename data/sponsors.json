@@ -177,6 +177,14 @@
       "isOrg": false
     },
     {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/9919?s=128&v=4",
+      "login": "github",
+      "name": "GitHub",
+      "location": "San Francisco, CA",
+      "url": "https://github.com/github",
+      "isOrg": true
+    },
+    {
       "name": "Michael Carter",
       "login": "kiliman",
       "avatarUrl": "https://avatars.githubusercontent.com/u/47168?s=128&u=8145112c847d2037790aff83e057f5be79acb5c5&v=4",
