@@ -78,9 +78,10 @@
       "brianespinosa",
       "drivly",
       "nathanclevenger",
-      "github"
+      "github",
+      "jakobskrym"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "scrollycoding",

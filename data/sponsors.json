@@ -271,6 +271,14 @@
       "location": null,
       "url": "https://github.com/nathanclevenger",
       "isOrg": false
+    },
+    {
+      "name": "Jakob",
+      "login": "jakobskrym",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/66998665?s=128&u=16c5f7b735b4f49f016b39647276817de78022e6&v=4",
+      "location": "Stockholm",
+      "url": "https://github.com/jakobskrym",
+      "isOrg": false
     }
   ],
   "access": [
