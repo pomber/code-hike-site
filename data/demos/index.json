@@ -42,10 +42,9 @@
       "stefanjudis",
       "molebox",
       "oli-kitty",
-      "glenngillen",
-      "IGassmann"
+      "glenngillen"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "sections",
