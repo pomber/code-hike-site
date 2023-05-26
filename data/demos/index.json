@@ -29,11 +29,10 @@
     "sponsors": [
       "mrboen94",
       "kickstartDS",
-      "rohald89",
       "ouiliame",
       "rohald89"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
