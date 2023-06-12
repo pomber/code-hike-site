@@ -409,10 +409,36 @@ You can only use `link` annotations as comments.
 
 Instead of writing the code inside the MDX file, you can use the `from` annotation to import it from another file.
 
+<CH.Code>
+
 ````md src/your.mdx
 ```py hello.py
 # from ./assets/my-file.py
 ```
 ````
 
+```py src/assets/my-file.py
+print("Hello World")
+```
+
+</CH.Code>
+
 The path is relative to the MDX file.
+
+If you want to import only a portion of the file, you can pass the starting and ending line number after the file path:
+
+<CH.Code>
+
+````md src/your.mdx
+```py hello.py
+# from ./assets/my-file.py 2:3
+```
+````
+
+```py src/assets/my-file.py focus=2:3
+print("One")
+print("Two")
+print("Three")
+```
+
+</CH.Code>
