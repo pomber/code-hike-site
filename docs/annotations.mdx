@@ -38,7 +38,7 @@ The current stable annotations are:
 
 - [_`focus`_](#focus-annotation): keep the targeted code bright while dimming the rest
 - [_`mark`_](#mark-annotation): add a background color to the targeted tokens
-- [_`withClass`_](#withClass-annotation): add a class to the targeted code
+- [_`withClass`_](#withclass-annotation): add a class to the targeted code
 - [_`link`_](#link-annotation): add links inside the code
 - [_`from`_](#from-annotation): include code from external files
 
@@ -409,10 +409,36 @@ You can only use `link` annotations as comments.
 
 Instead of writing the code inside the MDX file, you can use the `from` annotation to import it from another file.
 
+<CH.Code>
+
 ````md src/your.mdx
 ```py hello.py
 # from ./assets/my-file.py
 ```
 ````
 
+```py src/assets/my-file.py
+print("Hello World")
+```
+
+</CH.Code>
+
 The path is relative to the MDX file.
+
+If you want to import only a portion of the file, you can pass the starting and ending line number after the file path:
+
+<CH.Code>
+
+````md src/your.mdx
+```py hello.py
+# from ./assets/my-file.py 2:3
+```
+````
+
+```py src/assets/my-file.py focus=2:3
+print("One")
+print("Two")
+print("Three")
+```
+
+</CH.Code>

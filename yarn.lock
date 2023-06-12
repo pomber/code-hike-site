@@ -30,19 +30,18 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@code-hike/lighter@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-0.5.2.tgz#e2cd016848cc3ac0a6766661abfb27572beb2f53"
-  integrity sha512-5/pzY6y3FtmjZ7JGY/PJ3f6q4KBFEk9Xw5i+uDXOu9Wzh8gvmr7lF1IU94paq/vgh8TDYR5O+vBaiR13NXqKTA==
+"@code-hike/lighter@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-0.7.0.tgz#7bb7d59631237d7d2e82434c3ea6fe1875813cb0"
+  integrity sha512-64O07rIORKQLB+5T/GKAmKcD9sC0N9yHFJXa0Hs+0Aee1G+I4bSXxTccuDFP6c/G/3h5Pk7yv7PoX9/SpzaeiQ==
 
-"@code-hike/mdx@0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.8.1.tgz#0464febc4ea6d432ed195416d0a5a02775a3ba78"
-  integrity sha512-rjZf9yd8VFdaKJbSIvjZ9QKGlxgMZSa0SA5qTRXpuhKy+AlQVtFm66jreve1YlHw9ySF4yAXRPcpNWl090Z4hg==
+"@code-hike/mdx@0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.9.0.tgz#fe592887dc91b46374d9f7c176eb07e65fd9e2e3"
+  integrity sha512-0wg68ZCjVWAkWT4gBUZJ8Mwktjen/XeWyqBQCrhA2IZSbZZnMYsEI6JJEFb/nZoNI3comB3JdxPLykZRq3qT2A==
   dependencies:
-    "@code-hike/lighter" "^0.5.2"
+    "@code-hike/lighter" "0.7.0"
     node-fetch "^2.0.0"
-    shiki "^0.10.1"
 
 "@esbuild-plugins/node-resolve@^0.1.4":
   version "0.1.4"
@@ -771,6 +770,11 @@
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
+
+"@vercel/analytics@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-1.0.1.tgz#38308a626c91866cb00a249c08bf65251e9b9d81"
+  integrity sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==
 
 acorn-jsx@^5.0.0:
   version "5.3.2"
@@ -2850,7 +2854,7 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
-shiki@0.10.1, shiki@^0.10.1:
+shiki@0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.10.1.tgz#6f9a16205a823b56c072d0f1a0bcd0f2646bef14"
   integrity sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==

@@ -122,9 +122,6 @@ import {
 } from "contentlayer/source-files"
 // focus(1:4)
 import { remarkCodeHike } from "@code-hike/mdx"
-import { createRequire } from "module"
-const require = createRequire(import.meta.url)
-const theme = require("shiki/themes/nord.json")
 
 const Post = defineDocumentType(() => ({
   name: "Post",
@@ -138,7 +135,7 @@ export default makeSource({
   // focus(1:5)
   mdx: {
     remarkPlugins: [
-      [remarkCodeHike, { theme }],
+      [remarkCodeHike, { theme: "nord" }],
     ],
   },
 })
@@ -146,7 +143,7 @@ export default makeSource({
 
 Now we add Code Hike configuration.
 
-**Import _`remarkCodeHike`_ and a theme.** You may need a little [import/require dance](focus://6:8) to import a json file. For more information about themes, see the [themes docs](/docs/configuration#theme).
+**Import _`remarkCodeHike`_ and pick a theme** For more information about themes, see the [themes docs](/docs/themes).
 
 Then **add the Code Hike plugin to the [mdx options](focus://18:22)**. You can pass more options inside the configuration object if you need to, see the [configuration docs](/docs/configuration).
 
@@ -159,9 +156,6 @@ import {
   makeSource,
 } from "contentlayer/source-files"
 import { remarkCodeHike } from "@code-hike/mdx"
-import { createRequire } from "module"
-const require = createRequire(import.meta.url)
-const theme = require("shiki/themes/nord.json")
 
 const Post = defineDocumentType(() => ({
   name: "Post",
@@ -187,7 +181,7 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     remarkPlugins: [
-      [remarkCodeHike, { theme }],
+      [remarkCodeHike, { theme: "nord" }],
     ],
   },
 })

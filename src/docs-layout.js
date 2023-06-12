@@ -15,6 +15,7 @@ export const sidebar = [
   ["Introduction", "introduction"],
   ["Installation", "installation/nextjs"],
   ["Configuration", "configuration"],
+  ["Themes", "themes"],
   ["Code Blocks", "codeblocks"],
   ["Annotations", "annotations"],
   ["<CH.Code>", "ch-code"],
@@ -32,6 +33,7 @@ const stable = [
   "introduction",
   "installation/nextjs",
   "configuration",
+  "themes",
   "codeblocks",
   "annotations",
   "ch-code",
@@ -56,7 +58,7 @@ export function DocsLayout({ title, h1, slug, children, cardId, description }) {
                 <h1 className="text-2xl font-bold">
                   Code Hike
                   <span className="text-sm pl-2 font-normal text-gray-700">
-                    v0.8.1
+                    v0.9.0
                   </span>
                 </h1>
               </a>

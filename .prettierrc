@@ -8,7 +8,7 @@
       }
     },
     {
-      "files": ["show.mdx"],
+      "files": ["show.mdx", "old-show.mdx"],
       "options": {
         "printWidth": 54,
         "semi": false

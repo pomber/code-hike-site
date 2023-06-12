@@ -1,0 +1,59 @@
+<CH.Section>
+
+The `theme` option accepts a `string` for built-in themes or an `object` for custom themes.
+
+{/* prettier-ignore */}
+```js config.js
+import { remarkCodeHike } from "@code-hike/mdx"
+
+// focus
+// config depends on the framework you're using
+mdxOptions = {
+  remarkPlugins: [
+    // focus[22:43]
+    // mark[32:40]
+    [remarkCodeHike, { theme: "dark-plus" }],
+    anotherPlugin,
+  ],
+}
+```
+
+</CH.Section>
+
+## Built in themes
+
+<BuitInThemes />
+
+## Light/Dark mode
+
+There are also two built-in themes that support light/dark mode using CSS:
+
+<FromCSSThemes />
+
+To use them you need to include the colors as CSS variables. You can copy the CSS from here:
+
+- [`github-from-css` colors](https://github.com/code-hike/lighter/blob/main/lib/themes/github-from-css.css)
+- [`material-from-css` colors](https://github.com/code-hike/lighter/blob/main/lib/themes/material-from-css.css)
+
+and adapt it to your needs by changing the CSS selector.
+
+## Custom themes and VS Code themes
+
+You can use the [Theme Editor](https://themes.codehike.org/editor) to customize any of the built-in themes or any theme from the VS Code marketplace.
+
+Once you have your theme, import it in your config file:
+
+{/* prettier-ignore */}
+```js config.js
+import { remarkCodeHike } from "@code-hike/mdx"
+// focus
+import myTheme from "./my-theme"
+
+mdxOptions = {
+  remarkPlugins: [
+    // focus[22:39]
+    [remarkCodeHike, { theme: myTheme }],
+    anotherPlugin,
+  ],
+}
+```

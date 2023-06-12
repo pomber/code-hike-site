@@ -1,5 +1,3 @@
-import theme from "shiki/themes/dark-plus.json";
-
 import fs from "fs";
 import { remarkCodeHike } from "@code-hike/mdx";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -30,7 +28,7 @@ export async function getStaticProps(context) {
       return options;
     },
     xdmOptions(options) {
-      options.remarkPlugins = [[remarkCodeHike, { theme }]];
+      options.remarkPlugins = [[remarkCodeHike, { theme: "dark-plus" }]];
       return options;
     },
   });

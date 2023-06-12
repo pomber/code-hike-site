@@ -1,14 +1,13 @@
 import { highlight } from "@code-hike/mdx";
-import theme from "shiki/themes/github-light.json";
 import fs from "fs";
 
 export async function getHomeDemoProps() {
-  const mdx = fs.readFileSync("./data/demos/show.mdx", "utf8");
+  const mdx = fs.readFileSync("./data/demos/old-show.mdx", "utf8");
 
   const code = await highlight({
     code: mdx,
-    lang: "md",
-    theme,
+    lang: "mdx",
+    theme: "github-light",
   });
 
   return { code };
