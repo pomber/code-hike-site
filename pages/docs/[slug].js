@@ -1,7 +1,7 @@
 import { Collapsable } from "../../src/collapsable";
 
 import React, { useMemo } from "react";
-import { BUNDLED_LANGUAGES } from "shiki";
+import { LANG_NAMES } from "@code-hike/lighter";
 import { DocsLayout, sidebar } from "../../src/docs-layout";
 import { mdxToCode } from "../../src/docs-mdx";
 import { getMDXComponent } from "mdx-bundler/client";
@@ -58,18 +58,18 @@ function MDXComponent({ code, components }) {
 }
 
 function LangCount() {
-  return BUNDLED_LANGUAGES.length;
+  return LANG_NAMES.length;
 }
 
 function LanguageList() {
-  const languages = BUNDLED_LANGUAGES.map(({ id }) => id);
+  const languages = LANG_NAMES;
   const lastLanguage = languages[languages.length - 1];
   const headLanguages = languages.slice(0, languages.length - 1);
 
   return (
     <p className="text-justify">
       Code Hike handles syntax highlighting for{" "}
-      <strong>{BUNDLED_LANGUAGES.length} languages</strong>:{" "}
+      <strong>{LANG_NAMES.length} languages</strong>:{" "}
       {headLanguages.map((id) => (
         <React.Fragment key={id}>
           <span className="font-mono bg-gray-200 rounded px-1 py-0.5">

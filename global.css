@@ -167,6 +167,9 @@ body {
   color: unset !important;
 }
 
+.prose > style:first-child + h3 {
+  margin-top: 0;
+}
 /* unreset */
 
 .unreset a {
