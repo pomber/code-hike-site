@@ -59,13 +59,12 @@ module.exports = withMDX({
 
 To set up Code Hike you need to import the _`@code-hike/mdx`_ plugin, and add it to the _`remarkPlugins`_ array in the `next.config.js` file.
 
-Next to the plugin you can pass [a config object](focus://10[24:32]). Almost always you'll want to pass a `theme` there. You can import one from shiki, or make a custom one.
+Next to the plugin you can pass [a config object](focus://10[24:32]). Almost always you'll want to pass a `theme` there. For more information about themes, see the [themes docs](/docs/themes).
 
 You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
 
 {/* prettier-ignore */}
-```js next.config.js focus=1:4,9:11
-const theme = require("shiki/themes/nord.json")
+```js next.config.js focus=1:3,8:10
 const {
   remarkCodeHike,
 } = require("@code-hike/mdx")
@@ -74,7 +73,7 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
-      [remarkCodeHike, { theme }]
+      [remarkCodeHike, { theme: "nord" }]
     ],
   },
 })

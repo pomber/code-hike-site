@@ -1,4 +1,4 @@
-Code Hike is a remark plugin for [MDX v2](https://mdxjs.com/). The specific set up will depend on your stack, it usually involves five steps:
+Code Hike is a remark plugin for [MDX v2](https://mdxjs.com/). The specific set up will depend on [your stack](#frameworks), it usually involves five steps:
 
 <Collapsable>
 
@@ -52,14 +52,13 @@ import "@code-hike/mdx/dist/index.css"
 Also depends on your stack. Find the right place to pass `remarkPlugins`.
 
 {/* prettier-ignore */}
-```js your.config.js focus=2,3,6,7,10
+```js your.config.js focus=2,5,6,9
 const remarkSomething = require("remark-something");
 const { remarkCodeHike } = require("@code-hike/mdx");
-const theme = require("shiki/themes/github-dark.json"); // any theme from shiki
 
 mdxOptions = {
   remarkPlugins: [
-    [remarkCodeHike, { theme, lineNumbers: false }],
+    [remarkCodeHike, { theme: "github-dark", lineNumbers: false }],
     remarkSomething,
     remarkSomethingElse,
   ],

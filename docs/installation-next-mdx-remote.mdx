@@ -71,64 +71,92 @@ Next, create a page for rendering your MDX content.
 You can learn more about parsing MDX content from remote locations in the [next-mdx-remote docs](https://github.com/hashicorp/next-mdx-remote);
 
 ```js pages/content.js
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from "next-mdx-remote/serialize"
+import { MDXRemote } from "next-mdx-remote"
 
-import Test from '../components/test'
+import Test from "../components/test"
 
 const components = {}
 
-export default function TestPage({ source }) {
+export default function TestPage({
+  source,
+}) {
   return (
     <div className="wrapper">
-      <MDXRemote {...source} components={components} />
+      <MDXRemote
+        {...source}
+        components={components}
+      />
     </div>
   )
 }
 
 export async function getStaticProps() {
   // MDX text - can be from a local file, database, anywhere
-  const source = 'Some **mdx** text, <p>using an HTML element</p>'
-  const mdxSource = await serialize(source)
-  return { props: { source: mdxSource } }
+  const source =
+    "Some **mdx** text, <p>using an HTML element</p>"
+  const mdxSource = await serialize(
+    source
+  )
+  return {
+    props: { source: mdxSource },
+  }
 }
 ```
 
 ---
 
-To set up Code Hike you need to import the `@code-hike/mdx`` plugin, and add it to the `remarkPlugins`` array in the `serialize` function. 
+To set up Code Hike you need to import the ` @code-hike/mdx`` plugin, and add it to the  `remarkPlugins``array in the`serialize` function.
 
-Next to the plugin you can pass [a config object](focus://10[24:32]). Almost always you'll want to pass a `theme` there. You can import one from shiki, or make a custom one.
+Next to the plugin you can pass [a config object](focus://10[24:32]). Almost always you'll want to pass a `theme` there. For more information about themes, see the [themes docs](/docs/themes).
 
 You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
 
-```js pages/content.js focus=3:5,7,20:25
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
+```js pages/content.js focus=3:4,6,19:24
+import { serialize } from "next-mdx-remote/serialize"
+import { MDXRemote } from "next-mdx-remote"
 import { remarkCodeHike } from "@code-hike/mdx"
-import { CH } from '@code-hike/mdx/components'
-import theme from "shiki/themes/material-default.json"
+import { CH } from "@code-hike/mdx/components"
 
 const components = { CH }
 
-export default function TestPage({ source }) {
+export default function TestPage({
+  source,
+}) {
   return (
     <div className="wrapper">
-      <MDXRemote {...source} components={components} />
+      <MDXRemote
+        {...source}
+        components={components}
+      />
     </div>
   )
 }
 
 export async function getStaticProps() {
   // MDX text - can be from a local file, database, anywhere
-  const source = 'Some **mdx** text, <p>using an HTML element</p>'
-  const mdxSource = await serialize(source, {
-    mdxOptions: {
-      remarkPlugins: [[remarkCodeHike, { autoImport: false, theme }]],
-      useDynamicImport: true,
-    },
-  })
-  return { props: { source: mdxSource } }
+  const source =
+    "Some **mdx** text, <p>using an HTML element</p>"
+  const mdxSource = await serialize(
+    source,
+    {
+      mdxOptions: {
+        remarkPlugins: [
+          [
+            remarkCodeHike,
+            {
+              autoImport: false,
+              theme: "material-default",
+            },
+          ],
+        ],
+        useDynamicImport: true,
+      },
+    }
+  )
+  return {
+    props: { source: mdxSource },
+  }
 }
 ```
 

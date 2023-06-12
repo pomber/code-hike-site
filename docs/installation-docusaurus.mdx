@@ -49,9 +49,8 @@ There may be a few Docusuaurus features that don't work with mdx v2 yet, make su
 ---
 
 {/* prettier-ignore */}
-```js docusaurus.config.js focus=2:5,14:16
+```js docusaurus.config.js focus=1:4,13:15
 
-const theme = require("shiki/themes/nord.json")
 const {
   remarkCodeHike,
 } = require("@code-hike/mdx")
@@ -64,7 +63,7 @@ const config = {
       {
         docs: {
           beforeDefaultRemarkPlugins: [
-            [remarkCodeHike, { theme }],
+            [remarkCodeHike, { theme: "nord" }],
           ],
           sidebarPath: require.resolve("./sidebars.js"),
         },
@@ -92,15 +91,14 @@ Now that Docusaurus can render MDX v2 we can add Code Hike to the `docusaurus.co
 
 We need to import the `remarkCodeHike` function from the _`@code-hike/mdx`_ package, and add it to the _`beforeDefaultRemarkPlugins`_ array.
 
-Next to the plugin you can pass a [config object](focus://2,15[30:38]). Almost always you'll want to pass a theme there. You can import one from shiki, or make a custom one.
+Next to the plugin you can pass a [config object](focus://2,15[30:38]). Almost always you'll want to pass a theme there. For more information about themes, see the [themes docs](/docs/themes).
 
 You can also pass more options, like `lineNumbers` for example. See the [configuration docs](/docs/configuration) for more information.
 
 ---
 
 {/* prettier-ignore */}
-```js docusaurus.config.js focus=19,20,22
-const theme = require("shiki/themes/nord.json")
+```js docusaurus.config.js focus=18,19,21
 const {
   remarkCodeHike,
 } = require("@code-hike/mdx")
@@ -113,7 +111,7 @@ const config = {
       {
         docs: {
           beforeDefaultRemarkPlugins: [
-            [remarkCodeHike, { theme }],
+            [remarkCodeHike, { theme: "nord" }],
           ],
           sidebarPath: require.resolve("./sidebars.js"),
         },
