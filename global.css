@@ -82,7 +82,7 @@
 
 /* docs */
 
-.docs main > :not(.configuration-themes) .ch-frame-button {
+.docs main > :not(.configuration-themes, .theme-list) .ch-frame-button {
   border-color: #5c5c5c !important;
   background-color: #535353 !important;
 }

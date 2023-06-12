@@ -1,5 +1,4 @@
 import { highlight } from "@code-hike/mdx";
-import theme from "shiki/themes/github-light.json";
 import fs from "fs";
 
 export async function getHomeDemoProps() {
@@ -7,8 +6,8 @@ export async function getHomeDemoProps() {
 
   const code = await highlight({
     code: mdx,
-    lang: "md",
-    theme,
+    lang: "mdx",
+    theme: "github-light",
   });
 
   return { code };

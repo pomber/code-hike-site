@@ -1,6 +1,7 @@
 import "@code-hike/mdx/dist/index.css";
 import "tailwindcss/tailwind.css";
 import "../global.css";
+import "../themes.css";
 import { SessionProvider } from "next-auth/react";
 
 export default function App({

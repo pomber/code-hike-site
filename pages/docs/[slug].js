@@ -11,7 +11,9 @@ export async function getStaticPaths() {
     paths: sidebar
       .filter(
         ([title, slug]) =>
-          !slug.startsWith("installation") && !slug.startsWith("configuration")
+          !slug.startsWith("installation") &&
+          !slug.startsWith("configuration") &&
+          !slug.startsWith("themes")
       )
       .map(([title, slug]) => ({
         params: { slug, title },

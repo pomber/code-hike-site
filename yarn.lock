@@ -30,19 +30,18 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@code-hike/lighter@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-0.5.2.tgz#e2cd016848cc3ac0a6766661abfb27572beb2f53"
-  integrity sha512-5/pzY6y3FtmjZ7JGY/PJ3f6q4KBFEk9Xw5i+uDXOu9Wzh8gvmr7lF1IU94paq/vgh8TDYR5O+vBaiR13NXqKTA==
+"@code-hike/lighter@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@code-hike/lighter/-/lighter-0.7.0.tgz#7bb7d59631237d7d2e82434c3ea6fe1875813cb0"
+  integrity sha512-64O07rIORKQLB+5T/GKAmKcD9sC0N9yHFJXa0Hs+0Aee1G+I4bSXxTccuDFP6c/G/3h5Pk7yv7PoX9/SpzaeiQ==
 
-"@code-hike/mdx@0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.8.1.tgz#0464febc4ea6d432ed195416d0a5a02775a3ba78"
-  integrity sha512-rjZf9yd8VFdaKJbSIvjZ9QKGlxgMZSa0SA5qTRXpuhKy+AlQVtFm66jreve1YlHw9ySF4yAXRPcpNWl090Z4hg==
+"@code-hike/mdx@0.9.0-next.1":
+  version "0.9.0-next.1"
+  resolved "https://registry.yarnpkg.com/@code-hike/mdx/-/mdx-0.9.0-next.1.tgz#3a9513ead6a2226d3afc1de7b998f4301d014ad4"
+  integrity sha512-d8UliatJHrYCHuj3JqNHPgTB7uHb7UppvGmR0mm/kZ6WA8qMlkcwKiNWhM4UNKFZt7uMRzVA0DAakBbcAYehuw==
   dependencies:
-    "@code-hike/lighter" "^0.5.2"
+    "@code-hike/lighter" "0.7.0"
     node-fetch "^2.0.0"
-    shiki "^0.10.1"
 
 "@esbuild-plugins/node-resolve@^0.1.4":
   version "0.1.4"
@@ -2850,7 +2849,7 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
-shiki@0.10.1, shiki@^0.10.1:
+shiki@0.10.1:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.10.1.tgz#6f9a16205a823b56c072d0f1a0bcd0f2646bef14"
   integrity sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==

@@ -1,5 +1,4 @@
 import { internal } from "@code-hike/mdx/components";
-import theme from "shiki/themes/min-light.json";
 import React from "react";
 
 const { EditorSpring, MiniBrowser } = internal;
@@ -27,13 +26,43 @@ export function HomeDemo({ code }) {
         heightRatio: 1,
       },
       files: [{ name: "some.mdx", code, annotations: [], focus }],
-      codeConfig: { theme, minZoom: 0.5 },
+      codeConfig: { theme: "min-light", minZoom: 0.5 },
       frameProps: { style: { height: "100%" } },
     }),
     [code, focus]
   );
   return (
-    <div className="flex flex-col-reverse md:flex-row-reverse gap-6 w-full home-demo relative">
+    <div
+      className="flex flex-col-reverse md:flex-row-reverse gap-6 w-full home-demo relative"
+      style={{
+        "--ch-t-colorScheme": "light",
+        "--ch-t-foreground": "#24292eff",
+        "--ch-t-background": "#ffffff",
+
+        "--ch-t-editor-background": "#ffffff",
+        "--ch-t-editor-foreground": "#212121",
+        "--ch-t-editor-selectionBackground": "#ADD6FF",
+        "--ch-t-tab-activeBackground": "#ffffff",
+        "--ch-t-tab-activeForeground": "#424242",
+        "--ch-t-tab-inactiveBackground": "#f6f6f6",
+        "--ch-t-tab-inactiveForeground": "#BDBDBD",
+        "--ch-t-tab-border": "#f6f6f6",
+        "--ch-t-tab-activeBorder": "#FFF",
+        "--ch-t-editorGroup-border": "#E7E7E7",
+        "--ch-t-editorGroupHeader-tabsBackground": "#f6f6f6",
+        "--ch-t-editorLineNumber-foreground": "#CCC",
+        "--ch-t-input-background": "#fffffe",
+        "--ch-t-input-foreground": "#212121",
+        "--ch-t-input-border": "#E9E9E9",
+        "--ch-t-icon-foreground": "#424242",
+        "--ch-t-sideBar-background": "#f6f6f6",
+        "--ch-t-sideBar-foreground": "#212121",
+        "--ch-t-sideBar-border": "#f6f6f6",
+        "--ch-t-list-activeSelectionBackground": "#EEE",
+        "--ch-t-list-activeSelectionForeground": "#212121",
+        "--ch-t-list-hoverBackground": "#F0F0F0",
+      }}
+    >
       <div className="h-96 flex-1">
         <div className="flex text-2xl md:justify-end justify-center md:mr-8 mb-2">
           <span>
@@ -42,7 +71,7 @@ export function HomeDemo({ code }) {
           <Arrow right />
         </div>
         <div style={{ height: 420.6, maxWidth: 372 }} className="mx-auto">
-          <MiniBrowser url="" loadUrl="/show" theme={theme}>
+          <MiniBrowser url="" loadUrl="/show">
             <video
               onTimeUpdate={onVideoProgress}
               onSeeking={onVideoProgress}
@@ -66,7 +95,10 @@ export function HomeDemo({ code }) {
         </div>
         <div
           className="unreset mx-auto"
-          style={{ height: 420.6, maxWidth: 372 }}
+          style={{
+            height: 420.6,
+            maxWidth: 372,
+          }}
         >
           <EditorSpring {...props} />
         </div>
