@@ -8,24 +8,15 @@ import { steps } from "../src/home-demo";
 export async function getStaticProps() {
   const mdxSource = await fs.promises.readFile(`./data/demos/show.mdx`, "utf8");
 
-  const tooltipAnnotation = await fs.promises.readFile(
-    `./data/demos/custom-annotations/MyThing.jsx`,
-    "utf8"
-  );
-
-  const theme = "material-palenight";
-  const loadedTheme = await import(`shiki/themes/${theme}.json`).then(
-    (module) => module.default
-  );
-
   const previewSource = await bundleMDX(mdxSource, {
-    files: { "MyThing.jsx": tooltipAnnotation },
     esbuildOptions(options) {
       options.platform = "node";
       return options;
     },
     xdmOptions(options) {
-      options.remarkPlugins = [[remarkCodeHike, { theme: loadedTheme }]];
+      options.remarkPlugins = [
+        [remarkCodeHike, { theme: "material-palenight" }],
+      ];
       return options;
     },
   });

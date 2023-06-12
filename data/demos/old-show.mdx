@@ -86,6 +86,29 @@ function lorem(ipsum, dolor) {
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
 
+## And even custom annotations
+
+import MyThing from "./MyThing"
+
+```js
+function lorem(ipsum, dolor) {
+  const sit = "lorem ipsum"
+  dolor = elit(dolor, 3)
+  while (++consectetur < amet) {
+    sit.eiusmod("dolor sit amet")
+    tempor(ipsum, adipiscing)
+  }
+}
+```
+
+<CH.Annotation as={MyThing} focus="3[11:24]">
+
+Lorem **ipsum** dolor sit: [amet](#)
+
+</CH.Annotation>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+
 ## Code links
 
 <CH.Section>
