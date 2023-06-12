@@ -3,8 +3,6 @@ import { DocsLayout, sidebar } from "../../src/docs-layout";
 import { mdxToCode } from "../../src/docs-mdx";
 import { getMDXComponent } from "mdx-bundler/client";
 
-import { BUNDLED_THEMES } from "shiki";
-
 export async function getStaticProps() {
   const filename = "configuration";
   const title = sidebar.find(([, item]) => item === filename)[0];
@@ -13,70 +11,25 @@ export async function getStaticProps() {
     lineNumbers: true,
   });
 
-  const promises = BUNDLED_THEMES.filter((x) => x !== "css-variables").map(
-    async (themeName) => {
-      const theme = (await import(`shiki/themes/${themeName}.json`)).default;
-      const code = await mdxToCode("configuration/theme", {
-        theme,
-        lineNumbers: true,
-        showCopyButton: true,
-      });
-      return { themeName, code };
-    }
-  );
-
-  const themeCodes = await Promise.all(promises);
-
   return {
     props: {
       previewSource: code,
       slug: filename,
       title: title || null,
       lineNumbersCode,
-      themeCodes,
     },
   };
 }
 
-function getCodeSection(themeCodes) {
-  const children = themeCodes.map(({ code, themeName }, i) => {
-    const Component = getMDXComponent(code);
-    return (
-      <div key={i}>
-        <h4>
-          <code>shiki/themes/{themeName}.json</code>
-        </h4>
-        {Component()}
-      </div>
-    );
-  });
-
-  return () => <div className="configuration-themes">{children}</div>;
-}
-
-export default function Page({
-  slug,
-  previewSource,
-  title,
-  lineNumbersCode,
-  themeCodes,
-}) {
+export default function Page({ slug, previewSource, title, lineNumbersCode }) {
   const LineNumbersSection = useMemo(
     () => getMDXComponent(lineNumbersCode),
     [lineNumbersCode]
   );
 
-  const CodeSection = getCodeSection(themeCodes);
-
   return (
     <DocsLayout h1={title} title={title + " - Code Hike Docs"} slug={slug}>
-      <MDXComponent
-        code={previewSource}
-        components={{
-          LineNumbersSection,
-          CodeSection,
-        }}
-      />
+      <MDXComponent code={previewSource} components={{ LineNumbersSection }} />
     </DocsLayout>
   );
 }

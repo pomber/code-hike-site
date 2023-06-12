@@ -7,7 +7,6 @@ Somewhere in your code, you'll have a _`remarkPlugins`_ array, there you'll find
 const remarkSomething = require("remark-something")
 // focus
 const { remarkCodeHike } = require("@code-hike/mdx")
-const someTheme = require("shiki/themes/nord.json")
 
 mdxOptions = {
   remarkPlugins: [
@@ -15,18 +14,20 @@ mdxOptions = {
     [
       remarkCodeHike,
       {
-        // link[9:26] #line-numbers
+        // link[9:19] #line-numbers
         lineNumbers: false,
-        // link[9:29] #copy-button
+        // link[9:22] #copy-button
         showCopyButton: false,
-        // link[9:24] #theme
-        theme: someTheme,
-        // link[9:35] #skip-languages
+        // link[9:13] #theme
+        theme: "dark-plus",
+        // link[9:21] #skip-languages
         skipLanguages: ["mermaid"],
-        // link[9:59] #static-components
+        // link[9:24] #static-components
         staticMediaQuery: "not screen, (max-width: 768px)",
-        // link[9:24] #auto-import
+        // link[9:18] #auto-import
         autoImport: true,
+        // link[9:16] #auto-link
+        autoLink: false,
       },
     ],
     remarkSomething,
@@ -83,36 +84,7 @@ A common pattern is to have the copy button hidden by default, but show it when 
 
 ## Theme
 
-Code Hike uses [Shiki](https://github.com/shikijs/shiki) for syntax highlighting, so you can import themes directly from Shiki:
-
-{/* prettier-ignore */}
-```js
-// import:
-import theme from "shiki/themes/nord.json"
-
-// require:
-const theme = require("shiki/themes/nord.json")
-
-// import with assert:
-import theme from "shiki/themes/nord.json" assert { type: "json" }
-
-// createRequire:
-import { createRequire } from "module"
-const require = createRequire(import.meta.url)
-const theme = require("shiki/themes/nord.json")
-```
-
-### Custom themes
-
-Themes in Code Hike are javascript objects, so you can copy and edit any of the themes from Shiki. You can also search the json file for any **VS Code Theme** and make it your own.
-
-For example, this website is using a modified version of the [json file from the Nord Wave theme](https://github.com/dimitrisnl/nord-wave/blob/master/themes/Nord%20Wave-color-theme.json).
-
-### Theme list
-
-These are the themes you can import directly from Shiki:
-
-<CodeSection />
+See the [themes docs](themes) for more info.
 
 ## Skip Languages
 
@@ -193,3 +165,26 @@ function App() {
   return <Example components={{ CH }} />
 }
 ```
+
+## Auto Link
+
+<CH.Section>
+
+You can set _`autoLink: true`_ to automatically turn any URL in your code into a link.
+
+```js
+mdxOptions = {
+  remarkPlugins: [
+    [
+      remarkCodeHike,
+      {
+        // focus
+        // mark[19:22]
+        autoLink: true,
+      },
+    ],
+  ],
+}
+```
+
+</CH.Section>
