@@ -42,9 +42,10 @@
       "stefanjudis",
       "molebox",
       "glenngillen",
-      "transmissions11"
+      "transmissions11",
+      "scvnc"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "sections",
@@ -52,11 +53,10 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "ZTMLuisRamirez",
       "scvnc",
       "cabljac"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight",
