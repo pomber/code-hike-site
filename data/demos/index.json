@@ -30,9 +30,10 @@
       "mrboen94",
       "kickstartDS",
       "ouiliame",
-      "pedroapfilho"
+      "pedroapfilho",
+      "jakobskrym"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "comment-annotations",
@@ -75,10 +76,9 @@
       "brianespinosa",
       "drivly",
       "nathanclevenger",
-      "github",
       "jakobskrym"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "scrollycoding",
