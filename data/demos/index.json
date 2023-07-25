@@ -6,10 +6,9 @@
       "facebook",
       "fmvilas",
       "MatthiasZepper",
-      "codentell",
       "codentell"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "filenames",
@@ -52,8 +51,7 @@
     "title": "Code links",
     "sponsors": [
       "traviscooper",
-      "arosenkranz",
-      "cabljac"
+      "arosenkranz"
     ],
     "locked": true
   },
