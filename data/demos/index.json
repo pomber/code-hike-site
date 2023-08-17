@@ -6,9 +6,10 @@
       "facebook",
       "fmvilas",
       "MatthiasZepper",
-      "codentell"
+      "codentell",
+      "speakeasybot"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "filenames",

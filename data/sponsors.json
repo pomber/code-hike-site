@@ -231,6 +231,14 @@
       "location": null,
       "url": "https://github.com/transmissions11",
       "isOrg": false
+    },
+    {
+      "name": "Speakeasy Bot",
+      "login": "speakeasybot",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/108416695?s=128&u=7ea4a2153930b941e48f6f3c80af362ca6355cc8&v=4",
+      "location": "Beehive",
+      "url": "https://github.com/speakeasybot",
+      "isOrg": false
     }
   ],
   "access": [
