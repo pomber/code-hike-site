@@ -239,6 +239,14 @@
       "location": "Beehive",
       "url": "https://github.com/speakeasybot",
       "isOrg": false
+    },
+    {
+      "name": "matéo!",
+      "login": "9mbs",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/53072963?s=128&u=0b364e2a7287ce6e54756b9c79068a3e131be3d0&v=4",
+      "location": "California, US",
+      "url": "https://github.com/9mbs",
+      "isOrg": false
     }
   ],
   "access": [
