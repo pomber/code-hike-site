@@ -18,10 +18,9 @@
       "winkerVSbecks",
       "nberger",
       "codecrafters-io",
-      "uidotdev",
-      "kasterra"
+      "uidotdev"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "meta-annotations",
