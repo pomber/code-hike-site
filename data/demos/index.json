@@ -16,9 +16,9 @@
     "title": "Filenames and tabs",
     "sponsors": [
       "winkerVSbecks",
-      "nberger",
       "codecrafters-io",
-      "uidotdev"
+      "uidotdev",
+      "codecrafters-io"
     ],
     "locked": true
   },
