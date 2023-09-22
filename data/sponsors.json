@@ -75,7 +75,7 @@
     {
       "name": "Vincent Schramer",
       "login": "scvnc",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/885196?s=128&u=61ffec60543cea2cc04e657d2edccca7f0bd6c09&v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/885196?s=128&u=336070729d5a588ca760d6d2ebfb1a80fee8a97f&v=4",
       "location": "Lincoln, NE",
       "url": "https://github.com/scvnc",
       "isOrg": false
@@ -238,6 +238,14 @@
       "avatarUrl": "https://avatars.githubusercontent.com/u/31516445?s=128&u=b07368a5e08753d2cc2cf17c30c0e7c4d557fff3&v=4",
       "location": null,
       "url": "https://github.com/rtktpeng",
+      "isOrg": false
+    },
+    {
+      "name": "Brightforest",
+      "login": "cdalsoniii",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/8814807?s=128&u=ad8a462224a7046b7c77704a81e7038d6cbb2708&v=4",
+      "location": null,
+      "url": "https://github.com/cdalsoniii",
       "isOrg": false
     }
   ],
