@@ -18,9 +18,10 @@
       "winkerVSbecks",
       "uidotdev",
       "codecrafters-io",
-      "cdalsoniii"
+      "cdalsoniii",
+      "rtktpeng"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "meta-annotations",
@@ -52,7 +53,6 @@
     "sponsors": [
       "traviscooper",
       "arosenkranz",
-      "9mbs",
       "rtktpeng"
     ],
     "locked": true
