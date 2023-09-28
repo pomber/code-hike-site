@@ -18,9 +18,10 @@
       "winkerVSbecks",
       "uidotdev",
       "codecrafters-io",
-      "cdalsoniii"
+      "cdalsoniii",
+      "pedroapfilho"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "meta-annotations",
@@ -28,11 +29,10 @@
     "sponsors": [
       "mrboen94",
       "kickstartDS",
-      "ouiliame",
       "pedroapfilho",
       "jakobskrym"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
