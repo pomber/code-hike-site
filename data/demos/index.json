@@ -18,10 +18,9 @@
       "winkerVSbecks",
       "uidotdev",
       "codecrafters-io",
-      "cdalsoniii",
-      "pedroapfilho"
+      "cdalsoniii"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "meta-annotations",
