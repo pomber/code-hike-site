@@ -18,9 +18,10 @@
       "winkerVSbecks",
       "uidotdev",
       "codecrafters-io",
-      "cdalsoniii"
+      "cdalsoniii",
+      "molebox"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "meta-annotations",
@@ -37,13 +38,12 @@
     "id": "comment-annotations",
     "title": "Comment annotations",
     "sponsors": [
-      "stefanjudis",
       "molebox",
       "glenngillen",
       "transmissions11",
       "scvnc"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "sections",
