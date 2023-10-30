@@ -30,18 +30,19 @@
       "mrboen94",
       "kickstartDS",
       "jakobskrym",
-      "devopsbarista"
+      "devopsbarista",
+      "ryanwaits"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
     "sponsors": [
-      "molebox",
       "glenngillen",
       "transmissions11",
-      "scvnc"
+      "scvnc",
+      "glenngillen"
     ],
     "locked": true
   },
