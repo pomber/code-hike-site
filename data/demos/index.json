@@ -41,7 +41,8 @@
     "sponsors": [
       "transmissions11",
       "scvnc",
-      "glenngillen"
+      "glenngillen",
+      "kiliman"
     ],
     "locked": true
   },
@@ -60,12 +61,11 @@
     "title": "Spotlight",
     "sponsors": [
       "obgibson",
-      "jrolfs",
       "kiliman",
       "codeSTACKr",
       "outerbounds"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "spotlight-preview",
