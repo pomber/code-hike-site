@@ -42,9 +42,10 @@
       "transmissions11",
       "scvnc",
       "glenngillen",
-      "kiliman"
+      "kiliman",
+      "codeSTACKr"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "sections",
@@ -61,7 +62,6 @@
     "title": "Spotlight",
     "sponsors": [
       "obgibson",
-      "kiliman",
       "codeSTACKr",
       "outerbounds"
     ],
