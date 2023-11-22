@@ -54,16 +54,16 @@
       "traviscooper",
       "arosenkranz",
       "Naturalclar",
-      "outerbounds"
+      "outerbounds",
+      "ndimares"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "spotlight",
     "title": "Spotlight",
     "sponsors": [
-      "obgibson",
-      "outerbounds"
+      "obgibson"
     ],
     "locked": true
   },
