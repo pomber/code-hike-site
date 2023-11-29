@@ -7,7 +7,7 @@
       "fmvilas",
       "MatthiasZepper",
       "speakeasybot",
-      "speakeasybot"
+      "kickstartDS"
     ],
     "locked": false
   },
@@ -27,13 +27,12 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "mrboen94",
       "kickstartDS",
       "jakobskrym",
       "devopsbarista",
       "ryanwaits"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
