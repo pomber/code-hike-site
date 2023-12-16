@@ -30,9 +30,10 @@
       "devopsbarista",
       "ryanwaits",
       "jakobskrym",
-      "SubstrateLabs"
+      "SubstrateLabs",
+      "benzguo"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "comment-annotations",
