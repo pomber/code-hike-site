@@ -215,6 +215,14 @@
       "location": "London",
       "url": "https://github.com/ndimares",
       "isOrg": false
+    },
+    {
+      "avatarUrl": "https://avatars.githubusercontent.com/u/142449853?s=128&v=4",
+      "login": "SubstrateLabs",
+      "name": "Substrate",
+      "location": null,
+      "url": "https://github.com/SubstrateLabs",
+      "isOrg": true
     }
   ],
   "access": [
