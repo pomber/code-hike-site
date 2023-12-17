@@ -41,14 +41,6 @@
       "isOrg": false
     },
     {
-      "avatarUrl": "https://avatars.githubusercontent.com/u/59406945?s=128&v=4",
-      "login": "uidotdev",
-      "name": "ui.dev",
-      "location": null,
-      "url": "https://github.com/uidotdev",
-      "isOrg": true
-    },
-    {
       "avatarUrl": "https://avatars.githubusercontent.com/u/58904235?s=128&v=4",
       "login": "codecrafters-io",
       "name": "CodeCrafters",
@@ -155,7 +147,7 @@
     {
       "name": "Jakob",
       "login": "jakobskrym",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/66998665?s=128&u=2c500eb93a3894f36c00b713bebcbab0fc781e93&v=4",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/66998665?s=128&u=6bd4dff9706a1da45999e8a82d85582750767b0b&v=4",
       "location": "Stockholm",
       "url": "https://github.com/jakobskrym",
       "isOrg": false
