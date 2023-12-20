@@ -207,22 +207,6 @@
       "location": "London",
       "url": "https://github.com/ndimares",
       "isOrg": false
-    },
-    {
-      "avatarUrl": "https://avatars.githubusercontent.com/u/142449853?s=128&v=4",
-      "login": "SubstrateLabs",
-      "name": "Substrate",
-      "location": null,
-      "url": "https://github.com/SubstrateLabs",
-      "isOrg": true
-    },
-    {
-      "name": "Ben Guo",
-      "login": "benzguo",
-      "avatarUrl": "https://avatars.githubusercontent.com/u/894119?s=128&u=37e7463afdc42b4f134d268fe670c002f6fe8138&v=4",
-      "location": "bk",
-      "url": "https://github.com/benzguo",
-      "isOrg": false
     }
   ],
   "access": [

@@ -16,12 +16,11 @@
     "title": "Filenames and tabs",
     "sponsors": [
       "winkerVSbecks",
-      "codecrafters-io",
       "cdalsoniii",
       "molebox",
       "codecrafters-io"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "meta-annotations",
@@ -30,10 +29,9 @@
       "devopsbarista",
       "ryanwaits",
       "jakobskrym",
-      "SubstrateLabs",
       "benzguo"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
