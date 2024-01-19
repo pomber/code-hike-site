@@ -18,15 +18,15 @@
       "winkerVSbecks",
       "cdalsoniii",
       "molebox",
-      "codecrafters-io"
+      "codecrafters-io",
+      "ryanwaits"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "devopsbarista",
       "ryanwaits"
     ],
     "locked": true
