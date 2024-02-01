@@ -16,19 +16,17 @@
     "title": "Filenames and tabs",
     "sponsors": [
       "winkerVSbecks",
-      "cdalsoniii",
       "molebox",
       "codecrafters-io",
-      "ryanwaits"
+      "ryanwaits",
+      "molebox"
     ],
     "locked": false
   },
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": [
-      "ryanwaits"
-    ],
+    "sponsors": [],
     "locked": true
   },
   {
