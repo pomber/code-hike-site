@@ -26,20 +26,21 @@
   {
     "id": "meta-annotations",
     "title": "Annotations",
-    "sponsors": [],
+    "sponsors": [
+      "scvnc"
+    ],
     "locked": true
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
     "sponsors": [
-      "transmissions11",
       "scvnc",
       "glenngillen",
       "kiliman",
       "codeSTACKr"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "sections",
