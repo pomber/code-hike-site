@@ -19,7 +19,7 @@
       "codecrafters-io",
       "ryanwaits",
       "molebox",
-      "vprtwn"
+      "yacinelakel"
     ],
     "locked": false
   },
@@ -27,7 +27,8 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "scvnc"
+      "scvnc",
+      "glenngillen"
     ],
     "locked": true
   },
@@ -35,7 +36,6 @@
     "id": "comment-annotations",
     "title": "Comment annotations",
     "sponsors": [
-      "scvnc",
       "glenngillen",
       "kiliman",
       "codeSTACKr"
