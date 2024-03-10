@@ -29,15 +29,16 @@
     "sponsors": [
       "scvnc",
       "glenngillen",
-      "kiliman"
+      "kiliman",
+      "work-hadano",
+      "codeSTACKr"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "comment-annotations",
     "title": "Comment annotations",
     "sponsors": [
-      "kiliman",
       "codeSTACKr"
     ],
     "locked": true
