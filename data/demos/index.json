@@ -17,11 +17,10 @@
     "sponsors": [
       "winkerVSbecks",
       "codecrafters-io",
-      "molebox",
       "yacinelakel",
       "molebox"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "meta-annotations",
