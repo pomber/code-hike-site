@@ -29,10 +29,9 @@
       "scvnc",
       "glenngillen",
       "kiliman",
-      "codeSTACKr",
-      "work-hadano"
+      "codeSTACKr"
     ],
-    "locked": false
+    "locked": true
   },
   {
     "id": "comment-annotations",
