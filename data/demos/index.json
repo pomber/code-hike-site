@@ -15,10 +15,10 @@
     "id": "filenames",
     "title": "Filenames and tabs",
     "sponsors": [
-      "winkerVSbecks",
       "codecrafters-io",
       "yacinelakel",
-      "molebox"
+      "molebox",
+      "codecrafters-io"
     ],
     "locked": true
   },
