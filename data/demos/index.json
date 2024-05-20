@@ -17,7 +17,8 @@
     "sponsors": [
       "yacinelakel",
       "molebox",
-      "codecrafters-io"
+      "codecrafters-io",
+      "glenngillen"
     ],
     "locked": true
   },
@@ -25,7 +26,6 @@
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "scvnc",
       "glenngillen",
       "kiliman",
       "codeSTACKr"
