@@ -18,15 +18,16 @@
       "yacinelakel",
       "molebox",
       "codecrafters-io",
-      "kiliman"
+      "kiliman",
+      "AlexzanderFlores"
     ],
-    "locked": true
+    "locked": false
   },
   {
     "id": "meta-annotations",
     "title": "Annotations",
     "sponsors": [
-      "kiliman",
+      "codeSTACKr",
       "codeSTACKr"
     ],
     "locked": true
