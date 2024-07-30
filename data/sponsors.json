@@ -159,6 +159,14 @@
       "location": "California",
       "url": "https://github.com/AlexzanderFlores",
       "isOrg": false
+    },
+    {
+      "name": "Hunter Garrett",
+      "login": "hunterbecton",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/11995755?s=128&u=7ed08192cf6639b1b4f5261b9af74e1707da4e2c&v=4",
+      "location": "Atlanta, GA",
+      "url": "https://github.com/hunterbecton",
+      "isOrg": false
     }
   ],
   "access": [
