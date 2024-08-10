@@ -13,6 +13,7 @@ import { SEO } from "./seo";
 
 export const sidebar = [
   ["Introduction", "introduction"],
+  ["Test", "test"],
   ["Installation", "installation/nextjs"],
   ["Configuration", "configuration"],
   ["Themes", "themes"],

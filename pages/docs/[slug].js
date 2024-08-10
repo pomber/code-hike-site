@@ -46,10 +46,15 @@ export default function Page({ slug, previewSource, title }) {
           LangCount,
           SideBySide,
           Collapsable,
+          MyCode,
         }}
       />
     </DocsLayout>
   );
+}
+
+function MyCode(props) {
+  return <pre>hey</pre>;
 }
 
 function MDXComponent({ code, components }) {
