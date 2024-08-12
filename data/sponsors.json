@@ -159,6 +159,14 @@
       "location": "Atlanta, GA",
       "url": "https://github.com/hunterbecton",
       "isOrg": false
+    },
+    {
+      "name": "Lois",
+      "login": "zmzlois",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/79988376?s=128&u=9c85a3084168d2f52005654439be3d099514fb83&v=4",
+      "location": "London",
+      "url": "https://github.com/zmzlois",
+      "isOrg": false
     }
   ],
   "access": [
