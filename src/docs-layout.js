@@ -46,48 +46,57 @@ function isExperimental(slug) {
 
 export function DocsLayout({ title, h1, slug, children, cardId, description }) {
   return (
-    <div className="docs" style={{ minWidth: "80ch" }}>
-      <SEO title={title} cardId={cardId} description={description} />
-      <IdProvider>
-        <div className="sticky top-0 z-10">
-          <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
-            <MobileMenu current={slug} />
-            <Link href="/">
-              <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
-                <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
-                <h1 className="text-2xl font-bold">
-                  Code Hike
-                  <span className="text-sm pl-2 font-normal text-gray-700">
-                    v0.9.0
-                  </span>
-                </h1>
-              </a>
-            </Link>
+    <>
+      <div className="bg-blue-100 text-center py-1">
+        These are the old docs. <strong>Code Hike v1.0 is out!</strong> Read{" "}
+        <a href="https://codehike.org/blog/v1" className="underline">
+          the announcement
+        </a>
+        .
+      </div>
+      <div className="docs" style={{ minWidth: "80ch" }}>
+        <SEO title={title} cardId={cardId} description={description} />
+        <IdProvider>
+          <div className="sticky top-0 z-10">
+            <nav className="max-w-7xl mx-auto h-16 flex items-center gap-4 text-gray-800 bg-white 3cols:bg-transparent border-b  border-gray-100 3cols:border-b-0">
+              <MobileMenu current={slug} />
+              <Link href="/">
+                <a className="flex items-center gap-2 mr-auto 2cols:ml-6">
+                  <CodeHikeLogo className="block h-8 w-8 text-blue-600" />
+                  <h1 className="text-2xl font-bold">
+                    Code Hike
+                    <span className="text-sm pl-2 font-normal text-gray-700">
+                      v0.9.0
+                    </span>
+                  </h1>
+                </a>
+              </Link>
 
-            {/* <input placeholder="Search" className="w-40" /> */}
+              {/* <input placeholder="Search" className="w-40" /> */}
 
-            <DiscordLink className="hover:text-gray-500 transition-colors duration-200" />
-            <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
-            <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
-          </nav>
-        </div>
-        <div className="max-w-7xl mx-auto flex isolate">
-          <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
-            <Sidebar current={slug} />
-          </aside>
-          <aside className="w-64 top-16 shrink-0 hidden 3cols:block order-last"></aside>
-          <article className="min-w-0 flex-1 3cols:-mt-16">
-            <main
-              className="mx-auto px-8 pt-4 prose pb-24"
-              style={{ width: "80ch", maxWidth: "80ch" }}
-            >
-              <h1 className="text-2xl mt-0 mb-9 text-gray-800">{h1}</h1>
-              {children}
-            </main>
-          </article>
-        </div>
-      </IdProvider>
-    </div>
+              <DiscordLink className="hover:text-gray-500 transition-colors duration-200" />
+              <TwitterLink className="hover:text-gray-500 transition-colors duration-200" />
+              <GitHubLink className="hover:text-gray-500 transition-colors duration-200 mr-4" />
+            </nav>
+          </div>
+          <div className="max-w-7xl mx-auto flex isolate">
+            <aside className="w-64 sticky top-16 self-start shrink-0 hidden 2cols:block">
+              <Sidebar current={slug} />
+            </aside>
+            <aside className="w-64 top-16 shrink-0 hidden 3cols:block order-last"></aside>
+            <article className="min-w-0 flex-1 3cols:-mt-16">
+              <main
+                className="mx-auto px-8 pt-4 prose pb-24"
+                style={{ width: "80ch", maxWidth: "80ch" }}
+              >
+                <h1 className="text-2xl mt-0 mb-9 text-gray-800">{h1}</h1>
+                {children}
+              </main>
+            </article>
+          </div>
+        </IdProvider>
+      </div>
+    </>
   );
 }
 

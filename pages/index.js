@@ -23,49 +23,58 @@ export async function getStaticProps() {
 
 export default function Home({ homeDemoProps }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 md:px-0 px-4">
-      <SEO />
+    <>
+      <div className="bg-blue-100 text-center py-1">
+        These are the old docs. <strong>Code Hike v1.0 is out!</strong> Read{" "}
+        <a href="https://codehike.org/blog/v1" className="underline">
+          the announcement
+        </a>
+        .
+      </div>
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 md:px-0 px-4">
+        <SEO />
 
-      <Nav />
+        <Nav />
 
-      <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
-        <h1 className="md:text-6xl text-5xl font-bold md:mt-32 mt-20 text-center">
-          Not just a{" "}
-          <span className="text-blue-600 font-bold">syntax highlighter</span>.
-        </h1>
+        <main className="flex flex-col items-center w-full flex-1  max-w-3xl relative">
+          <h1 className="md:text-6xl text-5xl font-bold md:mt-32 mt-20 text-center">
+            Not just a{" "}
+            <span className="text-blue-600 font-bold">syntax highlighter</span>.
+          </h1>
 
-        <div className="mt-20 mb-24 text-xl text-center">
-          <Link href={`/docs/introduction`}>
-            <a className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 mb-4 md:mb-0 rounded block md:inline-block">
-              Documentation
+          <div className="mt-20 mb-24 text-xl text-center">
+            <Link href={`/docs/introduction`}>
+              <a className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 mb-4 md:mb-0 rounded block md:inline-block">
+                Documentation
+              </a>
+            </Link>
+            <a
+              href="https://play.codehike.org"
+              className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 rounded block md:inline-block"
+            >
+              Playground
             </a>
-          </Link>
-          <a
-            href="https://play.codehike.org"
-            className="border-2 border-gray-600 hover:border-blue-600 w-60 p-2 mx-2 rounded block md:inline-block"
-          >
-            Playground
-          </a>
-        </div>
-        {/* <div className="h-32" /> */}
+          </div>
+          {/* <div className="h-32" /> */}
 
-        <HomeDemo {...homeDemoProps} />
+          <HomeDemo {...homeDemoProps} />
 
-        <p className="md:text-2xl text-xl my-16  text-justify">
-          Build first-class{" "}
-          <span className="font-bold">code walkthroughs for the web</span>.
-          Whether you are writing blog posts, documentation, tutorials, coding
-          videos, or any type of technical content, Code Hike helps you create a
-          superior code reading experience.
-        </p>
+          <p className="md:text-2xl text-xl my-16  text-justify">
+            Build first-class{" "}
+            <span className="font-bold">code walkthroughs for the web</span>.
+            Whether you are writing blog posts, documentation, tutorials, coding
+            videos, or any type of technical content, Code Hike helps you create
+            a superior code reading experience.
+          </p>
 
-        <Testimonials />
+          <Testimonials />
 
-        <Demos />
-        <Sponsors sponsors={sponsorsData.sponsors} />
-        <Footer />
-      </main>
-    </div>
+          <Demos />
+          <Sponsors sponsors={sponsorsData.sponsors} />
+          <Footer />
+        </main>
+      </div>
+    </>
   );
 }
 
